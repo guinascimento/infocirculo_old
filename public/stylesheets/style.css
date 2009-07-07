@@ -1,0 +1,29 @@
+table.calendar {
+	width: 600px;
+	margin-bottom: 15px;
+	margin-left: 20px;
+}
+ 
+table.calendar th {
+	font-size: 10px;
+	text-align: left;
+}
+ 
+table.calendar td {
+	border: 1px solid #ccc;
+	font-size: 9px;
+	padding: 3px;
+}
+ 
+table.calendar td.with {
+	background: #fff;
+	color: #333;
+	border: 1px solid #000;
+	font-weight: bold;
+}
+ 
+table.calendar td.today {
+	background: #ffc;
+	color: #000;
+	border: 1px solid #fc6;
+}

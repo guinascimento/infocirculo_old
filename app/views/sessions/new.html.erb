@@ -1,0 +1,53 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h2>Login with your account</h2>
+                              </div>
+
+                              <div class="innercol">
+                                   <div id="login_dialog" class="">                    
+                                        <% form_tag session_path do -%>
+                                           <div id="user_name_login">
+                                                <%= flash_message %>
+                                                <h2>Username</h2>
+                                                <%= text_field_tag 'login', @login %>
+                                                <h2>Password</h2>
+                                                <%= password_field_tag 'password', nil %><br />
+                                                <label>
+                                                       <%= check_box_tag 'remember_me', '1', @remember_me, :class => 'auto' %> Remember me
+                                                </label>
+                                                <br /><br />
+                                                <% if_recaptcha? do %>
+                                                	<div class="field_row">
+                                                		<label for="recaptcha">Please enter the following words below.</label>
+                                                		<%= recaptcha_tags %><br />
+                                                	</div>
+                                                <% end %>
+                                                <%= submit_tag 'Log in', :class => 'button' %>
+                                                <div class="extras">
+                                                  <ul>
+                                                    <li><h2><%= link_to 'Cadastre-se', signup_path %></h2></li>
+                                                    <li><h2><%= link_to 'Forgot Password ?', forgot_password_path %></h2></li>
+                                                  </ul>
+                                                </div>
+                                           </div>
+                                        <% end -%>
+                                   </div>
+                              </div>
+
+                           </div>
+
+                     </td>
+                     <td class="right">
+                     </td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

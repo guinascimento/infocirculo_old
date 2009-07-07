@@ -1,0 +1,115 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h1>Minha conta</h1>
+                              </div>
+
+                              <% form_for :account, @account, :url => { :action => "update", :id => @account.id } do |f| %>
+                              <%= flash_message %>
+                              <div class="innercol">
+                                <%= f.error_messages %>
+                                <div id="basic_form">
+                                  <p class="blockintro">
+                                    Esses dados fazem parte da sua conta de usuario.
+                                  </p>
+
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:account, 'Nome:') %></dt>
+                                      <dd><%= f.text_field :name, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:account, 'Sobrenome:') %></dt>
+                                      <dd><%= f.text_field :last_name, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:account, 'Email:') %></dt>
+                                      <dd><%= f.text_field :email, :syize => 30 %></dd>
+
+                                      
+                                      <dt class="required"><%= label(:account, 'Indústria:') %></dt>
+                                      <dd>
+                                        <%= f.select :industry_id, Industry.find(:all).collect {|i| [i.name, i.id]}, {:include_blank => true} %>
+                                      </dd>
+
+                                      <dt class="required"><%= label(:account, 'Cargo:') %></dt>
+                                      <dd><%= f.text_field :professional_description, :size => 30 %></dd>
+                                    </dl>
+                                   </div>
+
+                                  <!--
+                                  <p class="blockintro">
+                                    Dados do endereço e contato.
+                                  </p>
+
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><//%= label(:account, 'Cidade:') %></dt>
+                                      <dd><//%= f.select :city_id, City.find(:all).collect {|c| [c.name, c.id]}, {:include_blank => true} %></dd>
+
+                                      <dt class="required"></%= label(:account, 'CEP:') %></dt>
+                                      <dd><//%= f.text_field :cep, :size => 8 %></dd>
+
+                                      <dt class="required"><//%= label(:account, 'CEP:') %></dt>
+                                      <dd><//%= f.text_field :cep, :size => 8 %></dd>
+                                    </dl>
+                                  </div>
+                                  -->
+
+                                  <p class="blockintro">
+                                    Nome de usuario e senha que o possibilitam fazer login.
+                                  </p>
+
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:account, 'Usuario:') %></dt>
+                                      <dd><%= f.text_field :login, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:account, 'Senha:') %></dt>
+                                      <dd><%= f.password_field :password, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:account, 'Confirme:') %></dt>
+                                      <dd><%= f.password_field :password_confirmation, :size => 30 %></dd>
+                                    </dl>
+                                  </div>
+
+                              </div>
+
+                              <div class="action">
+                                   <%= submit_tag 'Salvar', :class => 'button' %>
+                              </div>
+                              <% end %>
+
+                              <div id="basic_form">
+                                   <% form_tag '/user/account/avatar', :multipart => true do %>
+                                      <%= hidden_field_tag 'id', @account.id %>
+
+
+                                      <p class="blockintro">
+                                        Selecione uma imagem no formato GIF, JPG ou PNG para utilizar como avatar.
+                                      </p>
+
+                                      <div class="block">
+                                           <dl>
+                                               <dd class="required"><%= file_field_tag 'account[avatar]', :size => 30 %></dd>
+                                           </dl>
+                                      </div>
+
+                                      <div class="action">
+                                           <%= submit_tag 'Carregar Imagem', :class => 'button' %>
+                                      </div>
+                                   <% end %>
+                              </div>
+
+                        </div>
+                     </td>
+                     <td class="right"></td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

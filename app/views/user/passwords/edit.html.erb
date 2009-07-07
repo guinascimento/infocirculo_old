@@ -1,0 +1,38 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h2>Reset your password</h2>
+                              </div>
+
+                              <div class="innercol">
+                              <% form_for "password", :url => user_password_url(params[:id]),:html => { :method => :put } do |f| -%>
+		                    <%= hidden_field_tag :reset_code, params[:id] %>
+                                     <div id="user_name_login">
+                                          <%= flash_message %>
+                                          <h2>Password</h2>
+                                          <%= password_field_tag :password %>
+                                          <br />
+                                          <h2>Confirm Password</h2>
+                                          <%= password_field_tag :password_confirmation %>
+                                          <br />
+                                          <%= submit_tag 'Reset Password', :class => 'button' %>
+                                     </div>
+                                   <% end %>
+                              </div>
+
+                           </div>
+
+                     </td>
+                     <td class="right">
+                     </td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

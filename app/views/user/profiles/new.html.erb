@@ -1,0 +1,42 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h2>Sign up</h2>
+                              </div>
+
+                              <div class="innercol">
+                                     <% form_for :user, :url => user_profiles_path do |f| -%>
+                                     <div id="user_name_login">
+                                     <%= f.error_messages %>
+                                          <%= flash_message %>
+                                          <h2>Name</h2>
+                                          <%= f.text_field :name, :help => "*optional" %><br />
+                                          <h2>Login</h2>
+                                          <%= f.text_field :login %>
+                                          <h2>Email</h2>
+                                          <%= f.text_field :email %>
+                                          <h2>Password</h2>
+                                          <%= f.password_field :password %>
+                                          <h2>Password Confirmation</h2>
+                                          <%= f.password_field :password_confirmation %><br />
+                                          <%= submit_tag 'Sign up', :class => 'button' %>
+                                     </div>
+                                   <% end %>
+                              </div>
+
+                           </div>
+
+                     </td>
+                     <td class="right">
+                     </td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

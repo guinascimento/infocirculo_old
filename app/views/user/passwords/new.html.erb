@@ -1,0 +1,33 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h2>What is the email address used to create your account ?</h2>
+                              </div>
+
+                              <div class="innercol">
+                                   <% form_tag url_for(:action => 'create') do %>
+                                     <div id="user_name_login">
+                                          <%= flash_message %>
+                                          <%= text_field_tag :email, "", :size => 50 %>
+                                          <br />
+                                          <%= submit_tag 'Reset Password', :class => 'button' %>
+                                     </div>
+                                   <% end %>
+                              </div>
+
+                           </div>
+
+                     </td>
+                     <td class="right">
+                     </td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

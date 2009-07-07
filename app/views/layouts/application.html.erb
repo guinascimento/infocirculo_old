@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>javaplayer: All People</title>
+
+  <%= stylesheet_link_tag 'all' %>
+  <%= stylesheet_link_tag 'style' %>
+
+  <%= javascript_include_tag :defaults %>
+
+  <style type="text/css" media="screen">
+  a:link, a:visited {
+    color: #03c;
+  }
+
+  a:hover {
+    color: #fff;
+    background-color: #03c;
+  }
+
+  #Header {
+    background-color: #900;
+  }
+
+  #Header h1 {
+    color: #fafaf8;
+  }
+
+  #P2P_selector {
+    border: 1px solid #fff;
+    color: #fafaf8;
+  }
+
+  #Header h3, #Header h3 a:link, #Header h3 a:visited {
+    color: #fff;
+  }
+
+  #Header h3 a:hover {
+    color: #fc0;
+    background-color: #600;
+  }
+
+  #Header h3 a.current:link, #Header h3 a.current:visited {
+    color: #fafaf8;
+  }
+
+  #Header h3 a.current:hover {
+    color: #fafaf8;
+    background-color: #900;
+  }
+
+  #Header h1 a:link, #Header h1 a:visited {
+    color: #fafaf8;
+    text-decoration: none;
+  }
+
+  #Header h1 a:hover {
+    color: #fafaf8;
+    background-color: #900;
+    text-decoration: underline;
+  }
+
+  #Header h1 span {
+    color: #fff;
+  }
+
+  #Tabs a:link, #Tabs a:visited {
+    background-color: #c00;
+    color: #fff;
+    border: 1px solid #900;
+    border-bottom: 1px solid #c00;
+  }
+
+  #Tabs ul#MainTabs a:link.current, #Tabs ul#MainTabs a:visited.current,
+  div#CategoryList a.current:link, div#CategoryList a.current:visited {
+    color: #900;
+  }
+
+  #Tabs a:hover {
+    color: #fc0;
+    background-color: #600;
+    border-bottom: 1px solid #600;
+  }
+
+  #Tabs li#AdminTab a:link, #Tabs li#AdminTab a:visited {
+    color: #fff;
+    background-color: #900;
+    border-bottom: 1px solid #900;
+    text-decoration: underline;
+  }
+
+  #Tabs li#AdminTab a:hover {
+    color: #fafaf8;
+  }
+
+  #Tabs li#AdminTab a.current {
+    color: #fafaf8;
+    text-decoration: none;
+  }
+
+  span.switch div.menu a.hover,
+  span.switch div.menu a.hover span {
+    background: #f2ebeb !important;
+  }
+
+  span.switch div.menu a:active,
+  span.switch div.menu a:active span {
+    background: #ffa !important;
+  }
+
+
+  table.forum_view td.message a:hover {
+    color: #03c;
+  }
+
+  table.forum_view td.message a span.title:hover {
+    color: #fff;
+    background: #03c;
+  }
+
+</style>
+</head>
+
+<body class="edit_person companies unprintable">
+
+   <div id="Header" class="global">
+      <h3>
+         <%=current_user.login%>
+         <span class="pipe">|</span><a href="/user/account">Minha Conta</a><span class="pipe">|</span><a href="/logout">Logout</a>
+      </h3>
+
+      <h1>InfoCírculo</h1>
+
+      <div id="Tabs">
+         <ul id="MainTabs">
+            <li><a href="/dashboard" class="current">Dashboard</a></li>
+            <li><a href="/todo_lists">Pessoas</a></li>
+            <li><a href="/milestones/responsibilities">Empresas</a></li>
+            <li><a href="/milestones/responsibilities">Oportunidades</a></li>
+            <li style="float: right"><a href="/global/settings">Ajuda</a></li>
+            <li style="float: right"><a href="/templates">Configurações</a></li>
+      	    <li style="float: right"><a href="/account">Planos</a></li>
+            <li style="float: right"><a href="/companies">Inbox</a></li>
+            <li style="float: right"><a href="/profile">Perfil</a></li>
+         </ul>
+      </div>
+   </div>
+              <%= yield %>
+</body>
+
+</html>

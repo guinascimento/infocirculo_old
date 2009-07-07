@@ -1,0 +1,47 @@
+<div id="Wrapper" style="position: relative;">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                 <h1>Informações Pessoais</h1>
+                              </div>
+
+                              <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
+                              <%= flash_message %>
+                              <div class="innercol">
+                                <%= f.error_messages %>
+                                <div id="basic_form">
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
+                                      <dd><%= f.text_field :phone, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
+                                      <dd><%= f.password_field :address, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'IM:') %></dt>
+                                      <dd><%= f.password_field :im, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'Estado Civíl:') %></dt>
+                                      <dd><//%= f.select :maritial_status, Curriculum::MARITIAL_STATUS %></dd>
+                                    </dl>
+                                  </div>
+                              </div>
+
+                              <div class="action">
+                                   <%= submit_tag 'Salvar', :class => 'button' %>
+                              </div>
+                              <% end %>
+
+                        </div>
+                     </td>
+                     <td class="right"></td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>
