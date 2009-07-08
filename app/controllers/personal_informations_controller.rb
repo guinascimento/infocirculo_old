@@ -7,7 +7,6 @@ class PersonalInformationsController < ApplicationController
 
   def update
     @curriculum = Curriculum.find(params[:id])
-    puts params[:curriculum]
     @success = @curriculum.update_attributes(params[:curriculum])
 
     if @success && @curriculum.errors.empty?

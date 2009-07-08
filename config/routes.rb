@@ -26,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
 
 
   map.personal_informations '/profile/personal_informations', :controller => 'profile', :action => 'personal_informations'
-  map.personal_informations '/profile/summary', :controller => 'profile', :action => 'summary'
+  #map.personal_informations '/profile/summary', :controller => 'profile', :action => 'summary'
   map.personal_informations '/profile/professional_experience', :controller => 'profile', :action => 'professional_experience'
   map.personal_informations '/profile/education', :controller => 'profile', :action => 'education'
   # ===================================================================================== #

@@ -1,4 +1,8 @@
-<div id="Wrapper" style="position: relative;">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode">
+<meta content="MSHTML 6.00.2900.3562" name="GENERATOR"></head>
+<body><div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
                <table class="layout">
@@ -16,7 +20,7 @@
                                 <%= f.error_messages %>
                                 <div id="basic_form">
                                   <div class="block">
-                                    <table>
+                                    <table style="WIDTH: 390px; HEIGHT: 94px">
                                       <tr>
                                         <td class="required"><%= label(:curriculum, 'Telefone:') %></td>
                                         <td><%= f.text_field :phone, :size => 30 %></td>
@@ -31,7 +35,7 @@
                                         <td width="50%"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></td>
                                       </tr>
                                       <tr>
-                                        <td class="required"><%= label(:curriculum, 'Estado Civíl:') %></td>
+                                        <td class="required"><%= label(:curriculum, 'Estado Civil:') %></td>
                                         <td><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></td>
                                       </tr>
                                     </table>                                                                   
@@ -43,11 +47,11 @@
                               </div>
                               <% end %>
 
-                        </div>
+                        </div></div></div>
                      </td>
                      <td class="right"></td>
                   </tr>
                </table>
           </div>
      </div>
-</div>
+</div></body></html>
