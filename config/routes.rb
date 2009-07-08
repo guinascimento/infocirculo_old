@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   map.resources :events
-  map.resources :personal_informations
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -25,9 +24,11 @@ ActionController::Routing::Routes.draw do |map|
   map.account '/user/account/avatar', :controller => 'account', :action => 'avatar'
   map.account '/user/account/cities', :controller => 'account', :action => 'get_cities'
 
-  # Profile
-  #map.profile '/profile', :controller => 'profile', :action => 'index'
-  #map.profile '/profile/personal_information', :controller => 'profile', :action => 'personal_information'
+
+  map.personal_informations '/profile/personal_informations', :controller => 'profile', :action => 'personal_informations'
+  map.personal_informations '/profile/summary', :controller => 'profile', :action => 'summary'
+  map.personal_informations '/profile/professional_experience', :controller => 'profile', :action => 'professional_experience'
+  map.personal_informations '/profile/education', :controller => 'profile', :action => 'education'
   # ===================================================================================== #
 
 

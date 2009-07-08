@@ -16,20 +16,19 @@
                                     <ul>
                                         <span class="name"><%= full_name %></span> <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
                                         <li><%= @profile.user.professional_description %> - <%= @profile.user.industry.name %></li>
-                                        <li>www.guinascimento.com</li>
                                         <li><%= @profile.user.email %></li>
                                     </ul>
                                 </div>
 
                                 <% if @profile %>
                                 <div id="">
-                                    <h2>Informações Pessoais <span class="edit">[<%= link_to "Editar", new_personal_information_path %>]</span></h2>
+                                    <h2>Informações Pessoais <span class="edit">[<%= link_to "Editar", :controller => "personal_informations", :action => "index" %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
                                             <li id="">Telefone: <%= @profile.phone %></li>
                                             <li id="">Endereço: <%= @profile.address %></li>
                                             <li id="">IM: <%= full_im %></li>
-                                            <li id="">Estado Civíl: <%= maritial_status %></li>
+                                            <li id="">Estado Civíl: <%= @profile.maritial_status %></li>
                                         </ul>
                                     </div>
                                 </div>

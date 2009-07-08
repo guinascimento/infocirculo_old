@@ -6,7 +6,6 @@ class AccountController < ApplicationController
     
   def update
     @account = User.find(params[:id])
-    puts params[:account]
     @success = @account.update_attributes(params[:account])
 
     if @success && @account.errors.empty?

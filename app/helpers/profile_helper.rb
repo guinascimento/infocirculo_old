@@ -6,10 +6,4 @@ module ProfileHelper
     end
   end
 
-  def maritial_status
-    if @profile.maritial_status == 1
-      "Solteiro"
-    end
-  end
-
 end
