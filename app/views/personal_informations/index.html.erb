@@ -24,10 +24,10 @@
                                       <dd><%= f.text_field :address, :size => 30 %></dd>
 
                                       <dt class="required"><%= label(:curriculum, 'IM:') %></dt>
-                                      <dd><%= f.text_field :im, :size => 30 %></dd>
+                                      <dd><%= f.text_field :im, :size => 30 %>&nbsp;<span style="vertical-align:bottom;"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></span></dd>
 
                                       <dt class="required"><%= label(:curriculum, 'Estado Civíl:') %></dt>
-                                      <dd><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS %></dd>
+                                      <dd><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></dd>
                                     </dl>
                                   </div>
                               </div>
