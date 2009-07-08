@@ -7,5 +7,5 @@ class Curriculum < ActiveRecord::Base
   has_many :educations
 
   acts_as_enum :maritial_status, [:Solteiro, :Casado, :Divorciado]
-  acts_as_enum :im_type, [:MSN, :AIM, :Skype, :GTalk]
+  acts_as_enum :im_type, [:MSN, :AIM, :GTalk, :Skype]
 end

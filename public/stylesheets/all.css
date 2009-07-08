@@ -10362,6 +10362,12 @@ div.chat_explanation p {
   font-weight: bold;
 }
 
+#basic_form td.required {
+  font-weight: bold;
+    font-size: 11px;
+    text-align: right;
+}
+
 #basic_form dd input {
   vertical-align: middle;
 }

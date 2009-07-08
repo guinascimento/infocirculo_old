@@ -16,19 +16,25 @@
                                 <%= f.error_messages %>
                                 <div id="basic_form">
                                   <div class="block">
-                                    <dl>
-                                      <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
-                                      <dd><%= f.text_field :phone, :size => 30 %></dd>
-
-                                      <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
-                                      <dd><%= f.text_field :address, :size => 30 %></dd>
-
-                                      <dt class="required"><%= label(:curriculum, 'IM:') %></dt>
-                                      <dd><%= f.text_field :im, :size => 30 %>&nbsp;<span style="vertical-align:bottom;"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></span></dd>
-
-                                      <dt class="required"><%= label(:curriculum, 'Estado Civíl:') %></dt>
-                                      <dd><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></dd>
-                                    </dl>
+                                    <table>
+                                      <tr>
+                                        <td class="required"><%= label(:curriculum, 'Telefone:') %></td>
+                                        <td><%= f.text_field :phone, :size => 30 %></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="required"><%= label(:curriculum, 'Endereço:') %></td>
+                                        <td><%= f.text_field :address, :size => 30 %></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="required" colspan="3"><%= label(:curriculum, 'IM:') %></td>
+                                        <td width="20%"><%= f.text_field :im, :size => 30 %></td>
+                                        <td width="50%"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></td>
+                                      </tr>
+                                      <tr>
+                                        <td class="required"><%= label(:curriculum, 'Estado Civíl:') %></td>
+                                        <td><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></td>
+                                      </tr>
+                                    </table>                                                                   
                                   </div>
                               </div>
 
