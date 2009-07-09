@@ -135,7 +135,7 @@
 
       <div id="Tabs">
          <ul id="MainTabs">
-            <li><a href="/dashboard" class="current">Dashboard</a></li>
+            <li><%= link_to "Dashboard", { :controller => "dashboard" }, :class => is_active?("dashboard") %></li>
             <li><a href="/todo_lists">Pessoas</a></li>
             <li><a href="/milestones/responsibilities">Empresas</a></li>
             <li><a href="/milestones/responsibilities">Oportunidades</a></li>
@@ -143,7 +143,7 @@
             <li style="float: right"><a href="/templates">Configurações</a></li>
       	    <li style="float: right"><a href="/account">Planos</a></li>
             <li style="float: right"><a href="/companies">Inbox</a></li>
-            <li style="float: right"><a href="/profile">Perfil</a></li>
+            <li style="float: right"><%= link_to "Perfil", { :controller => "profile" }, :class => is_active?("profile") %></li>
          </ul>
       </div>
    </div>

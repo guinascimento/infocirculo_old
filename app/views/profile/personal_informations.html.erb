@@ -11,19 +11,29 @@
                         <div class="Left">
                            <div class="col">
                               <div class="page_header">
-                                 <h1>Resumo</h1>
+                                 <h1>Informações Pessoais</h1>
                               </div>
 
                               <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
                               <%= flash_message %>
+                              <%=  self.action_name %>
                               <div class="innercol">
                                 <%= f.error_messages %>
                                 <div id="basic_form">
                                   <div class="block">
-                                      <dl>
-                                        <dt class="required"><%= label(:curriculum, 'Resumo:') %></dt>
-                                        <dd><%= f.text_area :summary, :cols => 82, :rows => 10 %></dd>
-                                      </dl>
+                                    <dl>
+                                      <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
+                                      <dd><%= f.text_field :phone, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
+                                      <dd><%= f.text_field :address, :size => 30 %></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'IM:') %></dt>
+                                      <dd><%= f.text_field :im, :size => 30 %>&nbsp;<span style="vertical-align:bottom;"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></span></dd>
+
+                                      <dt class="required"><%= label(:curriculum, 'Estado Civíl:') %></dt>
+                                      <dd><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></dd>
+                                    </dl>
                                   </div>
                               </div>
 

@@ -22,7 +22,7 @@
 
                                 <% if @profile %>
                                 <div id="">
-                                    <h2>Informações Pessoais <span class="edit">[<%= link_to "Editar", :controller => "personal_informations", :action => "index" %>]</span></h2>
+                                    <h2>Informações Pessoais <span class="edit">[<%= link_to "Editar", :controller => "profile", :action => "personal_informations" %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
                                             <li id="">Telefone: <%= @profile.phone %></li>
