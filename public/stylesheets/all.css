@@ -10709,7 +10709,7 @@ text-align: center;
 }
 
 .fieldWithErrors {
-  color: green;
+  color: red;
 }
 
 .input {

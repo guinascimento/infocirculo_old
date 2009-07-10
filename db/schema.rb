@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090703193252) do
+ActiveRecord::Schema.define(:version => 20090706173053) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"

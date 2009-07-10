@@ -15,12 +15,12 @@
                                         <% form_tag session_path do -%>
                                            <div id="user_name_login">
                                                 <%= flash_message %>
-                                                <h2>Username</h2>
+                                                <h2><%= label_tag 'login', 'Login' %></h2>
                                                 <%= text_field_tag 'login', @login %>
-                                                <h2>Password</h2>
+                                                <h2><%= label_tag 'password', 'Senha' %></h2>
                                                 <%= password_field_tag 'password', nil %><br />
                                                 <label>
-                                                       <%= check_box_tag 'remember_me', '1', @remember_me, :class => 'auto' %> Remember me
+                                                       <%= check_box_tag 'remember_me', '1', @remember_me, :class => 'auto' %> Lembrar
                                                 </label>
                                                 <br /><br />
                                                 <% if_recaptcha? do %>
