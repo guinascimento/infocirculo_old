@@ -1,35 +1,35 @@
 <div id="Wrapper" style="position: relative;">
   <div id="swap_to">
 
-    
+
   </div>
 
   <div id="swap_from">
     <div id="screen_body" class="container">
-      
-      
 
-      
+
+
+
         <table class="layout">
           <tr>
             <td class="left">
               <div class="Left">
                 <div class="col">
 
-                  
+
                   <div class="page_header">
   <div class="page_header_links">
-    
 
-    
 
-    
+
+
+
   </div>
 
   <h1>Bem vindo!</h1>
 </div>
                   <div class="innercol">
-                    
+
 
 
 
@@ -42,7 +42,16 @@
 
   <div id="basic_form">
     <p class="blockintro">
-      <br><br><br><br><br><br><br><br><br><br><br>
+    <% if current_user.has_role?("completo") %>
+      <%  weekly_links(:date => @date)  %>
+      <br><br>
+      <%  weekly_calendar(@events, :date => @date) do |w|  %>
+        <%  w.week(:business_hours => params[:business_hours], :clickable_hours => true) do |event,truncate|  %>
+          <%=  event.starts_at.strftime('%I:%M%p')  %>
+          <%=  link_to truncate(event.name,truncate), event_path(event)  %>
+        <% end -%>
+      <% end -%>
+    <% end %>
     </p>
   </div>
 
@@ -52,20 +61,20 @@
 
 
                   </div>
-                  
+
                 </div>
                     <div class="bottom">&nbsp;</div>
-  
 
 
-  
+
+
 
               </div>
             </td>
             <td class="right">
               <div class="Right">
                 <div class="col">
-                   
+
   <h1>Informações Pessoais</h1>
 
   <div class="people">
@@ -78,39 +87,39 @@
   <div class="body">
     <h3><%= full_name %></h3>
 
-    
-      
-    
-      <a href="mailto:<%= current_user.email %>"><%= current_user.email %></a><br />
-      Data do cadastro: <%= current_user.created_at.to_s(:long) %>
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
 
-    
-      
+
+
+      <%= current_user.professional_description %><br /><a href="mailto:<%= current_user.email %>"><%= current_user.email %></a><br />
+      Data do cadastro: <%= current_user.created_at.to_s(:long) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <br />
 
-    
+
 
     <div class="edit">
-      
+
     </div>
   </div>
 </div>
 
   </div>
 
-  
+
 
                  </div>
                </div>
@@ -118,7 +127,7 @@
 
            </tr>
         </table>
-      
+
     </div>
   </div>
 </div>

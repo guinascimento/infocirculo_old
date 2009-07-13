@@ -12,8 +12,12 @@ module NavigationHelpers
       '/'
     when /the login page/
       '/login'
+    when /the profile page/
+      '/profile'
+    when /the dashboard page/
+      '/dashboard'  
 
-    
+
     # Add more mappings here.
     # Here is a more fancy example:
     #
