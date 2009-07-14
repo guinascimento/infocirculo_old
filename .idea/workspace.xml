@@ -30,16 +30,16 @@
       <file leaf-file-name="personal_informations.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/profile/personal_informations.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="132" selection-start="815" selection-end="815" vertical-scroll-proportion="-13.44">
+            <state line="17" column="30" selection-start="846" selection-end="866" vertical-scroll-proportion="-14.28">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
+      <file leaf-file-name="summary.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/profile/summary.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="60" selection-start="608" selection-end="608" vertical-scroll-proportion="0.5278276">
+            <state line="18" column="73" selection-start="926" selection-end="926" vertical-scroll-proportion="0.67863554">
               <folding />
             </state>
           </provider>
@@ -580,16 +580,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/profile/personal_informations.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="132" selection-start="815" selection-end="815" vertical-scroll-proportion="-13.44">
+        <state line="14" column="60" selection-start="608" selection-end="608" vertical-scroll-proportion="0.5278276">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/profile/personal_informations.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="60" selection-start="608" selection-end="608" vertical-scroll-proportion="0.5278276">
+        <state line="17" column="30" selection-start="846" selection-end="866" vertical-scroll-proportion="-14.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/profile/summary.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="73" selection-start="926" selection-end="926" vertical-scroll-proportion="0.67863554">
           <folding />
         </state>
       </provider>
