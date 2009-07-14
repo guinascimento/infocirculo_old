@@ -15,8 +15,7 @@
                               </div>
 
                               <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
-                              <%= flash_message %>
-                              <%=  self.action_name %>
+                              <%= hidden_field_tag :token, action_name %>
                               <div class="innercol">
                                 <%= f.error_messages %>
                                 <div id="basic_form">

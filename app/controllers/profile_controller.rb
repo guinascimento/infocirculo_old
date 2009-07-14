@@ -9,31 +9,22 @@ class ProfileController < ApplicationController
     @curriculum = Curriculum.find_by_user_id(current_user.id)
   end
 
+  def personal_informations
+    @curriculum = Curriculum.find_by_user_id(current_user.id)
+  end
+  
   def update
     @curriculum = Curriculum.find(params[:id])
     @success = @curriculum.update_attributes(params[:curriculum])
 
+    # Used to identify the page is being edited
+    token = params[:token]
+
     if @success && @curriculum.errors.empty?
       flash[:notice] = "Dados atualizados com sucesso."
-      redirect_to(:back)
+      redirect_to(:action => "index")
     else
-      render(:action => 'index')
-    end
-  end
-
-  def personal_informations
-    @curriculum = Curriculum.find_by_user_id(current_user.id)
-  end
-
-  def update_personal_informations
-    @curriculum = Curriculum.find(params[:id])
-    @success = @curriculum.update_attributes(params[:curriculum])
-
-    if @success && @curriculum.errors.empty?
-      flash[:notice] = "Informações pessoais atualizadas com sucesso."
-      redirect_to(:action => 'personal_informations')
-    else
-      render(:action => 'personal_informations')
+      render(:action => token)
     end
   end
 
