@@ -5,9 +5,7 @@ Feature: Manage Profile
   
   Scenario: Login
     Given I am registred
-    Then I am on the login page
-    And I fill in "Login" with "carlos"
-    And I fill in "Password" with "aaaaaa"
-    When I press "Log in"
-    
 
+  Scenario: Edit Summary
+    Given I am on the summary page
+    And I fill in "curriculum_summary" with "aaaaaaaaaaa"

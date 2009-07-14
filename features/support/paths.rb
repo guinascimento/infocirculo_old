@@ -16,7 +16,8 @@ module NavigationHelpers
       '/profile'
     when /the dashboard page/
       '/dashboard'  
-
+    when /the summary page/
+      '/profile/summary'
 
     # Add more mappings here.
     # Here is a more fancy example:

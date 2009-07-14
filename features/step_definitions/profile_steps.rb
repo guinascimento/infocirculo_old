@@ -13,8 +13,9 @@ Given /^I am registred$/ do
   click_first_link_in_email
   response.should contain(/Signup complete! Please sign in to continue./)
 
-  #fill_in("Login", :with => @current_user.login)
-  #fill_in("Senha", :with => @current_user.password)
-  #click_button("Login")
-  #response.should contain("Bem vindo!")
+  visit "/login"
+  fill_in("login", :with => "carlos")
+  fill_in("password", :with => "aaaaaa")
+  click_button("Log in")
+  User.find_by_name("Carlos").should_not be_nil
 end
