@@ -19,6 +19,7 @@ class ProfileController < ApplicationController
 
     # Used to identify the page is being edited
     token = params[:token]
+    puts token
 
     if @success && @curriculum.errors.empty?
       flash.now[:notice] = "Dados atualizados com sucesso."
