@@ -10709,7 +10709,9 @@ text-align: center;
 }
 
 .fieldWithErrors {
-  color: red;
+    border-color: red;
+  background-color: #ffcccc;
+    display: inline;
 }
 
 .input {

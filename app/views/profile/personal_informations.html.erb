@@ -19,11 +19,11 @@
                               <%= hidden_field_tag :token, action_name %>
                               <div class="innercol">
                                 <%= f.error_messages %>
-                                <div id="basic_form">
+                                <div id="basic_form"> 
                                   <div class="block">
                                     <dl>
                                       <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
-                                      <dd><%= f.text_field :phone, :size => 30 %></dd>
+                                      <dd><%= text_field_with_js_mask :curriculum, :phone, :class => 'mask_phone' -%></dd>
 
                                       <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
                                       <dd><%= f.text_field :address, :size => 30 %></dd>

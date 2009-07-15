@@ -5,7 +5,9 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+require 'hpricot'
 
+    
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -53,4 +55,15 @@ silence_warnings do
   Time::ABBR_MONTHNAMES = Date::ABBR_MONTHNAMES
   Time::ABBR_DAYNAMES = Date::ABBR_DAYNAMES
 end
+
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    doc = Hpricot(html_tag)
+    elem = (doc/"/").first
+    css_class = elem.attributes['class']
+    css_class ||= ""
+    css_array = css_class.split(" ")
+    css_array << "fieldWithErrors"
+    elem.attributes['class'] = css_array.uniq.join(" ")
+    doc.to_s
+  end
 end

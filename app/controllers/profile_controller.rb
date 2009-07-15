@@ -22,7 +22,7 @@ class ProfileController < ApplicationController
 
     if @success && @curriculum.errors.empty?
       flash[:notice] = "Dados atualizados com sucesso."
-      redirect_to(:action => "index")
+      redirect_to(:action => token)
     else
       render(:action => token)
     end

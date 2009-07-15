@@ -1,5 +1,6 @@
 class Curriculum < ActiveRecord::Base
   validates_presence_of :im_type, :if => Proc.new { |curriculum| curriculum.im != "" }
+  validates_presence_of :address
 
   belongs_to :user
   has_many :experiences
