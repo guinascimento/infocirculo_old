@@ -10709,9 +10709,10 @@ text-align: center;
 }
 
 .fieldWithErrors {
-    border-color: red;
-  background-color: #ffcccc;
-    display: inline;
+    border: 2px solid red;
+     display: inline;
+     padding: 2px;
+
 }
 
 .input {

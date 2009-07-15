@@ -5,8 +5,6 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
-require 'hpricot'
-
     
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -44,26 +42,15 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
-silence_warnings do
-  Date::MONTHNAMES = [nil] + %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)
-  Date::DAYNAMES = %w(Domingo Segunda-Feira Terça-Feira Quarta-Feira Quinta-Feira Sexta-Feira Sábado)
-  Date::ABBR_MONTHNAMES = [nil] + %w(Jan Fev Mar Abr Mai Jun Jul Aug Set Out Nov Dez)
-  Date::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sab)
+  silence_warnings do
+    Date::MONTHNAMES = [nil] + %w(Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro)
+    Date::DAYNAMES = %w(Domingo Segunda-Feira Terça-Feira Quarta-Feira Quinta-Feira Sexta-Feira Sábado)
+    Date::ABBR_MONTHNAMES = [nil] + %w(Jan Fev Mar Abr Mai Jun Jul Aug Set Out Nov Dez)
+    Date::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sab)
 
-  Time::MONTHNAMES = Date::MONTHNAMES
-  Time::DAYNAMES = Date::DAYNAMES
-  Time::ABBR_MONTHNAMES = Date::ABBR_MONTHNAMES
-  Time::ABBR_DAYNAMES = Date::ABBR_DAYNAMES
-end
-
-    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
-    doc = Hpricot(html_tag)
-    elem = (doc/"/").first
-    css_class = elem.attributes['class']
-    css_class ||= ""
-    css_array = css_class.split(" ")
-    css_array << "fieldWithErrors"
-    elem.attributes['class'] = css_array.uniq.join(" ")
-    doc.to_s
+    Time::MONTHNAMES = Date::MONTHNAMES
+    Time::DAYNAMES = Date::DAYNAMES
+    Time::ABBR_MONTHNAMES = Date::ABBR_MONTHNAMES
+    Time::ABBR_DAYNAMES = Date::ABBR_DAYNAMES
   end
 end
