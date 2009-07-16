@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :experiences
   map.resources :posts
   map.resources :events
   map.resources :personal_informations
@@ -25,9 +26,9 @@ ActionController::Routing::Routes.draw do |map|
   map.account '/user/account/avatar', :controller => 'account', :action => 'avatar'
   map.account '/user/account/cities', :controller => 'account', :action => 'get_cities'
 
-  # Profile
-  #map.profile '/profile', :controller => 'profile', :action => 'index'
-  #map.profile '/profile/personal_information', :controller => 'profile', :action => 'personal_information'
+  # Custom Experience Route
+  map.profile '/profile/experience/new', :controller => 'experiences', :action => 'new'
+  map.profile '/profile/experience/create', :controller => 'experiences', :action => 'create'
   # ===================================================================================== #
 
 

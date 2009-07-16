@@ -15,5 +15,7 @@
 #
 
 class Experience < ActiveRecord::Base
+  validates_presence_of :company_name, :title, :description
+
   belongs_to :curriculum
 end

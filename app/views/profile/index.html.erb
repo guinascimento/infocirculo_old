@@ -1,4 +1,3 @@
-<%= javascript_include_tag :defaults %>
 <div id="Wrapper" style="position: relative;">
      <div id="swap_from">
           <div id="screen_body" class="container">
@@ -44,12 +43,12 @@
 
 
                                 <div id="">
-                                    <h2>Experiência Profissional <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "experience" } %>]</span></h2>
+                                    <h2>Experiência Profissional <span class="edit">[<%= link_to "Adicionar", '/profile/experience/new' %>]</span></h2>
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
-                                                <li id=""><%= experience.title %></li>
-                                                <li id=""><%= experience.company_name %></li>
+                                                <li id=""><%= experience.title %> - <%= experience.company_name %></li>
+                                                <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
                                                 <li id=""><%= experience.description %></li>
                                             </ul>
                                         </div>

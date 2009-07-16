@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20090706173053) do
     t.integer  "curriculum_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "working"
   end
 
   create_table "four_oh_fours", :force => true do |t|
