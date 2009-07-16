@@ -7,7 +7,9 @@ module ApplicationHelper
 		messages = ""
 		FLASH_NOTICE_KEYS.each {|type|
 	  		if flash[type]
+                messages += "<div id='flash_messages'>"
 				messages += "<p class=\"#{type}\">#{flash[type]}</p>"
+                messages += "</div>"
 	  		end
 		}
 		messages

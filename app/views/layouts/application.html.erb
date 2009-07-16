@@ -11,6 +11,18 @@
 
   <%= javascript_include_tag :defaults, :jsmask %>
 
+  <script type="text/javascript">
+    document.observe('dom:loaded', function() {
+        setTimeout(hideFlashes, 2500);
+    });
+
+    var hideFlashes = function() {
+        $$('.notice', '.warning', '.error').each(function(e) {
+        if (e) Effect.Fade(e, { duration: 1.5 });
+        })
+    }
+</script>
+
   <style type="text/css" media="screen">
   a:link, a:visited {
     color: #03c;

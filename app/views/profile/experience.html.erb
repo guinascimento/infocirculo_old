@@ -11,28 +11,25 @@
                         <div class="Left">
                            <div class="col">
                               <div class="page_header">
-                                 <h1>Informações Pessoais</h1>
+                                 <h1>Experiência Profissional</h1>
                               </div>
 
-                              <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
+                              <% form_for :experience, :url => { :action => "update_experience", :id => @curriculum.id } do |f| %>
                               <%= flash_message %>
-                              <%= hidden_field_tag :token, "personal_informations" %>
+                              <%= hidden_field_tag :token, "experience" %>
                               <div class="innercol">
                                 <%= f.error_messages %>
                                 <div id="basic_form"> 
                                   <div class="block">
                                     <dl>
-                                      <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
-                                      <dd><%= text_field_with_js_mask :curriculum, :phone, :class => 'mask_phone' -%></dd>
+                                      <dt class="required"><%= label(:experience, 'Empresa:') %></dt>
+                                      <dd><%= f.text_field :company_name, :size => 50 %></dd>
 
-                                      <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
-                                      <dd><%= f.text_field :address, :size => 30 %></dd>
+                                      <dt class="required"><%= label(:experience, 'Cargo:') %></dt>
+                                      <dd><%= f.text_field :title, :size => 50 %></dd>
 
-                                      <dt class="required"><%= label(:curriculum, 'IM:') %></dt>
-                                      <dd><%= f.text_field :im, :size => 30 %>&nbsp;<span style="vertical-align:bottom;"><%= f.select :im_type, Curriculum::IM_TYPE, {:include_blank => true} %></span></dd>
-
-                                      <dt class="required"><%= label(:curriculum, 'Estado Civíl:') %></dt>
-                                      <dd><%= f.select :maritial_status, Curriculum::MARITIAL_STATUS, {:include_blank => true} %></dd>
+                                      <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>
+                                      <dd><%= f.text_area :description, :cols => 60, :rows => 7 %></dd>
                                     </dl>
                                   </div>
                               </div>

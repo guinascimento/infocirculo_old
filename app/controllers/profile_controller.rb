@@ -12,10 +12,6 @@ class ProfileController < ApplicationController
   def personal_informations
     @curriculum = find_curriculum_from_user
   end
-
-  def experience
-    @curriculum = find_curriculum_from_user
-  end
   
   def update
     @curriculum = Curriculum.find(params[:id])
