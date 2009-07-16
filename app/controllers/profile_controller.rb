@@ -2,15 +2,19 @@ class ProfileController < ApplicationController
   before_filter :login_required
 
   def index
-    @profile = Curriculum.find_by_user_id(current_user.id)
+    @profile = find_curriculum_from_user
   end
 
   def summary
-    @curriculum = Curriculum.find_by_user_id(current_user.id)
+    @curriculum = find_curriculum_from_user
   end
 
   def personal_informations
-    @curriculum = Curriculum.find_by_user_id(current_user.id)
+    @curriculum = find_curriculum_from_user
+  end
+
+  def experience
+    @curriculum = find_curriculum_from_user
   end
   
   def update
@@ -19,7 +23,6 @@ class ProfileController < ApplicationController
 
     # Used to identify the page is being edited
     token = params[:token]
-    puts token
 
     if @success && @curriculum.errors.empty?
       flash.now[:notice] = "Dados atualizados com sucesso."

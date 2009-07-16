@@ -1,3 +1,21 @@
+# == Schema Information
+# Schema version: 20090706173053
+#
+# Table name: curriculums
+#
+#  id              :integer(4)      not null, primary key
+#  summary         :string(255)
+#  phone           :string(255)
+#  im              :string(255)
+#  im_type         :integer(4)
+#  address         :string(255)
+#  birthday        :string(255)
+#  maritial_status :integer(3)
+#  user_id         :integer(4)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 

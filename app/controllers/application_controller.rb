@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
 
 	def in_beta?
 		APP_CONFIG['settings']['in_beta']
-	end
+    end
+
+    def find_curriculum_from_user
+      Curriculum.find_by_user_id(current_user.id)
+    end
 
 end

@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div id="">
-                                    <h2>Resumo <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" }, :id => "news" %>]</span></h2>
+                                    <h2>Resumo <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" } %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
                                             <li id=""><%= @profile.summary %></li>
@@ -44,7 +44,7 @@
 
 
                                 <div id="">
-                                    <h2>Experiência Profissional <span class="edit">[<a href="">Editar</a>]</span></h2>
+                                    <h2>Experiência Profissional <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "experience" } %>]</span></h2>
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
