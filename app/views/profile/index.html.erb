@@ -45,14 +45,15 @@
 
 
                                 <div id="professional_experience">
-                                    <h2>Experiência Profissional <span class="edit">[ <%= image_tag 'plus.PNG', :size => '15x15' %> <%= link_to "Adicionar", '/profile/experience/new' %> ]</span></h2>
+                                    <h2>Experiência Profissional <span class="edit">[ <%= image_tag 'plus.PNG', :size => '15x15' %> <%= link_to "Adicionar", new_experience_path %> ]</span></h2>
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
-                                                <li id=""><b><%= experience.title %> - <%= experience.company_name %></b> <span class="edit">[ <%= link_to "Editar", '/profile/experience/new' %> ]</span></li>
+                                                <li></li>
+                                                <li id=""><b><%= experience.title %> - <%= experience.company_name %></b> <span class="edit">[ <%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
                                                 <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
                                                 <li id=""><%= experience.description %></li>
-                                              <li></li>
+                                                <li></li>
                                             </ul>
                                         </div>
                                         

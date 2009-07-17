@@ -1,13 +1,74 @@
-<h1>Editing experience</h1>
+<script type="text/javascript">
+    function working() {
+        if ($('experience_working').checked) {
+            $('end').hide();
+        } else {
+            $('end').appear();
+        }
+    }
+</script>
 
-<% form_for(@experience) do |f| %>
-  <%= f.error_messages %>
+<div id="Wrapper" style="POSITION: relative">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                <span class="other_indexes">
+                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+                                </span>
+
+                                <h1>
+                                    Experiência Profissional
+                                </h1>
+                              </div>
+
+                              <% form_for @experience, :url => "update" do |f| %>
+                              <%= flash_message %>
+                              <%= f.hidden_field :curriculum_id, :value => @experience.curriculum.id %>
+                              <div class="innercol">
+                                <%= f.error_messages %>
+                                <div id="basic_form">
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:experience, 'Empresa:') %></dt>
+                                      <dd><%= f.text_field :company_name, :size => 50 %></dd>
+
+                                      <dt class="required"><%= label(:experience, 'Cargo:') %></dt>
+                                      <dd><%= f.text_field :title, :size => 50 %></dd>
+
+                                      <dt class="required"><%= label(:experience, 'Empregado') %></dt>
+                                      <dd><%= f.check_box :working, :onclick => "working()" %></dd>
+
+                                      <dt class="required"><%= label(:experience, 'Início:') %></dt>
+                                      <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
+
+                                      <div id="end">
+                                      <dt class="required"><%= label(:experience, 'Término:') %></dt>
+                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
+                                      </div>
+
+                                      <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>
+                                      <dd><%= f.text_area :description, :cols => 60, :rows => 7 %></dd>
+                                    </dl>
+                                  </div>
+                              <% end %>
+
+                             <div class="action">
+                                  <dl>
+                                    <dt><%= submit_tag 'Salvar', :class => 'button' %> <%= button_to 'Excluir', experience_path(@experience), :method => :delete %></dt>
+                                  </dl>
+                              </div>
 
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @experience %> |
-<%= link_to 'Back', experiences_path %>
+                        </div></div></div>
+                     </td>
+                     <td class="right"></td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>

@@ -10738,3 +10738,11 @@ border:2px solid #000099;
     padding: 4px;
     border: 1px solid #cccccc;
 }
+
+div.page_header span.other_indexes {
+  float: right;
+  width: 215px;
+  text-align: right;
+  font-size: 11px;
+  color: #999;
+}

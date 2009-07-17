@@ -1,22 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :experiences
+  # =====================================================================================================================
+  map.resources :experiences, :path_prefix => 'profile'
   map.resources :posts
   map.resources :events
   map.resources :personal_informations
 
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-	map.login_with_openid '/login_with_openid', :controller => 'openid_sessions', :action => 'new'
-	map.signup '/signup', :controller => 'user/profiles', :action => 'new'
-  map.beta_signup '/signup/:invitation_token', :controller => 'user/profiles', :action => 'new'
-	map.openid_signup '/openid_signup', :controller => 'openid_sessions', :action => 'index'
-	map.beta_openid_signup '/openid_signup/:invitation_token', :controller => 'openid_sessions', :action => 'index'
-  map.activate '/activate/:activation_code', :controller => 'user/activations', :action => 'activate', :activation_code => nil
-  map.forgot_password '/forgot_password', :controller => 'user/passwords', :action => 'new'
-	map.reset_password '/reset_password/:id', :controller => 'user/passwords', :action => 'edit', :id => nil
-	map.resend_activation '/resend_activation', :controller => 'user/activations', :action => 'new'
-  
-  # ===================================================================================== #
   # Dashboard
   map.dashboard '/dashboard', :controller => 'dashboard', :action => 'index'
 
@@ -25,10 +13,24 @@ ActionController::Routing::Routes.draw do |map|
   map.account '/user/account/update', :controller => 'account', :action => 'update'
   map.account '/user/account/avatar', :controller => 'account', :action => 'avatar'
   map.account '/user/account/cities', :controller => 'account', :action => 'get_cities'
+  # =====================================================================================================================
+
+  # Restful Authentication
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.login_with_openid '/login_with_openid', :controller => 'openid_sessions', :action => 'new'
+  map.signup '/signup', :controller => 'user/profiles', :action => 'new'
+  map.beta_signup '/signup/:invitation_token', :controller => 'user/profiles', :action => 'new'
+  map.openid_signup '/openid_signup', :controller => 'openid_sessions', :action => 'index'
+  map.beta_openid_signup '/openid_signup/:invitation_token', :controller => 'openid_sessions', :action => 'index'
+  map.activate '/activate/:activation_code', :controller => 'user/activations', :action => 'activate', :activation_code => nil
+  map.forgot_password '/forgot_password', :controller => 'user/passwords', :action => 'new'
+  map.reset_password '/reset_password/:id', :controller => 'user/passwords', :action => 'edit', :id => nil
+  map.resend_activation '/resend_activation', :controller => 'user/activations', :action => 'new'
 
   # Custom Experience Route
-  map.profile '/profile/experience/new', :controller => 'experiences', :action => 'new'
-  map.profile '/profile/experience/create', :controller => 'experiences', :action => 'create'
+  map.profile 'profile/experiences/create', :controller => 'experiences', :action => 'create'
+  map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
   # ===================================================================================== #
 
 

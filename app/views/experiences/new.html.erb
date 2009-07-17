@@ -1,6 +1,5 @@
 <script type="text/javascript">
     function working() {
-        //alert($('experience_working').checked);
         if ($('experience_working').checked) {
             $('end').hide();
         } else {
@@ -17,11 +16,17 @@
                      <td class="left">
                         <div class="Left">
                            <div class="col">
-                              <div class="page_header">
-                                 <h1>Experiência Profissional</h1>
+                              <div class="page_header">                                
+                                <span class="other_indexes">
+                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+                                </span>
+
+                                <h1>
+                                    Experiência Profissional
+                                </h1>
                               </div>
 
-                              <% form_for :experience, :url => "/profile/experience/create" do |f| %>
+                              <% form_for :experience, :url => "create" do |f| %>
                               <%= flash_message %>
                               <%= f.hidden_field :curriculum_id, :value => @curriculum.id %>
                               <div class="innercol">

@@ -36,7 +36,7 @@ class ExperiencesController < ApplicationController
   end
 
   # GET /experiences/1/edit
-  def edit
+  def edit 
     @experience = Experience.find(params[:id])
   end
 
@@ -49,6 +49,8 @@ class ExperiencesController < ApplicationController
     if @experience.save
       flash[:notice] = "Experiência Profissional adicionada com sucesso."
       redirect_to :controller => "profile", :action => "index"
+    else
+      render :action => 'new'  
     end
     
 
@@ -59,27 +61,22 @@ class ExperiencesController < ApplicationController
   def update
     @experience = Experience.find(params[:id])
 
-    respond_to do |format|
-      if @experience.update_attributes(params[:experience])
-        flash[:notice] = 'Experience was successfully updated.'
-        format.html { redirect_to(@experience) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @experience.errors, :status => :unprocessable_entity }
-      end
+    if @experience.update_attributes(params[:experience])
+      flash[:notice] = "Experiência Profissional atualizada com sucesso."
+      redirect_to :controller => "profile", :action => "index"
+    else
+      render :action => 'new'  
     end
   end
 
   # DELETE /experiences/1
   # DELETE /experiences/1.xml
   def destroy
+    puts params[:id]
     @experience = Experience.find(params[:id])
-    @experience.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(experiences_url) }
-      format.xml  { head :ok }
+    if @experience.destroy
+      flash[:notice] = "Experiência Profissional removida com sucesso."
+      redirect_to :controller => "profile", :action => "index"
     end
   end
 end
