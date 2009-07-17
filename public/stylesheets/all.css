@@ -126,7 +126,9 @@ body.candidates .popup_add_dialog h1 {
 }
 
 .companies div.contact div.body {
-  margin-left: 56px;
+  margin-left: 107px;
+  margin-top: -99px;
+  margin-bottom: 37px;
 }
 
 .companies div.contact  {
@@ -10731,3 +10733,8 @@ border:2px solid #000099;
     font-weight: bold;
 }
 
+
+#avatar {
+    padding: 4px;
+    border: 1px solid #cccccc;
+}

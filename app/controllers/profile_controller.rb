@@ -21,10 +21,12 @@ class ProfileController < ApplicationController
     token = params[:token]
 
     if @success && @curriculum.errors.empty?
-      flash.now[:notice] = "Dados atualizados com sucesso."
+      flash[:notice] = "Dados atualizados com sucesso."
+      redirect_to :action => "index"
+    else
+      render :action => token
     end
-    
-    render(:action => token)
+
   end
 
 end

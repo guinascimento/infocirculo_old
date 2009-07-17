@@ -47,10 +47,11 @@ class ExperiencesController < ApplicationController
     @curriculum = find_curriculum_from_user
 
     if @experience.save
-      flash.now[:notice] = "Experiência Profissional adicionada com sucesso."
+      flash[:notice] = "Experiência Profissional adicionada com sucesso."
+      redirect_to :controller => "profile", :action => "index"
     end
     
-    render(:action => "new")
+
   end
 
   # PUT /experiences/1

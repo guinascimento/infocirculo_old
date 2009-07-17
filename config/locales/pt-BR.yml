@@ -112,6 +112,8 @@ pt-BR:
             email: "Email"
             password: "Senha"
             password_confirmation: "Confirmação"
+        curriculum:
+            im_type: "Tipo do IM"
     errors:
       template:
         header:

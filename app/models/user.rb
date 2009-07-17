@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
   
 	attr_accessible :login, :email, :name, :password, :password_confirmation, :invitation_token, :last_name, :avatar, :industry_id, :cep, :professional_description
   
-	has_attached_file :avatar, :styles => { :medium => "400x400>", :thumb => "100x100>" }
+	has_attached_file :avatar, :styles => { :thumb => "90x90>" }
 
 	def self.member_list(page)
 		paginate :all,
