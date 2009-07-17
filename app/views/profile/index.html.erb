@@ -9,7 +9,7 @@
                               <div class="page_header">
                                  <h1>Perfil</h1>
                               </div>
-
+                              <%= flash_message %>
                               <div class="innercol">
                                 <div id="head_informations">
                                     <ul>
@@ -47,7 +47,7 @@
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
-                                                <li id=""><%= experience.title %> - <%= experience.company_name %> [ <span class="edit"><%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
+                                                <li id=""><b><%= experience.title %> - <%= experience.company_name %></b> [ <span class="edit"><%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
                                                 <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
                                                 <li id=""><%= experience.description %></li>
                                               <li></li>

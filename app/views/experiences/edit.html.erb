@@ -27,7 +27,6 @@
                               </div>
 
                               <% form_for @experience, :url => "update" do |f| %>
-                              <%= flash_message %>
                               <%= f.hidden_field :curriculum_id, :value => @experience.curriculum.id %>
                               <div class="innercol">
                                 <%= f.error_messages %>
