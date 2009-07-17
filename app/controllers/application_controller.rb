@@ -36,4 +36,7 @@ class ApplicationController < ActionController::Base
       Curriculum.find_by_user_id(current_user.id)
     end
 
+    def find_user_by_name(name)
+      User.find_by_name(name)
+    end
 end

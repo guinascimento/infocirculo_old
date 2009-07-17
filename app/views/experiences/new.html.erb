@@ -44,11 +44,11 @@
                                       <dd><%= f.check_box :working, :onclick => "working()" %></dd>
 
                                       <dt class="required"><%= label(:experience, 'Início:') %></dt>
-                                      <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
+                                      <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :include_blank => true %></dd>
 
                                       <div id="end">
                                       <dt class="required"><%= label(:experience, 'Término:') %></dt>
-                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
+                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :include_blank => true %></dd>
                                       </div>
 
                                       <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>

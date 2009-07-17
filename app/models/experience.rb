@@ -15,7 +15,8 @@
 #
 
 class Experience < ActiveRecord::Base
-  validates_presence_of :company_name, :title, :description, :start
+  validates_presence_of :company_name, :title, :description, :start, :end
+  #validates_date :start, :allow_nil => false
 
   belongs_to :curriculum
 end

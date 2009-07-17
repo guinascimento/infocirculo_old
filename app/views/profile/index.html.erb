@@ -10,8 +10,6 @@
                                  <h1>Perfil</h1>
                               </div>
 
-                             <%= flash_message %>
-                             
                               <div class="innercol">
                                 <div id="head_informations">
                                     <ul>
@@ -45,23 +43,22 @@
 
 
                                 <div id="professional_experience">
-                                    <h2>Experiência Profissional <span class="edit">[ <%= image_tag 'plus.PNG', :size => '15x15' %> <%= link_to "Adicionar", new_experience_path %> ]</span></h2>
+                                    <h2>Experiência Profissional <span class="edit">[ <img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_experience_path %> ]</span></h2>
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
-                                                <li></li>
-                                                <li id=""><b><%= experience.title %> - <%= experience.company_name %></b> <span class="edit">[ <%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
+                                                <li id=""><%= experience.title %> - <%= experience.company_name %> [ <span class="edit"><%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
                                                 <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
                                                 <li id=""><%= experience.description %></li>
-                                                <li></li>
+                                              <li></li>
                                             </ul>
                                         </div>
-                                        
-                                    <% end %>                                  
+
+                                    <% end %>
                                 </div>
 
                                <div id="education">
-                                    <h2>Educação <span class="edit">[ <%= image_tag 'plus.PNG', :size => '15x15' %> <a href="">Adicionar </a>]</span></h2>
+                                    <h2>Educação <span class="edit">[ <img src="images/plus.PNG" width="15px" height="15px"> <a href="">Adicionar </a>]</span></h2>
                                     <% for education in @profile.educations %>
                                         <div class="block categories">
                                             <ul id="message_categories">

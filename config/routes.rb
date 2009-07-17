@@ -13,6 +13,9 @@ ActionController::Routing::Routes.draw do |map|
   map.account '/user/account/update', :controller => 'account', :action => 'update'
   map.account '/user/account/avatar', :controller => 'account', :action => 'avatar'
   map.account '/user/account/cities', :controller => 'account', :action => 'get_cities'
+
+  # Public Profile
+  map.public_profile '/cv/:name', :controller => 'public_profile', :action => 'cv'
   # =====================================================================================================================
 
   # Restful Authentication
