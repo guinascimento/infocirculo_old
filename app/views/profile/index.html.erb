@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
 
-                                <div id="">
+                                <div id="summary">
                                     <h2>Resumo <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" } %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
@@ -42,22 +42,23 @@
                                 </div>
 
 
-                                <div id="">
-                                    <h2>Experiência Profissional <span class="edit">[<%= link_to "Adicionar", '/profile/experience/new' %>]</span></h2>
+                                <div id="professional_experience">
+                                    <h2>Experiência Profissional <span class="edit">[ <img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", '/profile/experience/new' %> ]</span></h2>
                                     <% for experience in @profile.experiences %>
                                         <div class="block categories">
                                             <ul id="message_categories">
-                                                <li id=""><%= experience.title %> - <%= experience.company_name %></li>
+                                                <li id=""><%= experience.title %> - <%= experience.company_name %> <span class="edit"><%= link_to "Editar", '/profile/experience/new' %> ]</span></li>
                                                 <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
                                                 <li id=""><%= experience.description %></li>
+                                              <li></li>
                                             </ul>
                                         </div>
-                                        <br>
+                                        
                                     <% end %>                                  
                                 </div>
 
-                               <div id="">
-                                    <h2>Educação <span class="edit">[<a href="">Editar</a>]</span></h2>
+                               <div id="education">
+                                    <h2>Educação <span class="edit">[ <img src="images/plus.PNG" width="15px" height="15px"> <a href="">Adicionar </a>]</span></h2>
                                     <% for education in @profile.educations %>
                                         <div class="block categories">
                                             <ul id="message_categories">

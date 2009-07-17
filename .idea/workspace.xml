@@ -27,10 +27,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="60" column="125" selection-start="3933" selection-end="3933" vertical-scroll-proportion="0.65">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20090525174706_create_curriculums.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20090525174706_create_curriculums.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="54" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="curriculum.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/curriculum.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="31" selection-start="701" selection-end="716" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -54,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="212" selection-end="212" vertical-scroll-proportion="0.23333333">
+            <state line="6" column="12" selection-start="212" selection-end="212" vertical-scroll-proportion="-5.04">
               <folding />
             </state>
           </provider>
@@ -631,20 +649,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/profile/summary.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="62" selection-start="0" selection-end="1971" vertical-scroll-proportion="-0.84">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/account_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -729,16 +733,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="6" column="12" selection-start="212" selection-end="212" vertical-scroll-proportion="-5.04">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/experiences/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/curriculum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="212" selection-end="212" vertical-scroll-proportion="0.23333333">
+        <state line="26" column="31" selection-start="701" selection-end="716" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20090525174706_create_curriculums.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="54" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/profile/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="125" selection-start="3933" selection-end="3933" vertical-scroll-proportion="0.65">
           <folding />
         </state>
       </provider>

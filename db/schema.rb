@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20090706173053) do
     t.integer  "im_type"
     t.string   "address"
     t.string   "birthday"
+    t.integer  "maritial_status", :limit => 2
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
