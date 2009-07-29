@@ -8,10 +8,11 @@
 #  title         :string(255)
 #  start         :datetime
 #  end           :datetime
-#  description   :string(255)
+#  description   :string(1000)
 #  curriculum_id :integer(4)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  working       :integer(4)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

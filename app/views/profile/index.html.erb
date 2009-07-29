@@ -49,7 +49,11 @@
                                             <ul id="message_categories">
                                                 <li></li>
                                                 <li id=""><b><%= experience.title %> - <%= experience.company_name %></b> [ <span class="edit"><%= link_to "Editar", edit_experience_path(experience) %> ]</span></li>
-                                                <li id=""><%= experience.start.to_s(:default) %> a <%= experience.end %></li>
+                                                <% if experience.end != nil %>
+                                                    <li id=""><%= experience.start %> a <%= experience.end %></li>
+                                                <% else %>
+                                                    <li id=""><%= experience.start %></li>
+                                                <% end %>
                                                 <li id=""><%= experience.description %></li>
                                               <li></li>
                                             </ul>

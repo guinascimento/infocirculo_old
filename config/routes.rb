@@ -1,6 +1,7 @@
-ActionController::Routing::Routes.draw do |map|
+  ActionController::Routing::Routes.draw do |map|
   # =====================================================================================================================
   map.resources :experiences, :path_prefix => 'profile'
+  map.resources :educations, :path_prefix => 'profile'
   map.resources :posts
   map.resources :events
   map.resources :personal_informations

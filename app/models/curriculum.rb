@@ -10,7 +10,7 @@
 #  im_type         :integer(4)
 #  address         :string(255)
 #  birthday        :string(255)
-#  maritial_status :integer(3)
+#  maritial_status :integer(2)
 #  user_id         :integer(4)
 #  created_at      :datetime
 #  updated_at      :datetime

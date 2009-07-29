@@ -8,15 +8,17 @@
 #  title         :string(255)
 #  start         :datetime
 #  end           :datetime
-#  description   :string(255)
+#  description   :string(1000)
 #  curriculum_id :integer(4)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  working       :integer(4)
 #
 
 class Experience < ActiveRecord::Base
-  validates_presence_of :company_name, :title, :description, :start, :end
-  #validates_date :start, :allow_nil => false
+  validates_presence_of :company_name, :title, :description
+  validates_presence_of :start
+  validates_presence_of :end, :if => Proc.new { |experience| experience.working == 0 }
 
   belongs_to :curriculum
 end
