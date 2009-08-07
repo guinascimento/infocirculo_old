@@ -68,7 +68,7 @@
                                         <div class="block categories">
                                             <ul id="message_categories">
                                                 <li></li>
-                                                <li id=""><b><%= education.degree %> - <%= education.school_name %></b>
+                                                <li id=""><b><%= education.degree %> - <%= education.school_name %></b> [ <span class="edit"><%= link_to "Editar", edit_education_path(education) %> ]</span>
                                                 <% if education.end != nil %>
                                                     <li id=""><%= education.start.strftime('%m/%Y') %> a <%= education.end.strftime('%m/%Y') %></li>
                                                 <% else %>
@@ -88,13 +88,12 @@
 
   <h1>Opções</h1>
 
-  <div class="people">
+    <div class="people">
     <div class="contact" id="firm_employee_3809931">
-
-        Envie seu perfil para um amigo.
-      <br><br>
-    <img src="images/print.PNG">
-    <img src="images/pdf.PNG">
+        <img src="images/print.PNG">
+        <img src="images/pdf.PNG">
+        <br/ ><br/ >
+        Permitir visualização pública do perfil.
 
                      </td>
                   </tr>

@@ -1,13 +1,81 @@
-<h1>Editing education</h1>
+<script type="text/javascript">
+    function studing() {
+        if ($('education_studing').checked) {
+            $('end').hide();
+        } else {
+            $('end').appear();
+        }
+    }
+</script>
 
-<% form_for(@education) do |f| %>
-  <%= f.error_messages %>
+<body onload="studing();"
+<div id="Wrapper" style="POSITION: relative">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                <span class="other_indexes">
+                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+                                </span>
 
+                                <h1>
+                                    Educação
+                                </h1>
+                              </div>
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+                              <% form_for :education, :url => "update" do |f| %>
+                              <%= f.hidden_field :curriculum_id, :value => @curriculum.id %>
+                              <div class="innercol">
+                                <%= f.error_messages %>
+                                <div id="basic_form">
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:education, 'País:') %></dt>
+                                      <dd><%= f.select :country_id, Country.find(:all).collect {|i| [i.name, i.id]}, {:include_blank => true} %></dd>
 
-<%= link_to 'Show', @education %> |
-<%= link_to 'Back', educations_path %>
+                                      <dt class="required"><%= label(:education, 'Instituição:') %></dt>
+                                      <dd><%= f.text_field :school_name, :size => 50 %></dd>
+
+                                      <dt class="required"><%= label(:education, 'Nível') %></dt>
+                                      <dd><%= f.select :degree, Education::DEGREE, {:include_blank => true} %></dd>
+
+                                      <dt class="required"><%= label(:education, 'Cursando') %></dt>
+                                      <dd><%= f.check_box :studing, :onclick => "studing()" %></dd>
+
+                                      <dt class="required"><%= label(:education, 'Início:') %></dt>
+                                      <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
+
+                                      <div id="end">
+                                      <dt class="required"><%= label(:education, 'Término:') %></dt>
+                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
+                                      </div>
+
+                                      <dt class="required"><%= label(:education, 'Descrição:') %></dt>
+                                      <dd><%= f.text_area :activities, :cols => 60, :rows => 7 %></dd>
+                                    </dl>
+                                  </div>
+
+                                 <div class="action">
+                                    <table align="right">
+                                        <tr>
+                                            <td colspan="3"><%= submit_tag 'Atualizar', :class => 'button' %></td>
+                                            <td><%= button_to 'Excluir', edit_education_path(@education), :method => :delete %></td>
+                                        </tr>
+                                    </table>
+                                   <br>
+                                 </div>
+                              <% end %>
+
+                        </div></div></div>
+                     </td>
+                     <td class="right"></td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>
+</body>

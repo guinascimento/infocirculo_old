@@ -38,6 +38,7 @@
 
   # Custom Education Route
   map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
+  map.profile 'profile/educations/:id/update', :controller => 'educations', :action => 'update'
   # ===================================================================================== #
 
 

@@ -38,6 +38,7 @@ class EducationsController < ApplicationController
   # GET /educations/1/edit
   def edit
     @education = Education.find(params[:id])
+    @curriculum = find_curriculum_from_user
   end
 
   # POST /educations
@@ -59,15 +60,11 @@ class EducationsController < ApplicationController
   def update
     @education = Education.find(params[:id])
 
-    respond_to do |format|
-      if @education.update_attributes(params[:education])
-        flash[:notice] = 'Education was successfully updated.'
-        format.html { redirect_to(@education) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @education.errors, :status => :unprocessable_entity }
-      end
+    if @education.update_attributes(params[:education])
+      flash[:notice] = "Educação atualizada com sucesso."
+      redirect_to :controller => "profile", :action => "index"
+    else
+      render :action => 'new'
     end
   end
 
