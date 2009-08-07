@@ -51,9 +51,7 @@ class ExperiencesController < ApplicationController
       redirect_to :controller => "profile", :action => "index"
     else
       render :action => 'new'  
-    end
-    
-
+    end  
   end
 
   # PUT /experiences/1
@@ -61,18 +59,23 @@ class ExperiencesController < ApplicationController
   def update
     @experience = Experience.find(params[:id])
 
+    if params[:experience][:working] == '1'
+      params[:experience]['end(1i)'] = ''
+      params[:experience]['end(2i)'] = ''
+      params[:experience]['end(3i)'] = ''
+    end
+
     if @experience.update_attributes(params[:experience])
       flash[:notice] = "Experiência Profissional atualizada com sucesso."
       redirect_to :controller => "profile", :action => "index"
     else
-      render :action => 'new'  
+      render :action => 'new'
     end
   end
 
   # DELETE /experiences/1
   # DELETE /experiences/1.xml
   def destroy
-    puts params[:id]
     @experience = Experience.find(params[:id])
     if @experience.destroy
       flash[:notice] = "Experiência Profissional removida com sucesso."

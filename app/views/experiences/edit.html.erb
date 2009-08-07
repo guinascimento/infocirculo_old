@@ -47,8 +47,8 @@
                                       <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
 
                                       <div id="end">
-                                      <dt class="required"><%= label(:experience, 'Término:') %></dt>
-                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true %></dd>
+                                        <dt class="required"><%= label(:experience, 'Término:') %></dt>
+                                        <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true%></dd>
                                       </div>
 
                                       <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>
@@ -60,7 +60,7 @@
                              <div class="action">
                                 <table align="right">
                                     <tr>
-                                        <td colspan="2"><%= submit_tag 'Salvar', :class => 'button' %></td>
+                                        <td colspan="3"><%= submit_tag 'Atualizar', :class => 'button' %></td>
                                         <td><%= button_to 'Excluir', experience_path(@experience), :method => :delete %></td>
                                     </tr>
                                 </table>

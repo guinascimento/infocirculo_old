@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090706173053
+# Schema version: 20090807214936
 #
 # Table name: cities
 #

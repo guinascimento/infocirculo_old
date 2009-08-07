@@ -9,11 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090706173053) do
+ActiveRecord::Schema.define(:version => 20090807214936) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
     t.integer "state_id"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "curriculums", :force => true do |t|
@@ -40,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20090706173053) do
     t.integer  "curriculum_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "studing"
   end
 
   create_table "events", :force => true do |t|
@@ -53,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20090706173053) do
     t.string   "title"
     t.datetime "start"
     t.datetime "end"
-    t.string   "description"
+    t.string   "description",   :limit => 1000
     t.integer  "curriculum_id"
     t.datetime "created_at"
     t.datetime "updated_at"

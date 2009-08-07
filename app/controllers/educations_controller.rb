@@ -1,4 +1,6 @@
 class EducationsController < ApplicationController
+  layout "application"
+
   # GET /educations
   # GET /educations.xml
   def index
@@ -25,6 +27,7 @@ class EducationsController < ApplicationController
   # GET /educations/new.xml
   def new
     @education = Education.new
+    @curriculum = find_curriculum_from_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,16 +44,13 @@ class EducationsController < ApplicationController
   # POST /educations.xml
   def create
     @education = Education.new(params[:education])
+    @curriculum = find_curriculum_from_user
 
-    respond_to do |format|
-      if @education.save
-        flash[:notice] = 'Education was successfully created.'
-        format.html { redirect_to(@education) }
-        format.xml  { render :xml => @education, :status => :created, :location => @education }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @education.errors, :status => :unprocessable_entity }
-      end
+    if @education.save
+      flash[:notice] = "Educação adicionada com sucesso."
+      redirect_to :controller => "profile", :action => "index"
+    else
+      render :action => 'new'
     end
   end
 

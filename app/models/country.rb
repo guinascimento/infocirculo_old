@@ -1,7 +1,7 @@
 # == Schema Information
 # Schema version: 20090807214936
 #
-# Table name: industries
+# Table name: countries
 #
 #  id         :integer(4)      not null, primary key
 #  name       :string(255)
@@ -9,12 +9,6 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+class Country < ActiveRecord::Base
 
-
-# one:
-#   column: value
-#
-# two:
-#   column: value
-
+end

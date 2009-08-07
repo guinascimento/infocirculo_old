@@ -1,6 +1,4 @@
   ActionController::Routing::Routes.draw do |map|
-  map.resources :educations
-
   # =====================================================================================================================
   map.resources :experiences, :path_prefix => 'profile'
   map.resources :educations, :path_prefix => 'profile'
@@ -37,6 +35,9 @@
   # Custom Experience Route
   map.profile 'profile/experiences/create', :controller => 'experiences', :action => 'create'
   map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
+
+  # Custom Education Route
+  map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
   # ===================================================================================== #
 
 
