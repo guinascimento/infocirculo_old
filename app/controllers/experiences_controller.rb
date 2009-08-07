@@ -59,6 +59,12 @@ class ExperiencesController < ApplicationController
   def update
     @experience = Experience.find(params[:id])
 
+    if params[:experience][:working] == '1'
+      params[:experience]['end(1i)'] = ''
+      params[:experience]['end(2i)'] = ''
+      params[:experience]['end(3i)'] = ''
+    end
+
     if @experience.update_attributes(params[:experience])
       flash[:notice] = "Experiência Profissional atualizada com sucesso."
       redirect_to :controller => "profile", :action => "index"

@@ -60,6 +60,12 @@ class EducationsController < ApplicationController
   def update
     @education = Education.find(params[:id])
 
+    if params[:education][:studing] == '1'
+      params[:education]['end(1i)'] = ''
+      params[:education]['end(2i)'] = ''
+      params[:education]['end(3i)'] = ''
+    end
+    
     if @education.update_attributes(params[:education])
       flash[:notice] = "Educação atualizada com sucesso."
       redirect_to :controller => "profile", :action => "index"
