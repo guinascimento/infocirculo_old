@@ -18,7 +18,7 @@
 #
 
 class Education < ActiveRecord::Base
-  validates_presence_of :country, :school_name, :degree, :activities
+  validates_presence_of :country, :school_name, :degree
   validates_presence_of :start
   validates_presence_of :end, :if => Proc.new { |education| education.studing == 0 }
 

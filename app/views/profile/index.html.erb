@@ -24,10 +24,10 @@
                                     <h2>Informações Pessoais <span class="edit">[<%= link_to "Editar", :controller => "profile", :action => "personal_informations" %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
-                                            <li id="">Telefone: <%= @profile.phone %></li>
-                                            <li id="">Endereço: <%= @profile.address %></li>
-                                            <li id="">IM: <%= full_im %></li>
-                                            <li id="">Estado Civíl: <%= @profile.maritial_status %></li>
+                                            <li>Telefone: <%= @profile.phone %></li>
+                                            <li>Endereço: <%= @profile.address %></li>
+                                            <li>IM: <%= full_im %></li>
+                                            <li>Estado Civíl: <%= @profile.maritial_status %></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -36,11 +36,10 @@
                                     <h2>Resumo <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" } %>]</span></h2>
                                     <div class="block categories">
                                         <ul id="message_categories">
-                                            <li id=""><%= @profile.summary %></li>
+                                            <%= format_text_area(@profile.summary) %>
                                         </ul>
                                     </div>
                                 </div>
-
 
                                 <div id="professional_experience">
                                     <h2>Experiência Profissional <span class="edit">[ <img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_experience_path %> ]</span></h2>
@@ -54,8 +53,7 @@
                                                 <% else %>
                                                     <li id=""><%= experience.start.strftime('%m/%Y') %></li>
                                                 <% end %>
-                                                <li id=""><%= experience.description %></li>
-                                              <li></li>
+                                                <%= format_text_area(experience.description) %>                                              
                                             </ul>
                                         </div>
 
@@ -74,7 +72,7 @@
                                                 <% else %>
                                                     <li id=""><%= education.start.strftime('%m/%Y') %></li>
                                                 <% end %>
-                                                <li id=""><%= education.activities %></li>
+                                                <%= format_text_area(education.activities) %>
                                             </ul>
                                         </div>
                                      <% end %>

@@ -78,11 +78,10 @@ class EducationsController < ApplicationController
   # DELETE /educations/1.xml
   def destroy
     @education = Education.find(params[:id])
-    @education.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(educations_url) }
-      format.xml  { head :ok }
+    if @education.destroy
+      flash[:notice] = "Educação removida com sucesso."
+      redirect_to :controller => "profile", :action => "index"
     end
   end
 end

@@ -58,17 +58,17 @@
                                       <dd><%= f.text_area :activities, :cols => 60, :rows => 7 %></dd>
                                     </dl>
                                   </div>
-
+                                  <% end %>
+                             
                                  <div class="action">
                                     <table align="right">
                                         <tr>
                                             <td colspan="3"><%= submit_tag 'Atualizar', :class => 'button' %></td>
-                                            <td><%= button_to 'Excluir', edit_education_path(@education), :method => :delete %></td>
+                                            <td><%= button_to 'Excluir', education_path(@education), :method => :delete %></td>
                                         </tr>
                                     </table>
                                    <br>
                                  </div>
-                              <% end %>
 
                         </div></div></div>
                      </td>
