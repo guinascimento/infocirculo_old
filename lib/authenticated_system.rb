@@ -57,7 +57,7 @@ module AuthenticatedSystem
 		# non-authenticated users such as the login or signup forms
 		# Make sure to redirect to a path they can access to avoid an infinite loop
 		def login_prohibited
-			!logged_in? || (redirect_to root_path)
+			#!logged_in? || (redirect_to root_path)
 		end
 
     # Redirect as appropriate when an access request fails.

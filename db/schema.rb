@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090807214936) do
+ActiveRecord::Schema.define(:version => 20090808150311) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20090807214936) do
   end
 
   create_table "curriculums", :force => true do |t|
-    t.string   "summary"
+    t.string   "summary",         :limit => 10000
     t.string   "phone"
     t.string   "im"
     t.integer  "im_type"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20090807214936) do
   end
 
   create_table "educations", :force => true do |t|
-    t.integer  "country"
     t.string   "school_name"
     t.integer  "degree"
     t.datetime "start"
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20090807214936) do
     t.string   "activities"
     t.string   "additional_notes"
     t.integer  "curriculum_id"
+    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "studing"
@@ -77,6 +77,14 @@ ActiveRecord::Schema.define(:version => 20090807214936) do
 
   add_index "four_oh_fours", ["url", "referer"], :name => "index_four_oh_fours_on_url_and_referer", :unique => true
   add_index "four_oh_fours", ["url"], :name => "index_four_oh_fours_on_url"
+
+  create_table "idioms", :force => true do |t|
+    t.integer  "degree",        :limit => 3
+    t.string   "name"
+    t.integer  "curriculum_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "industries", :force => true do |t|
     t.string   "name"

@@ -20,6 +20,8 @@ class CreateUsers < ActiveRecord::Migration
       t.column :invitation_limit, 		   :integer
       t.column :cep,                       :string, :limit => 8
       t.column :professional_description,  :string
+      t.column :public_profile,            :integer
+      t.column :subdomain,                 :string
       t.references :industry
     end
     add_index :users,  :login, :unique => true

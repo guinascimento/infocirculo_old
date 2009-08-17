@@ -29,4 +29,8 @@ class ProfileController < ApplicationController
 
   end
 
+  def public_profile
+    
+  end
+
 end

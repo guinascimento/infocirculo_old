@@ -1,0 +1,22 @@
+# == Schema Information
+# Schema version: 20090808150311
+#
+# Table name: idioms
+#
+#  id            :integer(4)      not null, primary key
+#  degree        :integer(3)
+#  name          :string(255)
+#  curriculum_id :integer(4)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+# one:
+#   column: value
+#
+# two:
+#   column: value
+

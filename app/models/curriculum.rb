@@ -1,10 +1,10 @@
 # == Schema Information
-# Schema version: 20090807214936
+# Schema version: 20090808150311
 #
 # Table name: curriculums
 #
 #  id              :integer(4)      not null, primary key
-#  summary         :string(255)
+#  summary         :string(10000)
 #  phone           :string(255)
 #  im              :string(255)
 #  im_type         :integer(4)
@@ -23,6 +23,7 @@ class Curriculum < ActiveRecord::Base
   belongs_to :user
   has_many :experiences
   has_many :educations
+  has_many :idioms
 
   acts_as_enum :maritial_status, [:Solteiro, :Casado, :Divorciado]
   acts_as_enum :im_type, [:MSN, :AIM, :GTalk, :Skype]

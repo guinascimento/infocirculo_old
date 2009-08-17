@@ -2,6 +2,7 @@
   # =====================================================================================================================
   map.resources :experiences, :path_prefix => 'profile'
   map.resources :educations, :path_prefix => 'profile'
+  map.resources :idioms, :path_prefix => 'profile'
   map.resources :posts
   map.resources :events
   map.resources :personal_informations
@@ -39,8 +40,11 @@
   # Custom Education Route
   map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
   map.profile 'profile/educations/:id/update', :controller => 'educations', :action => 'update'
-  # ===================================================================================== #
 
+  # Custom Idiom Route
+  map.profile 'profile/idioms/create', :controller => 'idioms', :action => 'create'
+  map.profile 'profile/idioms/:id/update', :controller => 'idioms', :action => 'update'
+  # ===================================================================================== #
 
   map.namespace :admin do |admin|
 		admin.resources :controls

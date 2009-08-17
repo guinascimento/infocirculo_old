@@ -1,0 +1,63 @@
+<script type="text/javascript">
+    function studing() {
+        if ($('education_studing').checked) {
+            $('end').hide();
+        } else {
+            $('end').appear();
+        }
+    }
+</script>
+
+<body onload="studing();"
+<div id="Wrapper" style="POSITION: relative">
+     <div id="swap_from">
+          <div id="screen_body" class="container">
+               <table class="layout">
+                  <tr>
+                     <td class="left">
+                        <div class="Left">
+                           <div class="col">
+                              <div class="page_header">
+                                <span class="other_indexes">
+                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+                                </span>
+
+                                <h1>
+                                    Idioma
+                                </h1>
+                              </div>
+
+                              <% form_for :idiom, :url => "create" do |f| %>
+                              <%= f.hidden_field :curriculum_id, :value => @curriculum.id %>
+                              <div class="innercol">
+                                <%= f.error_messages %>
+                                <div id="basic_form">
+                                  <div class="block">
+                                    <dl>
+                                      <dt class="required"><%= label(:idiom, 'Nome:') %></dt>
+                                      <dd>
+                                        <div id="idiom">
+                                            <%= f.text_field :name, :size => 20 %>
+                                            &nbsp;
+                                            <% for degree in Idiom::DEGREE %>
+                                                <span style="vertical-align:middle;"><%= degree %></span> <%= f.radio_button(:degree, degree) %>
+                                            <% end %>
+                                        </div>
+                                      </dd>
+                                    </dl>
+                                  </div>
+
+                              <div class="action">
+                                   <%= submit_tag 'Salvar', :class => 'button' %>
+                              </div>
+                              <% end %>
+
+                        </div></div></div>
+                     </td>
+                     <td class="right"></td>
+                  </tr>
+               </table>
+          </div>
+     </div>
+</div>
+</body>

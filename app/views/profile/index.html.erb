@@ -16,7 +16,7 @@
                 <div class="innercol">
                   <div id="head_informations">
                     <ul>
-                      <span class="name"><%= full_name %></span>
+                      <span class="name"><%= full_name %></span> <%= current_subdomain %>
                       <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
                       <li><%= @profile.user.professional_description %> - <%= @profile.user.industry.name %></li>
                       <li><%= @profile.user.email %></li>
@@ -56,7 +56,7 @@
                       <div id="professional_experience">
                         <h2>
                           Experiência Profissional
-                          <span class="edit">[<img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_experience_path %>]</span>
+                          <span class="edit">[<img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_education_path %>]</span>
                         </h2>
 
                         <% for experience in @profile.experiences %>
@@ -108,6 +108,25 @@
                             </div>
                         <% end %>
                       </div>
+
+                      <div id="idiom">
+                        <h2>
+                          Idiomas
+                          <span class="edit">[<img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_idiom_path %>]</span>
+                        </h2>
+
+                        <% for idiom in @profile.idioms %>
+                            <div class="block categories">
+                              <ul>
+                                <li></li>
+                                <li>
+                                  <%= idiom.name %> - <%= idiom.degree %>
+                                  [<span class="edit"><%= link_to "Editar", edit_idiom_path(idiom) %>]</span>
+                              </ul>
+                            </div>
+                        <% end %>
+                      </div>
+
                   <% end %>
                 </div>
 
@@ -118,20 +137,27 @@
           <td class="right">
             <div class="Right">
               <div class="col">
-                <h1>Opções</h1>
 
+                <h1>Opções</h1>
                 <div class="people">
                   <div class="contact" id="firm_employee_3809931">
-                    <img src="images/print.PNG">
-                    <img src="images/pdf.PNG">
+                    <%= image_tag 'print.png' %>
+                    <%= image_tag 'pdf.png' %>
                     <br><br>
-                    Permitir visualização pública do perfil.
+                    <a rel="lightbox" href="user/account">Permitir visualização pública do perfil.</a>
+                    <br><br>
+                    <a href="#TB_inline?height=155&amp;width=300&amp;inlineId=myOnPageContent&amp;modal=true" class="thickbox">Show hidden modal content.</a></p>
+
+                    <div id="myOnPageContent" style="display:none;"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
                   </div>
                 </div>
                 
               </div>
             </div>
           </td>
+
+          
 
         </tr>
       </table>
