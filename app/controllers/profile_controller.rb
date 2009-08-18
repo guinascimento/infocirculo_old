@@ -42,9 +42,9 @@ class ProfileController < ApplicationController
       @user = User.find(current_user.id)    
       @success = @user.update_attribute(:cv, params[:cv])
 
-      render :text => "URL configurada com sucesso."
+      render :text => "URL customizada com sucesso."
     else
-      render :text => "URL indisponível."
+      render :text => "Essa URL já está sendo utilizada."
     end
   end
 
