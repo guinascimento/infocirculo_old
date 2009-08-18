@@ -30,7 +30,11 @@ class ProfileController < ApplicationController
   end
 
   def public_profile
-    
+    if params[:cv] == "guilherme"
+      render :text => "URL configurada com sucesso."
+    else
+      render :text => "Indisponível."
+    end
   end
 
 end

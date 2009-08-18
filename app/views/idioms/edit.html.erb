@@ -1,14 +1,4 @@
-<script type="text/javascript">
-    function studing() {
-        if ($('education_studing').checked) {
-            $('end').hide();
-        } else {
-            $('end').appear();
-        }
-    }
-</script>
-
-<body onload="studing();"
+<body>
 <div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
@@ -46,11 +36,17 @@
                                       </dd>
                                     </dl>
                                   </div>
+                                  <% end %>
 
-                              <div class="action">
-                                   <%= submit_tag 'Salvar', :class => 'button' %>
-                              </div>
-                              <% end %>
+                                 <div class="action">
+                                    <table align="right">
+                                        <tr>
+                                            <td colspan="3"><%= submit_tag 'Salvar', :class => 'button' %></td>
+                                            <td><%= button_to 'Excluir', idiom_path(@idiom), :method => :delete %></td>
+                                        </tr>
+                                    </table>
+                                   <br>
+                                 </div>
 
                         </div></div></div>
                      </td>

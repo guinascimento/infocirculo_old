@@ -72,11 +72,9 @@ class IdiomsController < ApplicationController
   # DELETE /idioms/1.xml
   def destroy
     @idiom = Idiom.find(params[:id])
-    @idiom.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(idioms_url) }
-      format.xml  { head :ok }
+    if @idiom.destroy
+      flash[:notice] = "Idioma removido com sucesso."
+      redirect_to :controller => "profile", :action => "index"
     end
   end
 end
