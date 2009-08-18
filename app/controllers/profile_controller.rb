@@ -30,10 +30,21 @@ class ProfileController < ApplicationController
   end
 
   def public_profile
-    if params[:cv] == "guilherme"
+    # Desired name in URL
+    cv = params[:cv]
+
+    # Searching if the name used in URL already exists in database
+    exists = User.find(:all, :conditions => [ "cv = ?", cv ]).size
+
+    # If name isn't used
+    if exists == 0
+      # Updating the 'cv' column with de value configured by user
+      @user = User.find(current_user.id)    
+      @success = @user.update_attribute(:cv, params[:cv])
+
       render :text => "URL configurada com sucesso."
     else
-      render :text => "Indisponível."
+      render :text => "URL indisponível."
     end
   end
 

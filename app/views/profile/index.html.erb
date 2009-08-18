@@ -1,22 +1,19 @@
 <script>
-    function showDialog() {
-	    $("#dialog").dialog({ modal: true, width: 400 });
-    }
+        function show_dialog() {
+                $("#dialog").dialog( { modal: true, width: 400 } );
+        }
 </script>
 
 <div style="display: none;" id="dialog" title="Visualização Pública do Perfil">
-    <div class="innercol">
-        <div id="basic_form">
-          <div id="status"></div>
-            <% form_remote_tag(:url => { :controller => "profile", :action => "public_profile" }, :update => "status") do %>
-            <div>
-                <p>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv' %></p>
-                <p><%= submit_tag "Configurar", :class => 'button' %></p>
-            </div>              
-          <% end %>
-
-        </div>
-    </div>
+        <div id="status"></div>
+        <% form_remote_tag(:url => { :controller => "profile", :action => "public_profile" }, :update => "status") do %>
+                <div id="head_informations">
+                        <ul><li><li></ul>
+                        <ul>
+                                <li>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv' %>&nbsp;<%= submit_tag "Ok", :class => 'button' %></li>
+                        </ul>
+                </div>
+        <% end %>
 </div>
 
 <div id="Wrapper" style="position: relative;">
@@ -37,7 +34,7 @@
                 <div class="innercol">
                   <div id="head_informations">
                     <ul>
-                      <span class="name"><%= full_name %></span> <%= current_subdomain %>
+                      <span class="name"><%= full_name %></span>
                       <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
                       <li><%= @profile.user.professional_description %> - <%= @profile.user.industry.name %></li>
                       <li><%= @profile.user.email %></li>
@@ -165,7 +162,7 @@
                     <%= image_tag 'print.png' %>
                     <%= image_tag 'pdf.png' %>
                     <br><br>
-                    <a href="#" onclick="return showDialog();">Configurar visualização pública do perfil.</a>
+                    <a href="#" onclick="show_dialog();">Configurar visualização pública do perfil.</a>
                   </div>
                 </div>
 
