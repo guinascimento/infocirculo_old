@@ -29,6 +29,14 @@ class ProfileController < ApplicationController
 
   end
 
+  def test_method_to_test_branching_GIT
+  @teste = String.new
+   #
+   #
+   #
+   #
+  end
+
   def public_profile
     # Desired name in URL
     cv = params[:cv]
