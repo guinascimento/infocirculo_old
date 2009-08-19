@@ -32,19 +32,23 @@ class ProfileController < ApplicationController
   def public_profile
     # Desired name in URL
     cv = params[:cv]
-
-    # Searching if the name used in URL already exists in database
-    exists = User.find(:all, :conditions => [ "cv = ?", cv ]).size
-
-    # If name isn't used
-    if exists == 0
-      # Updating the 'cv' column with de value configured by user
-      @user = User.find(current_user.id)    
-      @success = @user.update_attribute(:cv, params[:cv])
-
-      render :text => "URL customizada com sucesso."
+    
+    if cv.eql?("")
+      render :text => "URL inválida."
     else
-      render :text => "Essa URL já está sendo utilizada."
+      # Searching if the name used in URL already exists in database
+      exists = User.find(:all, :conditions => [ "cv = ?", cv ]).size
+
+      # If name isn't used
+      if exists == 0
+        # Updating the 'cv' column with de value configured by user
+        @user = User.find(current_user.id)    
+        @success = @user.update_attribute(:cv, params[:cv])
+  
+        render :text => "URL customizada com sucesso."
+      else
+        render :text => "Essa URL já está sendo utilizada."
+      end
     end
   end
 
