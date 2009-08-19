@@ -32,7 +32,7 @@ class ProfileController < ApplicationController
   def string_method
     # Realizando modificações importantes nesse metodo
     age = 20
-    name = "Maria"
+    from = "Brazil"
   end
 
   def public_profile
