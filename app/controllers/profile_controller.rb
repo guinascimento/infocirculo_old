@@ -28,18 +28,6 @@ class ProfileController < ApplicationController
     end
 
   end
-  
-  def method_name
-    
-  end
-  ######
-  def string_method
-    # Realizando modificações importantes nesse metodo
-    age = 20
-    ##################
-    string = String.new
-   #######
-  end
 
   def public_profile
     # Desired name in URL
