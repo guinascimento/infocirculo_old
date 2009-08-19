@@ -31,6 +31,8 @@ class ProfileController < ApplicationController
   
   def string_method
     # Realizando modificações importantes nesse metodo
+    age = 20
+    name = "Maria"
   end
 
   def public_profile
