@@ -30,7 +30,8 @@ class ProfileController < ApplicationController
   end
   
   def novo_metodo
-    
+    ####
+    s = String.new
   end
 
   def public_profile
