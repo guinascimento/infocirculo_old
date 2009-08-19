@@ -29,9 +29,9 @@ class ProfileController < ApplicationController
 
   end
   
-  def novo_metodo
-    ####
-    s = String.new
+  def string_method
+    # this name can be used to identify the user
+    name = ""
   end
 
   def public_profile
