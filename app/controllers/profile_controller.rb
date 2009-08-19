@@ -30,11 +30,7 @@ class ProfileController < ApplicationController
   end
 
   def test_method_to_test_branching_GIT
-  @teste = String.newggggg
-   #
-   #
-   #
-   #
+   # MODIFICAÇÃO PARA O BRANCH TESTE
   end
 
   def public_profile
