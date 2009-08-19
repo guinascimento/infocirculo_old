@@ -30,7 +30,12 @@ class ProfileController < ApplicationController
   end
 
   def test_method_to_test_branching_GIT
-    
+    name = "Guilherme"
+    if name == "Guilherme"
+      render :text => "Nome válido!"
+    else
+      render :text => "Nome inválido!"
+    end
   end
 
   def public_profile
