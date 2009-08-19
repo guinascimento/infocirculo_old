@@ -30,8 +30,10 @@ class ProfileController < ApplicationController
   end
 
   def test_method_to_test_branching_GIT
-   # MODIFICAÇÃO PARA O BRANCH MASTER...
-   ####
+    name = "Guilherme"
+    if name == "Guilherme"
+      render :text => "Nome válido!"
+    end
   end
 
   def public_profile
