@@ -33,6 +33,9 @@ class ProfileController < ApplicationController
     name = "Guilherme"
     if name == "Guilherme"
       render :text => "Nome válido!"
+    else
+      render :text => "Nome inválido!"
+      ####
     end
   end
 
