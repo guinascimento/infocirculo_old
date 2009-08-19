@@ -30,7 +30,8 @@ class ProfileController < ApplicationController
   end
 
   def test_method_to_test_branching_GIT
-   # MODIFICAÇÃO PARA O BRANCH MASTER!!
+   # MODIFICAÇÃO PARA O BRANCH MASTER...
+   ####
   end
 
   def public_profile
