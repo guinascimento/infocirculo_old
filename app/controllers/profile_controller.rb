@@ -28,6 +28,10 @@ class ProfileController < ApplicationController
     end
 
   end
+  
+  def novo_metodo
+    ####
+  end
 
   def public_profile
     # Desired name in URL
