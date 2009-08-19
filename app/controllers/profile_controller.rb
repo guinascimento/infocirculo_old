@@ -29,8 +29,8 @@ class ProfileController < ApplicationController
 
   end
   
-  def novo_metodo
-    ####
+  def string_method
+    name = ""
   end
 
   def public_profile
