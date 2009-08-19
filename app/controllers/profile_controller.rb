@@ -30,9 +30,7 @@ class ProfileController < ApplicationController
   end
   
   def string_method
-    # this name can be used to identify the user
-    name = ""
-    puts name.to_s
+    # Realizando modificações importantes nesse metodo
   end
 
   def public_profile
