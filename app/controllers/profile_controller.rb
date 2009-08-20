@@ -13,11 +13,6 @@ class ProfileController < ApplicationController
     @curriculum = find_curriculum_from_user
   end
   
-  def method_name
-    b = String.new
-    a = 1
-  end
-  
   def update
     @curriculum = Curriculum.find(params[:id])
     @success = @curriculum.update_attributes(params[:curriculum])
