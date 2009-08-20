@@ -28,8 +28,6 @@ class ProfileController < ApplicationController
     end
 
   end
-  
-  # EFETUANDO MELHORIAS
 
   def public_profile
     # Desired name in URL
