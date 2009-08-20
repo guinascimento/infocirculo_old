@@ -14,7 +14,8 @@ class ProfileController < ApplicationController
   end
   
   def method_name
-    s = String.new
+    b = String.new
+    a = 1
   end
   
   def update
