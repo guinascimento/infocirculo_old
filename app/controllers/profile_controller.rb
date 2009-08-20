@@ -13,6 +13,11 @@ class ProfileController < ApplicationController
     @curriculum = find_curriculum_from_user
   end
   
+  def method_name
+    s = String.new
+    a = 1
+  end
+  
   def update
     @curriculum = Curriculum.find(params[:id])
     @success = @curriculum.update_attributes(params[:curriculum])
@@ -28,6 +33,8 @@ class ProfileController < ApplicationController
     end
 
   end
+  
+  # EFETUANDO MELHORIAS
 
   def public_profile
     # Desired name in URL
