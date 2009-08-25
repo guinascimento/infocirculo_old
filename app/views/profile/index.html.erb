@@ -4,13 +4,13 @@
         }
 </script>
 
-<div style="display: none;" id="dialog" title="Visualização Pública do Perfil">
+<div style="display: none;" id="dialog" title="Perfil Público">
         <div id="status"></div>
         <% form_remote_tag(:url => { :controller => "profile", :action => "public_profile" }, :update => "status") do %>
                 <div id="head_informations">
                         <ul><li><li></ul>
                         <ul>
-                                <li>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv' %>&nbsp;<%= submit_tag "Ok", :class => 'button' %></li>
+                                <li>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv', @profile.user.cv %>&nbsp;<%= submit_tag "Ok", :class => 'button' %></li>
                         </ul>
                 </div>
         <% end %>
@@ -159,18 +159,20 @@
                 <h1>Opções</h1>
                 <div class="people">
                   <div class="contact" id="firm_employee_3809931">
-                    <%= image_tag 'print.png' %>
-                    <%= image_tag 'pdf.png' %>
-                    <br><br>
-                    Perfil Público: http://www.infocirculo.com.br/cv/<%= @profile.user.cv %> <a href="#" onclick="show_dialog();">[Editar]</a>
+                    <li><%= image_tag 'print.png' %> <%= image_tag 'pdf.png' %></li>
+                  </div>
+                </div>
+
+                <h1>Perfil Público</h1>
+                <div class="people">
+                  <div class="contact" id="firm_employee_3809931">
+                    <li><a href="#" onclick="show_dialog();">Edite a URL pública para compartilhamento do perfil.</a></li>
                   </div>
                 </div>
 
               </div>
             </div>
           </td>
-
-
 
         </tr>
       </table>

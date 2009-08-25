@@ -71,35 +71,38 @@
 
               </div>
             </td>
+            
             <td class="right">
               <div class="Right">
                 <div class="col">
 
-  <h1>Informações Pessoais</h1>
+                  <h1><%= image_tag "profile.png" %> Informações Pessoais</h1>
+                    <div class="people">
+                      <div class="contact" id="firm_employee_3809931">
+                        <div>
+                          <%= image_tag current_user.avatar.url(:thumb), :id => "avatar" %>
+                        </div>
 
-  <div class="people">
-    <div class="contact" id="firm_employee_3809931">
+                        <div class="body">
+                          <h3><%= full_name %></h3>
+                          <%= current_user.professional_description %><br /><a href="mailto:<%= current_user.email %>"><%= current_user.email %></a><br />
+                          Data do cadastro: <%= current_user.created_at.to_s(:long) %>
+                          <br />
+                        </div>
+                    </div>
+                    
+                  <h1><%= image_tag "statistic.png" %> Estatísticas</h1>
+                  <div class="people">
+                    <div class="contact" id="firm_employee_3809931">
+                      <li><span style="vertical-align:bottom"><%= image_tag "tick.png" %></span> 3000 Pessoas</li>
+                      <li><span style="vertical-align:bottom"><%= image_tag "tick.png" %></span> 2389 Empresas</li>
+                      <li><span style="vertical-align:bottom"><%= image_tag "tick.png" %></span> 4500 Oportunidades</li>
+                    </div>
+                  </div>
 
-  <div>
-    <%= image_tag current_user.avatar.url(:thumb), :id => "avatar" %>
-  </div>
-
-  <div class="body">
-    <h3><%= full_name %></h3>
-    <%= current_user.professional_description %><br /><a href="mailto:<%= current_user.email %>"><%= current_user.email %></a><br />
-    Data do cadastro: <%= current_user.created_at.to_s(:long) %>
-    <br />
-  </div>
-      
-</div>
-
-  </div>
-
-
-
-                 </div>
-               </div>
-             </td>
+                </div>
+              </div>
+            </td>
 
            </tr>
         </table>
