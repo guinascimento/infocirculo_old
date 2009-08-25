@@ -67,4 +67,21 @@ module ApplicationHelper
       text.insert 0, start_tag
       text << "</li>"
   end
+  
+  def full_name
+	current_user.name + " " + current_user.last_name 
+  end
+
+  def full_im
+		case @profile.im_type
+			when :MSN
+	  		@profile.im + " (MSN)"
+			when :AIM
+	  		@profile.im + " (AIM)"
+			when :GTalk
+	  		@profile.im + " (GTalk)"
+			when :Skype
+	  		@profile.im + " (Skype)"
+  	end
+	end
 end

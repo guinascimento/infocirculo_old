@@ -1,19 +1,19 @@
 <script>
-        function show_dialog() {
-                $("#dialog").dialog( { modal: true, width: 400 } );
-        }
+  function show_dialog() {
+    $("#dialog").dialog( { modal: true, width: 400 } );
+  }
 </script>
 
 <div style="display: none;" id="dialog" title="Perfil Público">
-        <div id="status"></div>
-        <% form_remote_tag(:url => { :controller => "profile", :action => "public_profile" }, :update => "status") do %>
-                <div id="head_informations">
-                        <ul><li><li></ul>
-                        <ul>
-                                <li>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv', @profile.user.cv %>&nbsp;<%= submit_tag "Ok", :class => 'button' %></li>
-                        </ul>
-                </div>
-        <% end %>
+  <div id="status"></div>
+    <% form_remote_tag(:url => { :controller => "profile", :action => "public_profile" }, :update => "status") do %>
+      <div id="head_informations">
+        <ul><li><li></ul>
+        <ul>
+          <li>http://www.infocirculo.com/cv/&nbsp;<%= text_field_tag 'cv', @profile.user.cv %>&nbsp;<%= submit_tag "Ok", :class => 'button' %></li>
+        </ul>
+      </div>
+    <% end %>
 </div>
 
 <div id="Wrapper" style="position: relative;">
@@ -159,7 +159,10 @@
                 <h1>Opções</h1>
                 <div class="people">
                   <div class="contact" id="firm_employee_3809931">
-                    <li><%= image_tag 'print.png' %> <%= image_tag 'pdf.png' %></li>
+                    <li>
+                        <%= link_to image_tag ("pdf.png", :border => 0), :controller => "export", :action => "pdf" %>
+                        <%= image_tag 'print.png' %>
+                    </li>
                   </div>
                 </div>
 

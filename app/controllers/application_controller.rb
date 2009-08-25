@@ -32,11 +32,11 @@ class ApplicationController < ActionController::Base
 		APP_CONFIG['settings']['in_beta']
     end
 
-    def find_curriculum_from_user
-      Curriculum.find_by_user_id(current_user.id)
-    end
+  def find_curriculum_from_user
+    Curriculum.find_by_user_id(current_user.id)
+  end
 
-    def find_user_by_name(name)
-      User.find_by_name(name)
-    end
+   def find_user_by_name(name)
+    User.find_by_name(name)
+  end
 end
