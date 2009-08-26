@@ -69,10 +69,10 @@ module ApplicationHelper
   end
   
   def full_name
-	current_user.name + " " + current_user.last_name 
+		current_user.name + " " + current_user.last_name 
   end
 
-  def full_im
+	def full_im
 		case @profile.im_type
 			when :MSN
 	  		@profile.im + " (MSN)"
