@@ -1,0 +1,45 @@
+<body>
+<div id="Wrapper" style="POSITION: relative">
+	 <div id="swap_from">
+		  <div id="screen_body" class="container">
+			   <table class="layout">
+				  <tr>
+					 <td class="left">
+						<div class="Left">
+						   <div class="col">
+							  <div class="page_header">                                
+
+								<h1>
+									Inbox
+								</h1>
+							  </div>
+
+							<% form_tag('/inbox/send_email', :method => :post) do %>
+							<div class="innercol">
+								<div id="basic_form">
+									<div class="block">
+										<dl>
+											<dt class="required"><%= label_tag 'Assunto:' %></dt>
+											<dd><%= text_field_tag :subject, params[:subject] %></dd>
+										</dl>
+										<dl>
+											<dt class="required"><%= label_tag 'Mensagem:' %></dt>
+											<dd><%= text_area_tag :body, params[:subject] %></dd>
+										</dl>
+
+										<div class="action">
+											<%= submit_tag 'Enviar', :class => 'button' %>
+										</div>
+									</div>
+							  </div>
+							</div>
+							<% end %>
+
+					 </td>
+					 <td class="right"></td>
+				  </tr>
+			   </table>
+		  </div>
+	 </div>
+</div>
+</body>

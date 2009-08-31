@@ -1,0 +1,66 @@
+<body>
+<div id="Wrapper" style="POSITION: relative">
+	 <div id="swap_from">
+		  <div id="screen_body" class="container">
+			   <table class="layout">
+				  <tr>
+					 <td class="left">
+						<div class="Left">
+						   <div class="col">
+							  <div class="page_header">
+									<h1>
+										Inbox
+									</h1>
+							  </div>
+
+								<div class="innercol">
+									<div id="inbox">
+										<table id="teste">
+												aaa
+										</table>
+									</div>
+									
+									<form method="post" name="form">
+									<table cellspacing="0" class="inbox_table">
+										<thead>
+										<div class='buttons'>
+<button type='submit'>
+
+Save changes
+</button>
+</div>
+
+											<tr class="inbox_head">
+												<th><input type="checkbox" name="select" value="" onclick="selectAll();"></th>
+												<th><a href="" title="Sort by from">From</a></th>
+												<th><a href="" title="Sort by subject">Subject</a></th>
+												<th><a href="" title="Sort by date"><span class="sortdown">Date</span></a></th>
+											</tr>
+										</thead>
+	
+										<tbody class="inbox_line">
+											<% for inbox in @mail  %>
+											<tr>
+												<td><input type="checkbox" name="select"></td>
+												<td><%= inbox.message.sender.name %></td>
+	
+												<td>
+													<a href="/inbox/view/1" title="View details"><%= inbox.message.subject %></a>
+												</td>
+												<td><%= inbox.message.created_at.strftime('%d/%m/%Y')  %></td>
+											</tr>
+											<% end %>
+										</tbody>
+									</table>
+									</form>
+								</div>
+
+						</div></div></div>
+					 </td>
+					 <td class="right"></td>
+				  </tr>
+			   </table>
+		  </div>
+	 </div>
+</div>
+</body>
