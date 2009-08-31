@@ -9,11 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090808150311) do
+ActiveRecord::Schema.define(:version => 20090826183105) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
     t.integer "state_id"
+  end
+
+  create_table "conversations", :force => true do |t|
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
   end
 
   create_table "countries", :force => true do |t|
@@ -114,6 +119,31 @@ ActiveRecord::Schema.define(:version => 20090808150311) do
     t.datetime "created_at"
   end
 
+  create_table "mail", :force => true do |t|
+    t.integer  "user_id",                                          :null => false
+    t.integer  "message_id",                                       :null => false
+    t.integer  "conversation_id"
+    t.boolean  "read",                          :default => false
+    t.boolean  "trashed",                       :default => false
+    t.string   "mailbox",         :limit => 25
+    t.datetime "created_at",                                       :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.text     "body"
+    t.string   "subject",         :default => ""
+    t.text     "headers"
+    t.integer  "sender_id",                          :null => false
+    t.integer  "conversation_id"
+    t.boolean  "sent",            :default => false
+    t.datetime "created_at",                         :null => false
+  end
+
+  create_table "messages_recipients", :id => false, :force => true do |t|
+    t.integer "message_id",   :null => false
+    t.integer "recipient_id", :null => false
+  end
+
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
     t.integer "lifetime"
@@ -188,11 +218,14 @@ ActiveRecord::Schema.define(:version => 20090808150311) do
     t.string   "cep",                       :limit => 8
     t.string   "professional_description"
     t.integer  "industry_id"
+    t.integer  "public_profile"
+    t.string   "subdomain"
     t.string   "last_name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "cv"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

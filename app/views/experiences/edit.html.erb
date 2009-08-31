@@ -8,7 +8,7 @@
     }
 </script>
 
-<body onload="working();"
+<body onload="working();">
 <div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
@@ -58,13 +58,15 @@
                               <% end %>
 
                              <div class="action">
+                              <div class="buttons">
                                 <table align="right">
-                                    <tr>
-                                        <td colspan="3"><%= submit_tag 'Atualizar', :class => 'button' %></td>
-                                        <td><%= button_to 'Excluir', experience_path(@experience), :method => :delete %></td>
-                                    </tr>
+                                  <tr>
+                                    <td colspan="3"><%= submit_tag 'Atualizar' %></td>
+                                    <td><%= button_to 'Excluir', experience_path(@experience), :method => :delete %></td>
+                                  </tr>
                                 </table>
-                               <br>
+                                <br>
+                              </div>
                              </div>
 
                         </div></div></div>

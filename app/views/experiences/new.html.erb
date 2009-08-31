@@ -8,7 +8,7 @@
     }
 </script>
 
-<body onload="working();"
+<body onload="working();">
 <div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
@@ -57,7 +57,10 @@
                                   </div>
 
                               <div class="action">
-                                   <%= submit_tag 'Salvar', :class => 'button' %>
+                                <div class="buttons">
+                                  <%= submit_tag 'Salvar' %>
+                                  <br>
+                                </div>
                               </div>
                               <% end %>
 

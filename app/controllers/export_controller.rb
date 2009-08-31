@@ -1,10 +1,6 @@
 require "pdf/writer"
 	 
 class ExportController < ApplicationController
-	def convert_encoding text
-		Iconv.conv('ISO-8859-1', 'utf-8', text)
-	end
-
 	def pdf
 		@profile = find_curriculum_from_user
 
@@ -69,5 +65,9 @@ class ExportController < ApplicationController
 			when :Skype
 				profile.im + " (Skype)"
 		end
+	end
+
+	def convert_encoding text
+		Iconv.conv('ISO-8859-1', 'utf-8', text)
 	end
 end

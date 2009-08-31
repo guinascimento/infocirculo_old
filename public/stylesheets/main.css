@@ -42,13 +42,7 @@ table {
   padding-top: 1px;
   padding-bottom: 20px;
 }
-#header a, #header a:visited {
-  color: white;
-  text-decoration: none;
-}
-#header a:hover, #header a:visited:hover {
-  text-decoration: none;
-}
+
 #site-title {
   font-size: 150%;
   font-weight: bold;

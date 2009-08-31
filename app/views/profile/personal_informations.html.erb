@@ -11,6 +11,10 @@
                         <div class="Left">
                            <div class="col">
                               <div class="page_header">
+                                <span class="other_indexes">
+                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+                                </span>
+                                
                                  <h1>Informações Pessoais</h1>
                               </div>
 
@@ -37,7 +41,10 @@
                               </div>
 
                               <div class="action">
-                                   <%= submit_tag 'Salvar', :class => 'button' %>                                
+                                <div class="buttons">
+                                   <%= submit_tag 'Salvar' %> 
+                                   <br>
+                                </div>
                               </div>
                               <% end %>
 
