@@ -1,3 +1,13 @@
+# == Schema Information
+# Schema version: 20090826183105
+#
+# Table name: conversations
+#
+#  id         :integer(4)      not null, primary key
+#  subject    :string(255)     default("")
+#  created_at :datetime        not null
+#
+
 class Conversation < ActiveRecord::Base
   attr_reader :originator, :original_message, :last_sender, :last_message, :users
   has_many :messages

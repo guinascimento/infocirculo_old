@@ -114,6 +114,9 @@ pt-BR:
             password_confirmation: "Confirmação"
         curriculum:
             im_type: "Tipo do IM"
+        idiom:
+            name: "Nome"
+            degree: "Nível"
     errors:
       template:
         header:

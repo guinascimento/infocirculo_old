@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090808150311
+# Schema version: 20090826183105
 #
 # Table name: curriculums
 #

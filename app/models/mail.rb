@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20090826183105
+#
+# Table name: mail
+#
+#  id              :integer(4)      not null, primary key
+#  user_id         :integer(4)      not null
+#  message_id      :integer(4)      not null
+#  conversation_id :integer(4)
+#  read            :boolean(1)
+#  trashed         :boolean(1)
+#  mailbox         :string(25)
+#  created_at      :datetime        not null
+#
+
 class Mail < ActiveRecord::Base
   self.table_name = "mail"
   belongs_to :message

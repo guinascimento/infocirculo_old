@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090808150311
+# Schema version: 20090826183105
 #
 # Table name: users
 #
@@ -24,11 +24,14 @@
 #  cep                       :string(8)
 #  professional_description  :string(255)
 #  industry_id               :integer(4)
+#  public_profile            :integer(4)
+#  subdomain                 :string(255)
 #  last_name                 :string(255)
 #  avatar_file_name          :string(255)
 #  avatar_content_type       :string(255)
 #  avatar_file_size          :integer(4)
 #  avatar_updated_at         :datetime
+#  cv                        :string(255)
 #
 
 class SiteUser < User

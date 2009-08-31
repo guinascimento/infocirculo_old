@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20090826183105
+#
+# Table name: messages
+#
+#  id              :integer(4)      not null, primary key
+#  body            :text
+#  subject         :string(255)     default("")
+#  headers         :text
+#  sender_id       :integer(4)      not null
+#  conversation_id :integer(4)
+#  sent            :boolean(1)
+#  created_at      :datetime        not null
+#
+
 class Message < ActiveRecord::Base
   #any additional info that needs to be sent in a message (ex. I use these to determine request types)
   serialize :headers

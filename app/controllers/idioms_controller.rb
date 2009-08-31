@@ -59,12 +59,13 @@ class IdiomsController < ApplicationController
   # PUT /idioms/1.xml
   def update
     @idiom = Idiom.find(params[:id])
+    @curriculum = find_curriculum_from_user
 
     if @idiom.update_attributes(params[:idiom])
       flash[:notice] = "Idioma atualizado com sucesso."
       redirect_to :controller => "profile", :action => "index"
     else
-      render :action => 'new'
+      render :action => 'edit'
     end
   end
 
