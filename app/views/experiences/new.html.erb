@@ -1,11 +1,11 @@
 <script type="text/javascript">
-    function working() {
-        if ($('experience_working').checked) {
-            $('end').fade();
-        } else {
-            $('end').appear();
-        }
+  function working() {
+    if ( $('#experience_working').is(':checked') ) {
+      $("#end").fade();
+    } else {
+      $("#end").appear();
     }
+  }
 </script>
 
 <body onload="working();">
@@ -47,8 +47,8 @@
                                       <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
 
                                       <div id="end">
-                                      <dt class="required"><%= label(:experience, 'Término:') %></dt>
-                                      <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
+                                        <dt class="required"><%= label(:experience, 'Término:') %></dt>
+                                        <dd><%= f.date_select :end, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
                                       </div>
 
                                       <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>

@@ -1,14 +1,14 @@
 <script type="text/javascript">
-    function studing() {
-        if ($('education_studing').checked) {
-            $('end').fade();
-        } else {
-            $('end').appear();
-        }
+  function studying() {
+    if ( $('#education_studing').is(':checked') ) {
+      $("#end").fade();
+    } else {
+      $("#end").appear();
     }
+  }
 </script>
 
-<body onload="studing();"
+<body onload="studying();"
 <div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
@@ -44,7 +44,7 @@
                                       <dd><%= f.select :degree, Education::DEGREE, {:include_blank => true} %></dd>
 
                                       <dt class="required"><%= label(:education, 'Cursando') %></dt>
-                                      <dd><%= f.check_box :studing, :onclick => "studing()" %></dd>
+                                      <dd><%= f.check_box :studing, :onclick => "studying()" %></dd>
                                       
                                       <dt class="required"><%= label(:education, 'Início:') %></dt>
                                       <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>

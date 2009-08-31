@@ -1,11 +1,11 @@
 <script type="text/javascript">
-    function working() {
-        if ($('experience_working').checked) {
-            $('end').fade();
-        } else {
-            $('end').appear();
-        }
+  function working() {
+    if ( $('#experience_working').is(':checked') ) {
+      $("#end").fade();
+    } else {
+      $("#end").appear();
     }
+  }
 </script>
 
 <body onload="working();">
