@@ -1,8 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=unicode">
-<meta content="MSHTML 6.00.2900.3562" name="GENERATOR"></head>
-<body><div id="Wrapper" style="POSITION: relative">
+<div id="Wrapper" style="POSITION: relative">
      <div id="swap_from">
           <div id="screen_body" class="container">
                <table class="layout">
@@ -26,7 +22,7 @@
                                   <div class="block">
                                     <dl>
                                       <dt class="required"><%= label(:curriculum, 'Telefone:') %></dt>
-                                      <dd><%= text_field_with_js_mask :curriculum, :phone, :class => 'mask_phone' -%></dd>
+                                      <dd><%= text_field :curriculum, :phone %></dd>
 
                                       <dt class="required"><%= label(:curriculum, 'Endereço:') %></dt>
                                       <dd><%= f.text_field :address, :size => 30 %></dd>
@@ -55,4 +51,4 @@
                </table>
           </div>
      </div>
-</div></body></html>
+</div>

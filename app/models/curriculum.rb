@@ -17,8 +17,12 @@
 #
 
 class Curriculum < ActiveRecord::Base
-  validates_presence_of :im_type, :if => Proc.new { |curriculum| curriculum.im != "" }
-  validates_presence_of :address
+  #validates_presence_of :phone, :on => :update
+  #validates_numericality_of :phone, :on => :update
+  #validates_presence_of :address, :on => :update
+  validates_presence_of :im_type, :if => Proc.new { |curriculum| curriculum.im != nil }, :on => :update
+  #validates_presence_of :maritial_status, :on => :update
+  validates_presence_of :summary, :on => :update
 
   belongs_to :user
   has_many :experiences

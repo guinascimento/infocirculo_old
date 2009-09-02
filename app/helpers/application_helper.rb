@@ -67,10 +67,6 @@ module ApplicationHelper
       text.insert 0, start_tag
       text << "</li>"
   end
-  
-  def full_name
-		current_user.name + " " + current_user.last_name 
-  end
 
 	def full_im
 		case @profile.im_type

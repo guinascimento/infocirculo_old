@@ -31,17 +31,20 @@
 
                 <%= flash_message %>
 
-                <div class="innercol">
-                  <div id="head_informations">
-                    <ul>
-                      <span class="name"><%= full_name %></span>
-                      <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
-                      <li><%= @profile.user.professional_description %> - <%= @profile.user.industry.name %></li>
-                      <li><%= @profile.user.email %></li>
-                    </ul>
-                  </div>
-
-                  <% if @profile %>
+                
+                    <div class="innercol">
+                      <div id="head_informations">
+                        <ul>
+                          <span class="name"><%= @profile.user.name %></span>
+                          <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
+                          <li><%= @profile.user.professional_description %>
+                          <% if @profile.user.industry != nil %>
+                             - <%= @profile.user.industry.name %></li>
+                          <% end %>
+                          <li><%= @profile.user.email %></li>
+                        </ul>
+                      </div>
+                  
                       <div id="personal_informations">
                         <h2>
                           Informações Pessoais
@@ -59,9 +62,8 @@
                       </div>
 
                       <div id="summary">
-                        <h2>
-                          Resumo
-                          <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" } %>]</span>
+                        <h2>Resumo
+                          <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" }, :id => "Editar Resumo" %>]</span>
                         </h2>
 
                         <div class="block categories">
@@ -81,7 +83,7 @@
                             <div class="block categories">
                               <ul>
                                 <li></li>
-                                <li id="">
+                                <li>
                                   <strong><%= experience.title %> - <%= experience.company_name %></strong>
                                   [<span class="edit"><%= link_to "Editar", edit_experience_path(experience) %>]</span>
                                 </li>
@@ -145,7 +147,6 @@
                         <% end %>
                       </div>
 
-                  <% end %>
                 </div>
 
               </div>
@@ -171,7 +172,7 @@
 
                 <h1>Perfil Público</h1>
                 <div class="people">
-                  <div class="contact" id="firm_employee_3809931">
+                  <div class="contact">
                     <li><a href="#" onclick="show_dialog();">Edite a URL pública para compartilhamento do perfil.</a></li>
                   </div>
                 </div>

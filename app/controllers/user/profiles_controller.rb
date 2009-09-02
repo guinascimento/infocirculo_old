@@ -22,6 +22,10 @@ class User::ProfilesController < ApplicationController
 										 		 :password_confirmation => params[:user][:password_confirmation],
 												 :invitation_token => params[:user][:invitation_token])
     success = @user && @user.save
+    
+    # Creating curriculum
+    @curriculum = Curriculum.create!(:user => @user)
+    
     if success && @user.errors.empty?
       flash[:notice] = "Thanks for signing up! "
 			flash[:notice] += "We're sending you an email with your activation code."

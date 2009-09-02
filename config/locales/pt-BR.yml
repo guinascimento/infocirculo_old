@@ -113,7 +113,19 @@ pt-BR:
             password: "Senha"
             password_confirmation: "Confirmação"
         curriculum:
+            phone: "Telefone"
+            address: "Endereço"
+            im: "IM"
+            maritial_status: "Estado Civíl"
+            summary: "Resumo"
             im_type: "Tipo do IM"
+        experience:
+            company_name: "Empresa"
+            title: "Cargo"
+            working: "Atual"
+            start: "Início"
+            end: "Término"
+            description: "Descrição"
         idiom:
             name: "Nome"
             degree: "Nível"

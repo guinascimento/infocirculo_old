@@ -3,9 +3,14 @@ Feature: Manage Profile
   As an user
   I want fill and manage a profile
   
-  Scenario: Login
-    Given I am registred
-
-  Scenario: Edit Summary
-    Given I am on the summary page
-    And I fill in "curriculum_summary" with "aaaaaaaaaaa"
+  Scenario: Create a Profile
+    Given I am registred and logged
+    Then I should see "Bem vindo!"
+    
+  Scenario: Fill the Summary
+    Given I am registred and logged
+    And I am on the profile page
+    When I follow "Editar Resumo"
+    Then I fill in "Resumo" with "Profissional especializado em Ruby/Rails"
+    And I press "Salvar"
+    Then I should see "Dados atualizados com sucesso."

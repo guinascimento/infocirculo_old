@@ -25,7 +25,6 @@ class CreateUsers < ActiveRecord::Migration
       t.references :industry
     end
     add_index :users,  :login, :unique => true
-    add_column :users, :last_name, :string
 
     add_column :users, :avatar_file_name,    :string
     add_column :users, :avatar_content_type, :string

@@ -1,11 +1,12 @@
-Given /^I am registred$/ do
-  @current_user = SiteUser.create!(
-    :name => 'Carlos',
-    :email => 'guilherme.ruby@gmail.com',
+Given /^I am registred and logged$/ do
+  @user = SiteUser.create!(
+    :name => 'Carlos da Silva Sauro',
+    :email => 'carlos@gmail.com',
     :login => 'carlos',
     :password => 'aaaaaa',
-    :password_confirmation => 'aaaaaa'
-  )
+    :password_confirmation => 'aaaaaa')
+
+  @curriculum = Curriculum.create!(:user => @user)
 
   unread_emails_for(current_email_address).size.should == 1
   open_email(current_email_address)
@@ -14,8 +15,7 @@ Given /^I am registred$/ do
   response.should contain(/Signup complete! Please sign in to continue./)
 
   visit "/login"
-  fill_in("login", :with => "carlos")
-  fill_in("password", :with => "aaaaaa")
-  click_button("Log in")
-  User.find_by_name("Carlos").should_not be_nil
+  fill_in("login", :with => @user.login)
+  fill_in("password", :with => @user.password)
+  click_button("Entrar")
 end

@@ -4,49 +4,49 @@
 <meta content="MSHTML 6.00.2900.3562" name="GENERATOR"></head>
 
 <body><div id="Wrapper" style="POSITION: relative">
-     <div id="swap_from">
-          <div id="screen_body" class="container">
-               <table class="layout">
-                  <tr>
-                     <td class="left">
-                        <div class="Left">
-                           <div class="col">
-                              <div class="page_header">
-                                <span class="other_indexes">
-                                    <%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
-                                </span>
+	 <div id="swap_from">
+		  <div id="screen_body" class="container">
+			   <table class="layout">
+				  <tr>
+					 <td class="left">
+						<div class="Left">
+						   <div class="col">
+							  <div class="page_header">
+								<span class="other_indexes">
+									<%= link_to 'Voltar', :controller => 'profile', :action => 'index' %>
+								</span>
 
-                                <h1>
-                                    Resumo
-                                </h1>
-                              </div>
+								<h1>
+									Resumo
+								</h1>
+							  </div>
 
-                              <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
-                              <%= hidden_field_tag :token, "summary" %>
-                              <div class="innercol">
-                                <%= f.error_messages %>
-                                <div id="basic_form">
-                                  <div class="block">
-                                      <dl>
-                                        <dt class="required"><%= label(:curriculum, 'Resumo:') %></dt>
-                                        <dd><%= f.text_area :summary, :cols => 82, :rows => 10 %></dd>
-                                      </dl>
-                                  </div>
-                              </div>
+							  <% form_for :curriculum, @curriculum, :url => { :action => "update", :id => @curriculum.id } do |f| %>
+							  <%= hidden_field_tag :token, "summary" %>
+							  <div class="innercol">
+								<%= f.error_messages %>
+								<div id="basic_form">
+								  <div class="block">
+									  <dl>
+										<dt class="required"><%= label(:curriculum, 'Resumo:') %></dt>
+										<dd><%= f.text_area :summary, :cols => 82, :rows => 10, :id => "Resumo" %></dd>
+									  </dl>
+								  </div>
+							  </div>
 
-                              <div class="action">
-                                <div class="buttons">
-                                  <%= submit_tag 'Salvar' %> 
-                                  <br>
-                                </div>
-                              </div>
-                              <% end %>
+							  <div class="action">
+								<div class="buttons">
+								  <%= submit_tag 'Salvar', :id => "salvar" %> 
+								  <br>
+								</div>
+							  </div>
+							  <% end %>
 
-                        </div></div></div>
-                     </td>
-                     <td class="right"></td>
-                  </tr>
-               </table>
-          </div>
-     </div>
+						</div></div></div>
+					 </td>
+					 <td class="right"></td>
+				  </tr>
+			   </table>
+		  </div>
+	 </div>
 </div></body></html>
