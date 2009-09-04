@@ -18,7 +18,7 @@ module NavigationHelpers
       '/dashboard'  
     when /the summary page/
       '/profile/summary'
-
+      
     # Add more mappings here.
     # Here is a more fancy example:
     #

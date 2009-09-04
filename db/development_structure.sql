@@ -5,24 +5,38 @@ CREATE TABLE `cities` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE `curriculums` (
+CREATE TABLE `conversations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `summary` varchar(255) DEFAULT NULL,
-  `phone` varchar(255) DEFAULT NULL,
-  `im` varchar(255) DEFAULT NULL,
-  `im_type` int(11) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `birthday` varchar(255) DEFAULT NULL,
-  `maritial_status` int(11) DEFAULT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT '',
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `countries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `curriculums` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `summary` varchar(10000) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `im` varchar(255) DEFAULT NULL,
+  `im_type` int(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `birthday` varchar(255) DEFAULT NULL,
+  `maritial_status` smallint(6) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `educations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `country` int(11) DEFAULT NULL,
   `school_name` varchar(255) DEFAULT NULL,
   `degree` int(11) DEFAULT NULL,
   `start` datetime DEFAULT NULL,
@@ -30,18 +44,20 @@ CREATE TABLE `educations` (
   `activities` varchar(255) DEFAULT NULL,
   `additional_notes` varchar(255) DEFAULT NULL,
   `curriculum_id` int(11) DEFAULT NULL,
+  `country_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `studing` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `description` text,
+  `name` varchar(255) DEFAULT NULL,
+  `starts_at` datetime DEFAULT NULL,
+  `ends_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `experiences` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,12 +65,13 @@ CREATE TABLE `experiences` (
   `title` varchar(255) DEFAULT NULL,
   `start` datetime DEFAULT NULL,
   `end` datetime DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   `curriculum_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `working` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `four_oh_fours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -68,13 +85,23 @@ CREATE TABLE `four_oh_fours` (
   KEY `index_four_oh_fours_on_url` (`url`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `idioms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `degree` mediumint(9) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `curriculum_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `industries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `invitations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -99,6 +126,35 @@ CREATE TABLE `logged_exceptions` (
   `request` text,
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `mail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `message_id` int(11) NOT NULL,
+  `conversation_id` int(11) DEFAULT NULL,
+  `read` tinyint(1) DEFAULT '0',
+  `trashed` tinyint(1) DEFAULT '0',
+  `mailbox` varchar(25) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `body` text,
+  `subject` varchar(255) DEFAULT '',
+  `headers` text,
+  `sender_id` int(11) NOT NULL,
+  `conversation_id` int(11) DEFAULT NULL,
+  `sent` tinyint(1) DEFAULT '0',
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `messages_recipients` (
+  `message_id` int(11) NOT NULL,
+  `recipient_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `open_id_authentication_associations` (
@@ -134,7 +190,7 @@ CREATE TABLE `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `roles_users` (
   `role_id` int(11) DEFAULT NULL,
@@ -167,7 +223,7 @@ CREATE TABLE `user_failures` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_user_failures_on_remote_ip` (`remote_ip`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -191,14 +247,16 @@ CREATE TABLE `users` (
   `cep` varchar(8) DEFAULT NULL,
   `professional_description` varchar(255) DEFAULT NULL,
   `industry_id` int(11) DEFAULT NULL,
-  `last_name` varchar(255) DEFAULT NULL,
+  `public_profile` int(11) DEFAULT NULL,
+  `subdomain` varchar(255) DEFAULT NULL,
   `avatar_file_name` varchar(255) DEFAULT NULL,
   `avatar_content_type` varchar(255) DEFAULT NULL,
   `avatar_file_size` int(11) DEFAULT NULL,
   `avatar_updated_at` datetime DEFAULT NULL,
+  `cv` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_login` (`login`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 INSERT INTO schema_migrations (version) VALUES ('20080805045804');
 
@@ -233,3 +291,15 @@ INSERT INTO schema_migrations (version) VALUES ('20090702143249');
 INSERT INTO schema_migrations (version) VALUES ('20090703193252');
 
 INSERT INTO schema_migrations (version) VALUES ('20090706173053');
+
+INSERT INTO schema_migrations (version) VALUES ('20090807214936');
+
+INSERT INTO schema_migrations (version) VALUES ('20090808150311');
+
+INSERT INTO schema_migrations (version) VALUES ('20090826183008');
+
+INSERT INTO schema_migrations (version) VALUES ('20090826183031');
+
+INSERT INTO schema_migrations (version) VALUES ('20090826183045');
+
+INSERT INTO schema_migrations (version) VALUES ('20090826183105');

@@ -4,10 +4,6 @@ class CreateIndustries < ActiveRecord::Migration
       t.column :name,  :string
       t.timestamps
     end
-
-    industry = Industry.new
-    industry.name = "Desenvolvimento de Software"
-    industry.save
   end
 
   def self.down

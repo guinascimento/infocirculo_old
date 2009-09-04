@@ -1,6 +1,6 @@
 <script type="text/javascript">
   function working() {
-    if ( $('#experience_working').is(':checked') ) {
+    if ( $('#Working').is(':checked') ) {
       $("#end").fade();
     } else {
       $("#end").appear();
@@ -27,7 +27,7 @@
                                 </h1>
                               </div>
 
-                              <% form_for @experience, :url => "update" do |f| %>
+                              <% form_for @experience do |f| %>
                               <%= f.hidden_field :curriculum_id, :value => @experience.curriculum.id %>
                               <div class="innercol">
                                 <%= f.error_messages %>
@@ -35,13 +35,13 @@
                                   <div class="block">
                                     <dl>
                                       <dt class="required"><%= label(:experience, 'Empresa:') %></dt>
-                                      <dd><%= f.text_field :company_name, :size => 50 %></dd>
+                                      <dd><%= f.text_field :company_name, :size => 50, :id => "Company Name" %></dd>
 
                                       <dt class="required"><%= label(:experience, 'Cargo:') %></dt>
-                                      <dd><%= f.text_field :title, :size => 50 %></dd>
+                                      <dd><%= f.text_field :title, :size => 50, :id => "Title" %></dd>
 
                                       <dt class="required"><%= label(:experience, 'Atual ?') %></dt>
-                                      <dd><%= f.check_box :working, :onclick => "working()" %></dd>
+                                      <dd><%= f.check_box :working, :onclick => "working()", :id => "Working" %></dd>
 
                                       <dt class="required"><%= label(:experience, 'Início:') %></dt>
                                       <dd><%= f.date_select :start, :start_year => 1979, :end_year => Time.now.year, :discard_day => true, :order => [:month, :year], :include_blank => true %></dd>
@@ -52,7 +52,7 @@
                                       </div>
 
                                       <dt class="required"><%= label(:curriculum, 'Descrição:') %></dt>
-                                      <dd><%= f.text_area :description, :cols => 60, :rows => 7 %></dd>
+                                      <dd><%= f.text_area :description, :cols => 60, :rows => 7, :id => "Description" %></dd>
                                     </dl>
                                   </div>
                               <% end %>

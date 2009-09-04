@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090826183105) do
+ActiveRecord::Schema.define(:version => 20090902221543) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -220,7 +220,6 @@ ActiveRecord::Schema.define(:version => 20090826183105) do
     t.integer  "industry_id"
     t.integer  "public_profile"
     t.string   "subdomain"
-    t.string   "last_name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -229,5 +228,9 @@ ActiveRecord::Schema.define(:version => 20090826183105) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  industry = Industry.new
+  industry.name = "Desenvolvimento de Software"
+  industry.save
 
 end

@@ -34,8 +34,8 @@
   map.resend_activation '/resend_activation', :controller => 'user/activations', :action => 'new'
 
   # Custom Experience Route
-  map.profile 'profile/experiences/create', :controller => 'experiences', :action => 'create'
-  map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
+  #map.profile 'profile/experiences/create', :controller => 'experiences', :action => 'create'
+  #map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
 
   # Custom Education Route
   map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'

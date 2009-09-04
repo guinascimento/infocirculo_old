@@ -31,16 +31,22 @@
 
                 <%= flash_message %>
 
-                
                     <div class="innercol">
                       <div id="head_informations">
                         <ul>
                           <span class="name"><%= @profile.user.name %></span>
-                          <span class="edit">[<%= link_to "Editar", :controller => "account" %>]</span>
-                          <li><%= @profile.user.professional_description %>
-                          <% if @profile.user.industry != nil %>
-                             - <%= @profile.user.industry.name %></li>
-                          <% end %>
+                          <span class="edit">[<%= link_to "Editar", { :controller => "account" }, :id => "Edit Account" %>]</span>
+                          <li>
+                                <%= @profile.user.professional_description %>
+
+                                <% if @profile.user.professional_description != "" and @profile.user.industry != nil %>
+                                  -
+                                <% end %>
+                          
+                                <% if @profile.user.industry != nil %>
+                                  <%= @profile.user.industry.name %>
+                                <% end %>
+                          </li>
                           <li><%= @profile.user.email %></li>
                         </ul>
                       </div>
@@ -48,22 +54,30 @@
                       <div id="personal_informations">
                         <h2>
                           Informações Pessoais
-                          <span class="edit">[<%= link_to "Editar", :controller => "profile", :action => "personal_informations" %>]</span>
+                          <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "personal_informations" }, :id => "Edit Personal Information" %>]</span>
                         </h2>
 
                         <div class="block categories">
                           <ul>
-                            <li>Telefone: <%= @profile.phone %></li>
-                            <li>Endereço: <%= @profile.address %></li>
-                            <li>IM: <%= full_im %></li>
-                            <li>Estado Civíl: <%= @profile.maritial_status %></li>
+                            <% if @profile.phone != nil %>
+                              <li>Telefone: <%= @profile.phone %></li>
+                            <% end %>
+                            <% if @profile.address != "" %>
+                              <li>Endereço: <%= @profile.address %></li>
+                            <% end %>
+                            <% if @profile.im != "" %>
+                              <li>IM: <%= full_im %></li>
+                            <% end %>
+                            <% if @profile.maritial_status != nil %>
+                              <li>Estado Civíl: <%= @profile.maritial_status %></li>
+                            <% end %>
                           </ul>
                         </div>
                       </div>
 
                       <div id="summary">
                         <h2>Resumo
-                          <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" }, :id => "Editar Resumo" %>]</span>
+                          <span class="edit">[<%= link_to "Editar", { :controller => "profile", :action => "summary" }, :id => "Edit Summary" %>]</span>
                         </h2>
 
                         <div class="block categories">
@@ -76,7 +90,7 @@
                       <div id="professional_experience">
                         <h2>
                           Experiência Profissional
-                          <span class="edit">[<img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_experience_path %>]</span>
+                          <span class="edit">[<img src="images/plus.PNG" width="15px" height="15px"> <%= link_to "Adicionar", new_experience_path, :id => "Add Experience" %>]</span>
                         </h2>
 
                         <% for experience in @profile.experiences %>
@@ -85,7 +99,7 @@
                                 <li></li>
                                 <li>
                                   <strong><%= experience.title %> - <%= experience.company_name %></strong>
-                                  [<span class="edit"><%= link_to "Editar", edit_experience_path(experience) %>]</span>
+                                  [<span class="edit"><%= link_to "Editar", edit_experience_path(experience), :id => "Edit Experience" %>]</span>
                                 </li>
 
                                 <% if experience.end != nil %>

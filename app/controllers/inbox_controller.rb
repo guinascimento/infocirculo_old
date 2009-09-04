@@ -1,6 +1,6 @@
 class InboxController < ApplicationController
 	def index
-		@me = User.find(1)
+		@me = User.find(2)
 		@mail = @me.mailbox[:inbox].unread_mail
 	end
 	
@@ -13,6 +13,20 @@ class InboxController < ApplicationController
 		respond_to do |format|
 			format.html
 		end
+	end
+	
+	def remove
+	ids = params[:id]
+	puts "->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + ids.inspect
+		for m in ids
+			message = Message.find(m)
+			message.destroy
+		end
+		#@message = Message.find(params[:id])
+		#puts @message.inspect
+		#if @idiom.destroy
+		#	flash[:notice] = "Mensagem excluída com sucesso."
+		#end
 	end
 	
 	def send_email

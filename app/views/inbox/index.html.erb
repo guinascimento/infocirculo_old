@@ -1,66 +1,60 @@
 <body>
-<div id="Wrapper" style="POSITION: relative">
-	 <div id="swap_from">
-		  <div id="screen_body" class="container">
+
+<div id="center">
+
 			   <table class="layout">
-				  <tr>
-					 <td class="left">
-						<div class="Left">
-						   <div class="col">
-							  <div class="page_header">
-									<h1>
-										Inbox
-									</h1>
-							  </div>
+				 	<tr>
+							<td class="left">
+								<div class="Left">
+									<div class="col">
+										<div class="page_header">
+											<h1>Inbox</h1>
+										</div>
+										
+										<div class="innercol">
+											<div id="Main" class="">
+												<h3 class="Tab"> 
+													<span class="TabIn">Sua Inbox <span class="unread_count"> (<%= @mail.size %>)</span></span>
+													<span class="TabOut"><a href="/mail/sent">Enviados</a></span>
+											</h3>
 
-								<div class="innercol">
-									<div id="inbox">
-										<table id="teste">
-												aaa
-										</table>
-									</div>
-									
-									<form method="post" name="form">
-									<table cellspacing="0" class="inbox_table">
-										<thead>
-										<div class='buttons'>
-<button type='submit'>
+											<% form_for :inbox, :url => { :action => "remove" }, :html => {:name => 'form'} do |form| %>
+												<table id="mail" cellspacing="0" width="100%">
+													<tr valign="bottom">
+														<th>&nbsp;</th>
+														<th>De</th>
+														<th><a href="/mail?sort=subj&dir=down" title="Order by subject">Assunto</a></th>
+														<th><a href="/mail?&sort=date&dir=up" title="Order by date">Data</a> &uarr;</th>
+														<th class="delete">
+															<small><a href="#" id="Select All" onclick="selectAll()">Selecionar todos</a></small>
+														</th>
+													</tr>
 
-Save changes
-</button>
-</div>
-
-											<tr class="inbox_head">
-												<th><input type="checkbox" name="select" value="" onclick="selectAll();"></th>
-												<th><a href="" title="Sort by from">From</a></th>
-												<th><a href="" title="Sort by subject">Subject</a></th>
-												<th><a href="" title="Sort by date"><span class="sortdown">Date</span></a></th>
-											</tr>
-										</thead>
-	
-										<tbody class="inbox_line">
-											<% for inbox in @mail  %>
-											<tr>
-												<td><input type="checkbox" name="select"></td>
-												<td><%= inbox.message.sender.name %></td>
-	
-												<td>
-													<a href="/inbox/view/1" title="View details"><%= inbox.message.subject %></a>
-												</td>
-												<td><%= inbox.message.created_at.strftime('%d/%m/%Y')  %></td>
-											</tr>
+													<% for inbox in @mail %>	
+														<tr class="message_row  unread">
+															<td class="mail_icon"><div class="mail_icon mail_indicator"><a class="toggler" id="toggler_72057594042647006" title="Click to mark this message as read"><img src="http://l.yimg.com/g/images/spaceball.gif" width="16" height="16" alt="Click to mark this message as read" title=""></a></div></td>
+															<td class="fromto"><%= inbox.message.sender.name %></td>
+															<td class="subj"><a href="/mail/72057594042647006"><%= inbox.message.subject %></a></td>
+															<td class="date"><%= inbox.message.created_at.strftime('%d %b %Y, %H:%M %p') %></td>
+															<td class="delete"><%= check_box_tag 'id[]', inbox.id %></td>
+														</tr>
+													<% end %>
+												</table>
+												
+												<div class="action">
+													<div class="buttons">
+														<%= submit_tag 'Delete' %>
+														<br>
+													</div>
+												</div>
 											<% end %>
-										</tbody>
-									</table>
-									</form>
+											</div>
+										</div>
+									<div>
 								</div>
-
-						</div></div></div>
-					 </td>
-					 <td class="right"></td>
-				  </tr>
+							</td>
+							<td class="right"></td>
+					</tr>
 			   </table>
 		  </div>
-	 </div>
-</div>
 </body>

@@ -22,18 +22,18 @@
                                   <div class="block">
                                     <dl>
                                       <dt class="required"><%= label(:account, 'Nome:') %></dt>
-                                      <dd><%= f.text_field :name, :size => 30 %></dd>
+                                      <dd><%= f.text_field :name, :size => 30, :id => "Name" %></dd>
 
                                       <dt class="required"><%= label(:account, 'Email:') %></dt>
-                                      <dd><%= f.text_field :email, :syize => 30 %></dd>
+                                      <dd><%= f.text_field :email, :syize => 30, :id => "Email" %> Não lhe enviaremos spam ;)</dd>
                                       
                                       <dt class="required"><%= label(:account, 'Indústria:') %></dt>
                                       <dd>
-                                        <%= f.select :industry_id, Industry.find(:all).collect {|i| [i.name, i.id]}, {:include_blank => true} %>
+                                        <%= f.select :industry_id, Industry.find(:all).collect {|i| [i.name, i.id]}, {:include_blank => true}, :id => "Industry" %>
                                       </dd>
 
                                       <dt class="required"><%= label(:account, 'Cargo:') %></dt>
-                                      <dd><%= f.text_field :professional_description, :size => 30 %></dd>
+                                      <dd><%= f.text_field :professional_description, :size => 30, :id => "Professional Description" %></dd>
                                     </dl>
                                    </div>
 

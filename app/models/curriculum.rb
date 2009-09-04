@@ -22,7 +22,7 @@ class Curriculum < ActiveRecord::Base
   #validates_presence_of :address, :on => :update
   validates_presence_of :im_type, :if => Proc.new { |curriculum| curriculum.im != nil }, :on => :update
   #validates_presence_of :maritial_status, :on => :update
-  validates_presence_of :summary, :on => :update
+  #validates_presence_of :summary, :on => :update
 
   belongs_to :user
   has_many :experiences
