@@ -1,0 +1,63 @@
+<body>
+
+<div id="center">
+  <table class="layout">
+    <tr>
+      <td class="left">
+        <div class="Left">
+          <div class="col">
+            <div class="page_header">
+              <span class="other_indexes">
+                <%= link_to 'Voltar', :controller => 'mailbox', :action => 'index' %>
+              </span>
+                                
+              <h1>Inbox</h1>
+            </div>
+            
+            <%= flash_message %>
+
+            <div class="innercol">
+              <% form_for :message, :url => {:controller => "sent", :action => "create"} do |f| %>
+                <%= f.error_messages %>
+                <div id="basic_form">
+                  <div class="block">
+                      <dl>
+                        <dt class="required"><%= label(:message, 'Para:') %></dt>
+                        <dd>
+                          <select name="message[to]" id="To">
+                            <%= options_from_collection_for_select(User.find(:all), :id, :name, @message.to) %>
+                          </select>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt class="required"><%= label(:message, 'Assunto:') %></dt>
+                        <dd>
+                          <%= f.text_field :subject, :id => 'Subject' %>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt class="required"><%= label(:message, 'Corpo:') %></dt>
+                        <dd>
+                          <%= f.text_area :body, :id => 'Body' %>
+                        </dd>
+                      </dl>
+                  </div>
+                </div>
+  
+                <div class="action">
+                  <div class="buttons">
+                    <%= submit_tag 'Enviar', :id => "Send" %> 
+                    <br>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td class="right"></td>
+    </tr>
+  </table>
+</div>
+
+</body>

@@ -24,14 +24,14 @@
 
 
   <style type="text/css" media="screen">
-  a:link, a:visited {
-    color: #03c;
-  }
+#  a:link, a:visited {
+#    color: #03c;
+#  }
 
-  a:hover {
-    color: #fff;
-    background-color: #03c;
-  }
+#  a:hover {
+#    color: #fff;
+#    background-color: #03c;
+#  }
 
   #Header {
     background-color: #900;
@@ -155,7 +155,7 @@
             <li style="float: right"><a href="/global/settings">Ajuda</a></li>
             <li style="float: right"><a href="/templates">Configurações</a></li>
       	    <li style="float: right"><a href="/account">Planos</a></li>
-            <li style="float: right"><%= link_to "Inbox", { :controller => "inbox" }, :class => is_active?("inbox") %></li>
+            <li style="float: right"><%= link_to "Inbox", { :controller => "mailbox" }, :class => is_active?("inbox") %></li>
             <li style="float: right"><%= link_to "Perfil", { :controller => "profile" }, :class => is_active?("profile") %></li>
          </ul>
       </div>

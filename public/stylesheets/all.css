@@ -2206,10 +2206,6 @@ span.help {
   color: #666;
 }
 
-a {text-decoration: underline; padding: 1px; }
-a:link { color: #03c; }
-a:visited { color: #03c; }
-a:hover { color: #fff; background-color: #30c; text-decoration: none; }
 
 
 a.image:link, a.image:visited, a.image:hover {
@@ -10421,6 +10417,12 @@ div.chat_explanation p {
 	text-align: right;
 	padding-top: 8px;
 	font-size: 12px;
+}
+
+#basic_form div.action_compose, div.action_compose {
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 12px;
 }
 
 .pick_chat_room div.action { color: #999; }

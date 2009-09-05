@@ -1,6 +1,6 @@
 Given /^I am registred and logged$/ do
-  @user = SiteUser.create!(
-    :name => 'Carlos da Silva Sauro',
+  @user = SiteUser.create(
+    :name => 'Carlos da Silva',
     :email => 'carlos@gmail.com',
     :login => 'carlos',
     :password => 'aaaaaa',

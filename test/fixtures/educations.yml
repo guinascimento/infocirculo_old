@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090826183105
+# Schema version: 20090904144307
 #
 # Table name: educations
 #

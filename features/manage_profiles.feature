@@ -7,20 +7,20 @@
     Given I am on the profile page
     Then I should see "You must be logged in to access this feature."
   
-  Scenario: Create a Profile
+  Scenario: Create a profile
     Given I am registred and logged
     Then I should see "Bem vindo!"
 
-  Scenario: Update the Account
+  Scenario: Update the account
     Given I am registred and logged
     And I am on the profile page
     Then I follow "Edit Account"
-    When I select "Desenvolvimento de Software" from "Industry"
+    #When I select "Desenvolvimento de Software" from "Industry"
     And I fill in "Professional Description" with "Programador"
     And I press "Salvar"
     Then I should see "Sua conta foi atualizada com sucesso."
     
-  Scenario: Update Personal Informations
+  Scenario: Update personal informations
     Given I am registred and logged
     And I am on the profile page
     When I follow "Edit Personal Information"
@@ -32,7 +32,7 @@
     And I press "Salvar"
     Then I should see "Dados atualizados com sucesso."
     
-  Scenario: Update the Summary
+  Scenario: Update the summary
     Given I am registred and logged
     And I am on the profile page
     When I follow "Edit Summary"
@@ -40,7 +40,7 @@
     And I press "Salvar"
     Then I should see "Dados atualizados com sucesso."
     
-  Scenario: Add a Professional Experience
+  Scenario: Add a professional experience
     Given I am registred and logged
     And I am on the profile page
     When I follow "Add Experience"

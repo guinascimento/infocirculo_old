@@ -1,0 +1,68 @@
+﻿<body>
+
+<div id="center">
+	<table class="layout" style="width:130%">
+		<tr>
+			<td class="left">
+				<div class="Left">
+					<div class="col">
+						<div class="page_header">
+							<h1>Inbox</h1>
+						</div>
+
+						<div class="innercol">
+							<div class="action_compose">
+								<div class="buttons">
+									<%= link_to "Criar Mensagem", { :controller => "sent", :action => "new" }, :id => "Create Message" %>
+									<br>
+								</div>
+							</div>
+										
+							<div id="Main" class="">
+								<h3 class="Tab"> 
+									<span class="TabIn"><%=h @folder.name %> <span class="unread_count">(<%= @messages.size %>)</span></span>
+									<span class="TabOut"><%= link_to "Enviados", :controller => "sent", :action => "index" %></span>
+							</h3>
+
+							<% form_for :inbox, :url => { :action => "remove" }, :html => {:name => 'form'} do |form| %>
+								<table id="mail" cellspacing="0" width="100%">
+									<tr valign="bottom">
+										<th>&nbsp;</th>
+										<th>De</th>
+										<th><a href="/mail?sort=subj&dir=down" title="Order by subject">Assunto</a></th>
+										<th><a href="/mail?&sort=date&dir=up" title="Order by date">Data</a> &uarr;</th>
+										<th class="delete">
+											<small><a href="#" id="Select All" onclick="selectAll()">Selecionar todos</a></small>
+										</th>
+									</tr>
+
+									<% for message in @messages %>	
+										<tr class="message_row  unread">
+											<td class="mail_icon"><div class="mail_icon mail_indicator"><a class="toggler" id="toggler_72057594042647006" title="Click to mark this message as read"><img src="http://l.yimg.com/g/images/spaceball.gif" width="16" height="16" alt="Click to mark this message as read" title=""></a></div></td>
+											<td class="fromto"><%= message.author.name %></td>
+											<td class="subj"><a href=""><%= link_to h(message.subject), message_path(message)  %></a></td>
+											<td class="date"><%= message.created_at.strftime('%d %b %Y, %H:%M %p') %></td>
+											<td class="delete"><%= check_box_tag 'id[]', message.id %></td>
+										</tr>
+									<% end %>
+								</table>
+								<%= will_paginate @messages %>
+
+								<div class="action">
+									<div class="buttons">
+										<%= submit_tag 'Deletar' %>
+										<br>
+									</div>
+								</div>
+							<% end %>
+							</div>
+						</div>
+					<div>
+				</div>
+			</td>
+			<td class="right"></td>
+		</tr>
+	</table>
+</div>
+<br>
+</body>

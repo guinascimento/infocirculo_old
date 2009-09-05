@@ -38,12 +38,12 @@
   #map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
 
   # Custom Education Route
-  map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
-  map.profile 'profile/educations/:id/update', :controller => 'educations', :action => 'update'
+  #map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
+  #map.profile 'profile/educations/:id/update', :controller => 'educations', :action => 'update'
 
   # Custom Idiom Route
-  map.profile 'profile/idioms/create', :controller => 'idioms', :action => 'create'
-  map.profile 'profile/idioms/:id/update', :controller => 'idioms', :action => 'update'
+  #map.profile 'profile/idioms/create', :controller => 'idioms', :action => 'create'
+  #map.profile 'profile/idioms/:id/update', :controller => 'idioms', :action => 'update'
   # ===================================================================================== #
 
   map.namespace :admin do |admin|
@@ -67,6 +67,7 @@
 		end
   end
 
+  map.resources :sent, :messages, :mailbox
 	map.resource  :session
 	map.resource  :openid_session
 	map.resources :members
@@ -109,7 +110,7 @@
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
+  map.connect ':controller/:action/:id.:format'
 
   #map.connect '*path' , :controller => 'four_oh_fours'
 end

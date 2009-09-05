@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090902221543) do
+ActiveRecord::Schema.define(:version => 20090904144307) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(:version => 20090902221543) do
     t.integer  "working"
   end
 
+  create_table "folders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "parent_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "four_oh_fours", :force => true do |t|
     t.string   "url"
     t.string   "referer"
@@ -129,14 +137,20 @@ ActiveRecord::Schema.define(:version => 20090902221543) do
     t.datetime "created_at",                                       :null => false
   end
 
+  create_table "message_copies", :force => true do |t|
+    t.integer  "recipient_id"
+    t.integer  "message_id"
+    t.integer  "folder_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.text     "body"
-    t.string   "subject",         :default => ""
-    t.text     "headers"
-    t.integer  "sender_id",                          :null => false
-    t.integer  "conversation_id"
-    t.boolean  "sent",            :default => false
-    t.datetime "created_at",                         :null => false
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at"
+    t.integer  "author_id"
   end
 
   create_table "messages_recipients", :id => false, :force => true do |t|
@@ -228,9 +242,5 @@ ActiveRecord::Schema.define(:version => 20090902221543) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
-
-  industry = Industry.new
-  industry.name = "Desenvolvimento de Software"
-  industry.save
 
 end

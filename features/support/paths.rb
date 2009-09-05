@@ -18,6 +18,8 @@ module NavigationHelpers
       '/dashboard'  
     when /the summary page/
       '/profile/summary'
+    when /the inbox page/
+      '/mailbox/'
       
     # Add more mappings here.
     # Here is a more fancy example:

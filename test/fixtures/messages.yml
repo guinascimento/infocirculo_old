@@ -1,0 +1,34 @@
+# == Schema Information
+# Schema version: 20090904144307
+#
+# Table name: messages
+#
+#  id         :integer(4)      not null, primary key
+#  body       :text
+#  subject    :string(255)     default("")
+#  created_at :datetime        not null
+#  updated_at :datetime
+#  author_id  :integer(4)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+one:
+
+  author_id: 1
+
+  subject: MyString
+
+  body: MyText
+
+
+two:
+
+  author_id: 1
+
+  subject: MyString
+
+  body: MyText
+
+

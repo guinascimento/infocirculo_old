@@ -1,0 +1,34 @@
+# == Schema Information
+# Schema version: 20090904144307
+#
+# Table name: message_copies
+#
+#  id           :integer(4)      not null, primary key
+#  recipient_id :integer(4)
+#  message_id   :integer(4)
+#  folder_id    :integer(4)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+
+one:
+
+  recipient_id: 1
+
+  message_id: 1
+
+  folder_id: 1
+
+
+two:
+
+  recipient_id: 1
+
+  message_id: 1
+
+  folder_id: 1
+
+
