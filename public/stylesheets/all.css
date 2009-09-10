@@ -2521,7 +2521,10 @@ STRUCTURE
 
 /*CUSTOM CENTRAL DIV*/
 div#center {
-  padding: 40px 23px 0px 280px;
+  ###padding: 40px 0px 0px 0px;
+  padding-left: 160px;
+  padding-top: 20px;
+  width: 75%;
 }
 
 div#Wrapper {
@@ -10786,4 +10789,61 @@ text-decoration: none;
 .buttons input[type="submit"]:hover, .buttons a:hover {border: 1px solid #999999; color: #000000}
  
  
- h3.Tab{border-bottom:3px solid #f1f1f1;padding:0 0 0 15px;margin:5px 0 15px 0;}.TabIn{background-color:#fff;padding:3px 11px;margin-right:7px;border:1px solid #f1f1f1;border-bottom:1px solid #fff;}.TabOut{font-size:13px;color:#333;background-color:#f1f1f1;padding:2px 8px 4px 8px;margin-right:7px;}.NewMsg{float:right;font-size:12px;font-weight:bold;padding:2px;text-align:right;}.NewMsg a{padding-left:18px;background:url(/images/mail_icons_2.gif) 0 -104px no-repeat;}.NewMsg a:hover{background-color:#0063DC;}.mail_indicator{cursor:pointer;background:url(/images/mail_icons_2.gif) 0 3px no-repeat;}table#mail{margin-right:0;margin-left:0;}table#mail tr{vertical-align:middle;}table#mail td{font-size:12px;border-bottom:1px solid #E5E5E5;padding:5px 5px 7px 5px;}table#mail th{text-align:left;padding-left:5px;padding-bottom:5px;}table#mail tr.unread td.fromto,table#mail tr.unread td.subj{font-weight:bold;}table#mail th.delete,table#mail td.delete{text-align:center;}table#mail td.date{font-size:11px;color:#999;}table#mail td.icon{text-align:center;}table#mail td.icon{vertical-align:top;}table#mail td.mail_icon{width:1%;}table#mail tr td.mail_icon div.mail_icon{width:16px;height:16px;}table#mail tr td.mail_icon div.mail_icon a{text-decoration:none;width:16px;height:16px;}table#mail tr td.mail_icon div.mail_icon a:hover{background:none;}table#mail tr.unread td.mail_icon div.mail_icon{background-position:0 -22px;}table#mail tr.read td.mail_icon div.mail_icon{background-position:0 -49px;}table#mail tr.replied td.mail_icon div.mail_icon{background-position:0 -76px;}table#mail td a{text-decoration:none;}.unread_count{font-size:11px;color:#999;}.Preview{border:1px solid #ddd;background-color:#f5f5f5;padding:10px;font-size:12px;}.Reply{background:#f3f3f3;padding:10px!important;font-style:italic;}.FlickrMailmessage th{border:none;padding-right:15px;text-align:right;}.FlickrMailMessage th h3{white-space:nowrap;}#OriginalMail{margin-top:10px;}#SelectAllMessage,tr#SelectAllMessage td{padding:0;font-size:0;height:0;border-bottom:none;}#SelectAllMessageDiv{text-align:center;font-size:13px;overflow:hidden;height:1px;}#SelectAllMessageDiv div{padding:10px 0;background-color:#dce8f6;}.from_header{color:#222;font-size:13px;font-weight:normal;}.from_header_link,.from_header_link:visited{font-size:13px;color:#222;text-decoration:none;}.from_header_link:hover{color:#fff;}#InBox table{margin-right:0;margin-left:0;}#InBox tr{vertical-align:top;}#InBox td{border-bottom:1px solid #E5E5E5;padding:5px 5px 7px 5px;}#InBox th{text-align:left;padding-left:5px;padding-bottom:5px;}#InBox p{margin-bottom:10px;}#InBox .Head{font-weight:bold;margin-top:0;margin-bottom:0;color:#fff;background:#666;}#InBox h4{font-size:11px;margin-top:0;margin-bottom:0;color:#666;}#InBox h6{margin-bottom:0;padding-bottom:0;}#InBox #Unread{font-weight:bold;background:#F0F0F0;}#InBox #Read{font-weight:normal;}#InBox #Replied{font-style:italic;color:#333;}#InBox #InBoxDel{text-align:center;}#InBox .icon a:hover{background-color:transparent;}#BoSelectaContainer{margin-top:0;}#BoSelectaResultsBox.flickrmail{display:none;margin:-5px 0 -6px -5px;}#BoSelectaResultsBox.flickrmail li p span.controls{float:left;}#BoSelectaResultsBox.flickrmail li p span.controls a.delete-x:hover{*background-color:#fff;}#BoSelectaContactsBox.flickrmail,#BoSelectaContactsBox.flickrmail #flickrmail-to{width:400px;}#BoSelectaContactsBox.flickrmail .loading{margin-top:0;padding-top:2px;border:none;}td p.flickr-user{width:100%;margin-top:-9px;}td p.flickrmail-to{padding-bottom:1px;}td p.flickrmail-to span.name img{top:4px;}td p.flickrmail-to span.name strong.username{margin-top:1px;}td p.flickrmail-to span.name span.realname{margin-top:0;}
+ h3.Tab{border-bottom:3px solid #f1f1f1;padding:0 0 0 15px;margin:5px 0 15px 0;}
+ .TabIn{background-color:#fff;padding:3px 11px;margin-right:7px;border:1px solid #f1f1f1;border-bottom:1px solid #fff;}
+ .TabOut{font-size:13px;color:#333;background-color:#f1f1f1;padding:2px 8px 4px 8px;margin-right:7px;}
+ .NewMsg{float:right;font-size:12px;font-weight:bold;padding:2px;text-align:right;}
+ .NewMsg a{padding-left:18px;background:url(/images/mail_icons_2.gif) 0 -104px no-repeat;}
+ .NewMsg a:hover{background-color:#0063DC;}
+ .mail_indicator{cursor:pointer;background:url(/images/mail_icons_2.gif) 0 3px no-repeat;}
+ table#mail{margin-right:0;margin-left:0;}
+ table#mail tr{vertical-align:middle;}
+ table#mail td{font-size:11px;border-bottom:1px solid #E5E5E5;padding:5px 5px 7px 5px;}
+ table#mail th{text-align:left;padding-left:5px;padding-bottom:5px;}
+# table#mail tr.unread td.fromto,table#mail tr.unread td.subj{font-weight:bold;}
+ table#mail th.delete,table#mail td.delete{text-align:center;}
+ table#mail td.date{font-size:11px;color:#999;}
+ table#mail td.icon{text-align:center;}
+ table#mail td.icon{vertical-align:top;}
+ table#mail td.mail_icon{width:1%;}
+ table#mail tr td.mail_icon div.mail_icon{width:16px;height:16px;}
+ table#mail tr td.mail_icon div.mail_icon a{text-decoration:none;width:16px;height:16px;}
+ table#mail tr td.mail_icon div.mail_icon a:hover{background:none;}
+ table#mail tr.unread td.mail_icon div.mail_icon{background-position:0 -22px;}
+ table#mail tr.read td.mail_icon div.mail_icon{background-position:0 -49px;}
+ table#mail tr.replied td.mail_icon div.mail_icon{background-position:0 -76px;}
+ table#mail td a{text-decoration:none;}
+ .unread_count{font-size:11px;color:#999;}
+ .Preview{border:1px solid #ddd;background-color:#f5f5f5;padding:10px;font-size:12px;}
+ .Reply{background:#f3f3f3;padding:10px!important;font-style:italic;}
+ .FlickrMailmessage th{border:none;padding-right:15px;text-align:right;}
+ .FlickrMailMessage th h3{white-space:nowrap;}
+ #OriginalMail{margin-top:10px;}
+ #SelectAllMessage,tr#SelectAllMessage td{padding:0;font-size:0;height:0;border-bottom:none;}
+ #SelectAllMessageDiv{text-align:center;font-size:13px;overflow:hidden;height:1px;}
+ #SelectAllMessageDiv div{padding:10px 0;background-color:#dce8f6;}
+ .from_header{color:#222;font-size:13px;font-weight:normal;}
+ .from_header_link,.from_header_link:visited{font-size:13px;color:#222;text-decoration:none;}
+ .from_header_link:hover{color:#fff;}
+ #InBox table{margin-right:0;margin-left:0;}
+ #InBox tr{vertical-align:top;}
+ #InBox td{border-bottom:1px solid #E5E5E5;padding:5px 5px 7px 5px;}
+ #InBox th{text-align:left;padding-left:5px;padding-bottom:5px;}
+ #InBox p{margin-bottom:10px;}
+ #InBox .Head{font-weight:bold;margin-top:0;margin-bottom:0;color:#fff;background:#666;}
+ #InBox h4{font-size:11px;margin-top:0;margin-bottom:0;color:#666;}
+ #InBox h6{margin-bottom:0;padding-bottom:0;}
+ #InBox #Unread{font-weight:bold;background:#F0F0F0;}
+ #InBox #Read{font-weight:normal;}
+ #InBox #Replied{font-style:italic;color:#333;}
+ #InBox #InBoxDel{text-align:center;}
+ #InBox .icon a:hover{background-color:transparent;}
+ #BoSelectaContainer{margin-top:0;}
+ #BoSelectaResultsBox.flickrmail{display:none;margin:-5px 0 -6px -5px;}
+ #BoSelectaResultsBox.flickrmail li p span.controls{float:left;}
+ #BoSelectaResultsBox.flickrmail li p span.controls a.delete-x:hover{*background-color:#fff;}
+ #BoSelectaContactsBox.flickrmail,#BoSelectaContactsBox.flickrmail #flickrmail-to{width:400px;}
+ #BoSelectaContactsBox.flickrmail .loading{margin-top:0;padding-top:2px;border:none;}
+ td p.flickr-user{width:100%;margin-top:-9px;}td p.flickrmail-to{padding-bottom:1px;}
+ td p.flickrmail-to span.name img{top:4px;}td p.flickrmail-to span.name strong.username{margin-top:1px;}
+ td p.flickrmail-to span.name span.realname{margin-top:0;}

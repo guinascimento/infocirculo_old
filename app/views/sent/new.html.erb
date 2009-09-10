@@ -13,8 +13,6 @@
                                 
               <h1>Inbox</h1>
             </div>
-            
-            <%= flash_message %>
 
             <div class="innercol">
               <% form_for :message, :url => {:controller => "sent", :action => "create"} do |f| %>
@@ -22,7 +20,7 @@
                 <div id="basic_form">
                   <div class="block">
                       <dl>
-                        <dt class="required"><%= label(:message, 'Para:') %></dt>
+                        <dt class="required"><%= label_tag('Para:') %></dt>
                         <dd>
                           <select name="message[to]" id="To">
                             <%= options_from_collection_for_select(User.find(:all), :id, :name, @message.to) %>
@@ -30,15 +28,15 @@
                         </dd>
                       </dl>
                       <dl>
-                        <dt class="required"><%= label(:message, 'Assunto:') %></dt>
+                        <dt class="required"><%= label_tag('Assunto') %></dt>
                         <dd>
                           <%= f.text_field :subject, :id => 'Subject' %>
                         </dd>
                       </dl>
                       <dl>
-                        <dt class="required"><%= label(:message, 'Corpo:') %></dt>
+                        <dt class="required"><%= label_tag('Corpo:') %></dt>
                         <dd>
-                          <%= f.text_area :body, :id => 'Body' %>
+                          <%= f.text_area :body, :id => 'Body', :cols => 62, :rows => 10 %>
                         </dd>
                       </dl>
                   </div>

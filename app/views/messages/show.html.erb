@@ -1,7 +1,69 @@
-<h2><%=h @message.subject %></h2>
+<body>
 
-<p><strong>From:</strong> <%=h @message.author.login %></p>
-<p><strong>To:</strong> <%=h @message.recipients.map(&:login).to_sentence %></p>
-<p><strong>Received:</strong> <%= @message.created_at.to_s(:long) %></p>
+<div id="center">
+  <table class="layout">
+	<tr>
+	  <td class="left">
+		<div class="Left">
+		  <div class="col">
+			<div class="page_header">
+			  <span class="other_indexes">
+				<%= link_to 'Voltar', :controller => 'mailbox', :action => 'index' %>
+			  </span>
 
-<pre><%=h @message.body %></pre>
+			  <h1>Inbox</h1>
+			</div>
+
+			<div class="innercol">
+				<div class="action_compose">
+					<div class="buttons">
+						<%= link_to "Responder", reply_message_path(@message), :id => "Reply" %>
+						<br><br>
+					</div>
+				</div>
+
+				<div id="basic_form">
+				  <div class="block">
+					  <dl>
+						<dt class="required"><%= label_tag 'Assunto:' %></dt>
+						<dd>
+						  <%=h @message.subject %>
+						</dd>
+					  </dl>
+					  <dl>
+						<dt class="required"><%= label_tag 'De:' %></dt>
+						<dd>
+						  <%=h @message.author.name %>
+						</dd>
+					  </dl>
+					  <dl>
+						<dt class="required"><%= label_tag 'Para:' %></dt>
+						<dd>
+						   <%=h @message.recipients.map(&:name).to_sentence %>
+						</dd>
+					  </dl>
+					  <dl>
+						<dt class="required"><%= label_tag 'Recebido em:' %></dt>
+						<dd>
+						   <%=h @message.created_at.strftime('%d %b %Y, %H:%M %p') %>
+						</dd>
+					  </dl>
+					  <dl>
+						<dt class="required"><%= label_tag 'Mensagem:' %></dt>
+						<dd>
+						   <%=h @message.body %>
+						</dd>
+					  </dl>
+				  </div>
+				</div>
+
+			</div>
+		  </div>
+		</div>
+	  </td>
+	  <td class="right"></td>
+	</tr>
+  </table>
+</div>
+
+</body>

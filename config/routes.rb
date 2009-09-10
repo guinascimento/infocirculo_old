@@ -67,7 +67,8 @@
 		end
   end
 
-  map.resources :sent, :messages, :mailbox
+  map.resources :sent, :mailbox
+  map.resources :messages, :member => { :reply => :get }
 	map.resource  :session
 	map.resource  :openid_session
 	map.resources :members

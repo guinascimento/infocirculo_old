@@ -16,11 +16,6 @@ ActiveRecord::Schema.define(:version => 20090904144307) do
     t.integer "state_id"
   end
 
-  create_table "conversations", :force => true do |t|
-    t.string   "subject",    :default => ""
-    t.datetime "created_at",                 :null => false
-  end
-
   create_table "countries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -151,11 +146,6 @@ ActiveRecord::Schema.define(:version => 20090904144307) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at"
     t.integer  "author_id"
-  end
-
-  create_table "messages_recipients", :id => false, :force => true do |t|
-    t.integer "message_id",   :null => false
-    t.integer "recipient_id", :null => false
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|

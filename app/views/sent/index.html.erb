@@ -1,7 +1,7 @@
 ﻿<body>
 
 <div id="center">
-	<table class="layout">
+	<table class="layout" style="width:130%">
 		<tr>
 			<td class="left">
 				<div class="Left">
@@ -9,6 +9,8 @@
 						<div class="page_header">
 							<h1>Inbox</h1>
 						</div>
+
+						<%= flash_message %>
 
 						<div class="innercol">
 							<div id="Main" class="">
@@ -20,7 +22,7 @@
 							<table id="mail" cellspacing="0" width="100%">
 								<tr valign="bottom">
 									<th>&nbsp;</th>
-									<th>De</th>
+									<th>Para</th>
 									<th><a href="/mail?sort=subj&dir=down" title="Order by subject">Assunto</a></th>
 									<th><a href="/mail?&sort=date&dir=up" title="Order by date">Data</a> &uarr;</th>
 								</tr>

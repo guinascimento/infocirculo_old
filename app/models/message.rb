@@ -29,7 +29,11 @@ class Message < ActiveRecord::Base
 
 		to.each do |recipient|
 			recipient = User.find(recipient)
-			message_copies.build(:recipient_id => recipient.id, :folder_id => recipient.inbox.id)
+			message_copies.build(:recipient_id => recipient.id, :folder_id => recipient.inbox.id, :read => 0)
 		end
+	end
+
+	def self.find_unread_messages user
+  	count(:all, :joins=>"INNER JOIN message_copies ON message_copies.message_id = messages.id AND message_copies.folder_id = #{user.inbox.id}", :conditions => "message_copies.read = 0")
 	end
 end
