@@ -138,6 +138,8 @@ ActiveRecord::Schema.define(:version => 20090904144307) do
     t.integer  "folder_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "read"
+    t.boolean  "deleted"
   end
 
   create_table "messages", :force => true do |t|

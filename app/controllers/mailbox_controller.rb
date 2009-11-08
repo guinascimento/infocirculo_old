@@ -9,6 +9,7 @@ class MailboxController < ApplicationController
 
   def show
     @folder ||= current_user.folders.find(params[:id])
-    @messages = @folder.messages.paginate :per_page => 10, :page => params[:page], :include => :message, :order => "messages.created_at DESC"
+    @messages = @folder.messages.paginate_not_deleted :all, :per_page => 10, :page => params[:page],
+          :include => :message, :order => "messages.created_at DESC"
   end
 end

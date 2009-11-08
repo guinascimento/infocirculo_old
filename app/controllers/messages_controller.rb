@@ -16,9 +16,10 @@ class MessagesController < ApplicationController
   
   def destroy
     begin
+      #@messages = current_user.received_messages.find(params[:message])
       @messages = current_user.received_messages.find(params[:message])
       @messages.each do |m|
-        m.destroy
+        m.update_attribute("deleted", true)
       end
       if @messages.size == 1
         flash[:notice] = "Mensagem removida com sucesso."  

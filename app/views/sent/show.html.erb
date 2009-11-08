@@ -1,5 +1,92 @@
-<h2>Sent: <%=h(@message.subject) %></h2>
-<p><strong>To:</strong> <%= @message.recipients.map(&:login).to_sentence %></p>
-<p><strong>Sent:</strong> <%= @message.created_at.to_s(:long) %></p>
+<body>
 
-<pre><%=h @message.body %></pre>
+<div id="center">
+  <table class="layout">
+	<tr>
+	  <td class="left">
+		<div class="Left">
+		  <div class="col">
+			<div class="page_header">
+			  <span class="other_indexes">
+				<%= link_to 'Voltar', :controller => 'mailbox', :action => 'index' %>
+			  </span>
+
+			  <h1>Inbox</h1>
+			</div>
+
+			<div class="innercol">
+				<div class="action_compose">
+					<div class="buttons">
+						<br>
+					</div>
+				</div>
+
+				<div id="basic_form">
+				  <div class="block categories">
+						<dl>
+							<dt class="required"><%= label_tag 'De:' %></dt>
+								<dd>
+									<ul>
+									<li>
+										<%=h @message.author.name %> <i><%=h "<" + @message.author.email + ">" %></i>
+									</li>
+								</ul>
+								</dd>
+							</dt>
+						</dl>
+
+						<dl>
+						<dt class="required"><%= label_tag 'Para:' %></dt>
+							<dd>
+							<ul>
+								<li>
+									<%=h @message.recipients.map(&:name).to_sentence %> <i><%=h "<" + @message.recipients.map(&:email).to_sentence + ">" %></i>
+								</li>
+							</ul>
+							</dd>
+						</dl>
+
+					  <dl>
+						<dt class="required"><%= label_tag 'Assunto:' %></dt>
+							<dd>
+								<ul>
+								<li>
+									<%= @message.subject %>
+								</li>
+								</ul>
+							</dd>
+						</dt>
+					  </dl>
+
+						<dl>
+						<dt class="required"><%= label_tag 'Data:' %></dt>
+							<dd>
+							<ul>
+								<li>
+									 <%=h @message.created_at.strftime('%a, %b %d, %Y at %H:%M %p') %>
+								</li>
+							</ul>
+							</dd>
+					  </dl>
+
+						<dl class="message">
+							<dd>
+								<ul>
+									<li></li>
+										<%= format_text_area(@message.body) %>
+								</ul>
+							</dd>
+					  </dl>
+
+				  </div>
+				</div>
+
+			</div>
+		  </div>
+		</div>
+	  </td>
+	</tr>
+  </table>
+</div>
+
+</body>
