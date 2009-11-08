@@ -5,7 +5,7 @@ class ExportController < ApplicationController
 		@profile = find_curriculum_from_user
 
 		pdf = PDF::Writer.new
-		pdf.text convert_encoding(current_user.name + " " + current_user.last_name), :font_size => 23
+		pdf.text convert_encoding(current_user.name), :font_size => 23
 		pdf.text @profile.user.professional_description + " - " + @profile.user.industry.name, :font_size => 10
 		pdf.text @profile.user.email, :font_size => 10
 		

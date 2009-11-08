@@ -61,8 +61,18 @@
                               <div class="buttons">
                                 <table align="right">
                                   <tr>
-                                    <td colspan="3"><%= submit_tag 'Atualizar' %></td>
-                                    <td><%= button_to 'Excluir', experience_path(@experience), :method => :delete %></td>
+                                    <td colspan="3">
+                                      <div class="action_compose">
+                                        <div class="buttons">
+                                          <%= submit_tag 'Atualizar' %></td>
+                                        </div>
+                                      </div>
+                                    <td>
+                                      <div class="action_compose">
+                                        <div class="buttons">
+                                          <%= button_to 'Excluir', experience_path(@experience), :method => :delete %></td>
+                                        </div>
+                                      </div>
                                   </tr>
                                 </table>
                                 <br>

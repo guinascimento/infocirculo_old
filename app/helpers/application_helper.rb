@@ -80,4 +80,13 @@ module ApplicationHelper
 	  		@profile.im + " (Skype)"
   	end
 	end
+
+	def messages_on_inbox
+		 total = Message.find_unread_messages(current_user)
+		 if total > 0
+		 	"Inbox (#{total})"
+		 else
+		 	"Inbox"
+		 end
+	end	
 end

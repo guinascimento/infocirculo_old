@@ -23,37 +23,62 @@
 				</div>
 
 				<div id="basic_form">
-				  <div class="block">
+				  <div class="block categories">
+						<dl>
+							<dt class="required"><%= label_tag 'De:' %></dt>
+								<dd>
+									<ul>
+									<li>
+										<%=h @message.author.name %> <i><%=h "<" + @message.author.email + ">" %></i>
+									</li>
+								</ul>
+								</dd>
+							</dt>
+						</dl>
+
+						<dl>
+						<dt class="required"><%= label_tag 'Para:' %></dt>
+							<dd>
+							<ul>
+								<li>
+									<%=h @message.recipients.map(&:name).to_sentence %> <i><%=h "<" + @message.recipients.map(&:email).to_sentence + ">" %></i>
+								</li>
+							</ul>
+							</dd>
+						</dl>
+
 					  <dl>
 						<dt class="required"><%= label_tag 'Assunto:' %></dt>
-						<dd>
-						  <%=h @message.subject %>
-						</dd>
+							<dd>
+								<ul>
+								<li>
+									<%= @message.subject %>
+								</li>
+								</ul>
+							</dd>
+						</dt>
 					  </dl>
-					  <dl>
-						<dt class="required"><%= label_tag 'De:' %></dt>
-						<dd>
-						  <%=h @message.author.name %>
-						</dd>
+					  
+						<dl>
+						<dt class="required"><%= label_tag 'Data:' %></dt>
+							<dd>
+							<ul>
+								<li>
+									 <%=h @message.created_at.strftime('%a, %b %d, %Y at %H:%M %p') %>
+								</li>
+							</ul>
+							</dd>
 					  </dl>
-					  <dl>
-						<dt class="required"><%= label_tag 'Para:' %></dt>
-						<dd>
-						   <%=h @message.recipients.map(&:name).to_sentence %>
-						</dd>
+					  
+						<dl class="message">
+							<dd>
+								<ul>
+									<li></li>
+										<%= format_text_area(@message.body) %>
+								</ul>
+							</dd>
 					  </dl>
-					  <dl>
-						<dt class="required"><%= label_tag 'Recebido em:' %></dt>
-						<dd>
-						   <%=h @message.created_at.strftime('%d %b %Y, %H:%M %p') %>
-						</dd>
-					  </dl>
-					  <dl>
-						<dt class="required"><%= label_tag 'Mensagem:' %></dt>
-						<dd>
-						   <%=h @message.body %>
-						</dd>
-					  </dl>
+						
 				  </div>
 				</div>
 
@@ -61,7 +86,6 @@
 		  </div>
 		</div>
 	  </td>
-	  <td class="right"></td>
 	</tr>
   </table>
 </div>

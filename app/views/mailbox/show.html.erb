@@ -10,6 +10,8 @@
 							<h1>Inbox</h1>
 						</div>
 
+						<%= flash_message %>
+
 						<div class="innercol">
 							<div class="action_compose">
 								<div class="buttons">
@@ -20,7 +22,7 @@
 										
 							<div id="Main" class="">
 								<h3 class="Tab"> 
-									<span class="TabIn"><%=h @folder.name %> <span class="unread_count">(<%= Message.find_unread_messages current_user %>)</span></span>
+									<span class="TabIn"><%=h @folder.name %></span>
 									<span class="TabOut"><%= link_to "Enviados", :controller => "sent", :action => "index" %></span>
 							</h3>
 							
@@ -46,7 +48,7 @@
 												<td class="mail_icon"><div class="mail_icon mail_indicator"></div></td>
 												<td class="fromto"><%= message.author.name %></td>
 												<td class="subj"><a href=""><%= link_to h(message.subject), message_path(message)  %></a></td>
-												<td class="date"><%= message.created_at.strftime('%d %b %Y, %H:%M %p') %></td>
+												<td class="date"><%= message.created_at.strftime('%d %b') %></td>
 												<td class="delete"><%= check_box_tag 'message[]', message.id %></td>
 											</tr>
 									<% end %>
@@ -56,7 +58,7 @@
 
 								<div class="action">
 									<div class="buttons">
-										<%= submit_tag 'Deletar', :id => "Delete" %>
+										<%= submit_tag 'Excluir', :id => "Delete" %>
 										<br>
 									</div>
 								</div>
@@ -69,5 +71,5 @@
 		</tr>
 	</table>
 </div>
-<br>
+<br />
 </body>

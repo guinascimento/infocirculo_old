@@ -9,8 +9,9 @@
   <%= stylesheet_link_tag 'style' %>
   <%= stylesheet_link_tag 'weekly' %>
   <%= stylesheet_link_tag 'blitzer/jquery-ui-1.7.2.custom' %>
+  <%= stylesheet_link_tag 'jquery.suggest' %>
 
-  <%= javascript_include_tag :defaults, "core", "dialog", "lib", "pulse.jquery" %>
+  <%= javascript_include_tag :defaults, "core", "dialog", "lib", "pulse.jquery", "jquery.suggest" %>
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -20,14 +21,7 @@
         }, 
         2500); // time to wait
     });
-    
-    function push() {
-      $("#messages").click(function () {
-      $(this).effect("pulsate", { times:3 }, 2000);
-      });
-    }
   </script>
-
 
   <style type="text/css" media="screen">
 #  a:link, a:visited {
@@ -144,8 +138,6 @@
 
 <body class="edit_person companies unprintable">
 
-  <%= periodically_call_remote(:url => { :controller => "dashboard", :action => "push_notification" }, :frequency => "5", :update => "push") %>
-
    <div id="Header" class="global">
       <h3>
          <%= current_user.login %>
@@ -161,9 +153,9 @@
             <li><a href="/milestones/responsibilities">Empresas</a></li>
             <li><a href="/milestones/responsibilities">Oportunidades</a></li>
             <li style="float: right"><a href="/global/settings">Ajuda</a></li>
-            <li style="float: right"><a href="/templates">Configurações</a></li>
-      	    <li style="float: right"><a href="/account">Planos</a></li>
-            <li style="float: right"><%= link_to "Inbox", { :controller => "mailbox" }, :class => is_active?("inbox") %>(<span id="push"></span>)</li>
+      	    <li style="float: right"><%= link_to "Planos", { :controller => "pricing" }, :class => is_active?("pricing") %></li>
+            <li style="float: right"><%= link_to messages_on_inbox, { :controller => "mailbox" }, :class => is_active?("inbox") %><li>
+            <li style="float: right"><a href="/templates">Contatos</a></li>
             <li style="float: right"><%= link_to "Perfil", { :controller => "profile" }, :class => is_active?("profile") %></li>
          </ul>
       </div>

@@ -2521,7 +2521,6 @@ STRUCTURE
 
 /*CUSTOM CENTRAL DIV*/
 div#center {
-  ###padding: 40px 0px 0px 0px;
   padding-left: 160px;
   padding-top: 20px;
   width: 75%;
@@ -10847,3 +10846,31 @@ text-decoration: none;
  td p.flickr-user{width:100%;margin-top:-9px;}td p.flickrmail-to{padding-bottom:1px;}
  td p.flickrmail-to span.name img{top:4px;}td p.flickrmail-to span.name strong.username{margin-top:1px;}
  td p.flickrmail-to span.name span.realname{margin-top:0;}
+
+.signup_holder    {clear: both; padding: 20px 0; font-size: 19px; font-weight: bold;}
+.signup_holder div{margin: 20px 0 0 0;}
+.signup_holder a  {margin: 0 0 0 2px; padding: 5px; }
+ 
+h1.pricing 			          {font-size: 42px; color: #222; padding: 5px 0 0 0; margin: 35px 0 10px 0; text-align: center; letter-spacing: -0.04em; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+
+h1.sub     			  {font-size: 28px; color: #36A160; padding: 0px 0 5px 0; text-align: center; margin: 20px 0 20px 0;  letter-spacing: -0.03em;} 
+ 
+
+#content2          {padding: 15px 0 0 0;}
+#content2 .container {background: url(/images/screen_front.png) no-repeat right bottom;}
+
+#plans {
+  margin-left: 250px;
+}
+ 
+ .package_holder   {font-size: 14px; height: 260px; width: 160px;  text-align: center; padding: 0px 5px; border: 4px solid #ccc; background: url(/images/bg_yellow.jpg) repeat-x 0 -130px; float: left; margin: 0 15px 0 0;}
+.package          {font-size: 19px; color: #111; font-weight: bold;}
+.price            {font-size: 28px; padding: 16px 0 12px; color: #36A160; font-weight: bold; letter-spacing: -0.015em;}
+.price span       {color: #2c834e; font-size: 24px;}
+.blurp2           {padding-top: 10px;}
+.signup           {padding: 0 0 5px 0;}
+.who              {padding: 5px 0; margin: 5px 0; font-size: 13px;font-weight: bold; border-top: 1px solid #444; border-bottom: 1px solid #444;}
+.what             {padding: 3px 0; text-align: left; font-size: 12px;}
+.what ul          {padding: 0 0 3px 15px;}
+
+.message { padding-left: 45px; }

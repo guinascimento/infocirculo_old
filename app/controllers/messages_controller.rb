@@ -15,13 +15,19 @@ class MessagesController < ApplicationController
   end
   
   def destroy
-    puts params[:message]
-    @messages = current_user.received_messages.find(params[:message])
-
-    @messages.each do |m|
-      puts m.inspect
-      m.destroy
+    begin
+      @messages = current_user.received_messages.find(params[:message])
+      @messages.each do |m|
+        m.destroy
+      end
+      if @messages.size == 1
+        flash[:notice] = "Mensagem removida com sucesso."  
+      else
+        flash[:notice] = "Mensagens removidas com sucesso."
+      end
+    rescue ActiveRecord::RecordNotFound
+      flash[:error] = "Selecione uma mensagem."
     end
-    #redirect_to inbox_path
+    redirect_to :controller => "mailbox", :action => "index"
   end
 end
