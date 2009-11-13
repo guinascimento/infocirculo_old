@@ -27,8 +27,7 @@
                                 </h1>
                               </div>
 
-                              <% form_for @idiom do |f| %>
-                              <%= f.hidden_field :curriculum_id, :value => @curriculum.id %>
+                              <% form_for :user, @user, :url => { :action => "search" } do |f| %>
                               <div class="innercol">
                                 <%= f.error_messages %>
                                 <div id="basic_form">

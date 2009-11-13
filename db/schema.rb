@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090904144307) do
+ActiveRecord::Schema.define(:version => 20091113175828) do
 
   create_table "cities", :force => true do |t|
     t.string  "name"
@@ -85,6 +85,24 @@ ActiveRecord::Schema.define(:version => 20090904144307) do
 
   add_index "four_oh_fours", ["url", "referer"], :name => "index_four_oh_fours_on_url_and_referer", :unique => true
   add_index "four_oh_fours", ["url"], :name => "index_four_oh_fours_on_url"
+
+  create_table "friendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "requested_at"
+    t.datetime "accepted_at"
+    t.string   "status"
+  end
+
+  add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
+  add_index "friendships", ["status"], :name => "index_friendships_on_status"
+  add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
+
+  create_table "houses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "idioms", :force => true do |t|
     t.integer  "degree",        :limit => 3
@@ -226,11 +244,11 @@ ActiveRecord::Schema.define(:version => 20090904144307) do
     t.integer  "industry_id"
     t.integer  "public_profile"
     t.string   "subdomain"
+    t.string   "cv"
+    t.integer  "friends_count",                            :default => 0
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "cv"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

@@ -35,11 +35,14 @@
 
 require 'digest/sha1'
   
-class User < ActiveRecord::Base  
+class User < ActiveRecord::Base
+  has_friends
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
   has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
   has_many :folders
   before_create :build_inbox
+
+  acts_as_solr :fields => [:name, :professional_description]
 
   def inbox
     folders.find_by_name("Inbox")
@@ -73,11 +76,10 @@ class User < ActiveRecord::Base
   set_inheritance_column :user_type
   validates_presence_of  :user_type
   
-  validates_presence_of :name
+  #validates_presence_of :name
+  #attr_accessible :login, :email, :name, :password, :password_confirmation, :invitation_token, :last_name, :industry_id, :cep, :professional_description, :avatar
   
-  attr_accessible :login, :email, :name, :password, :password_confirmation, :invitation_token, :last_name, :avatar, :industry_id, :cep, :professional_description
-  
-  has_attached_file :avatar, :styles => { :thumb => "90x90>" }
+  has_attached_file :avatar, :styles => { :thumb => "90x90>", :small => "50x50>" }
   
   def self.member_list(page)
     paginate :all, :per_page => 50, :page => page, :conditions => ['enabled = ? and activated_at IS NOT NULL', true], :order => 'login'

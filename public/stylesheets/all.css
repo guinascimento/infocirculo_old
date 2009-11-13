@@ -75,8 +75,7 @@ body.companies div.innercol_center {
 }
 
 body.companies div.avatar img {
-  width: 32px;
-  height: 32px;
+
 }
 
 body.companies div.company {
@@ -2356,11 +2355,19 @@ p.blankslate strong {
 }
 
 h2 {
-	font-family: "Lucida Grande", arial, sans-serif;
+	font-family:  Arial,Helvetica,"Nimbus Sans L",sans-serif;
 	margin: 20px 0 5px 0px;
 	color: #333;
-	font-size: 14px;
+  font-size: 16.9px
 	padding: 0;
+}
+
+.info h2 {
+  font-family: "Lucida Grande", arial, sans-serif;
+  margin: 20px 0 5px 0px;
+  color: #333;
+  font-size: 16px;
+  padding: 0;
 }
 
 h2.subheader {
@@ -10680,7 +10687,7 @@ body.account #Listform li table.export_formats div.export_status p {
 }
 
 
-.notice, .error, .warning, .info {
+.notice, .error, .warning, .infoa {
   text-align:center;
   color: white;
   margin-top: 25px;
@@ -10712,10 +10719,7 @@ text-align: center;
 }
 
 .info {
-border: 1px solid #82c2d4;
-color: #000;
-width: 50%;
-text-align: center;
+vertical-align: top;
 }
 
 .fieldWithErrors {
@@ -10742,8 +10746,8 @@ border:2px solid #000099;
 }
 
 
-#avatar {
-    padding: 4px;
+#avatar_border {
+    padding: 2px;
     border: 1px solid #cccccc;
 }
 
@@ -10874,3 +10878,453 @@ h1.sub     			  {font-size: 28px; color: #36A160; padding: 0px 0 5px 0; text-ali
 .what ul          {padding: 0 0 3px 15px;}
 
 .message { padding-left: 45px; }
+
+
+div#navigation_wrapper {
+  position:absolute;
+  right:-110px;
+  width:101px;
+  border-left:3px solid #c8e68b;
+  background:#dbf1aa;
+}
+
+ul#navigation {
+  padding:10px 0 10px 0;
+  margin-left:-17px;
+  width:130px;
+  background:url(../images/active_navigation.png) no-repeat;
+}
+
+ul#navigation.option-1 { background-position:0px 9px; }
+ul#navigation.option-2 { background-position:0px 42px; }
+ul#navigation.option-3 { background-position:0px 75px; }
+ul#navigation.option-4 { background-position:0px 108px; }
+ul#navigation.option-5 { background-position:0px 141px; }
+ul#navigation.option-6 { background-position:0px 174px; }
+ul#navigation.option-7 { background:none; }
+
+ul#navigation li a {
+  display:block;
+  color:#8ac401;
+  font:13px/22px "American Typewriter", "Constantia", "Verdana", monospace;
+  text-transform:uppercase;
+  text-decoration:none;
+  width:80px;
+  padding:5px 0 5px 3px;
+  margin-left:24px;
+  border-bottom:1px solid #c4e96e;
+}
+
+ul#navigation li.last a { border-bottom:0; }
+
+ul#navigation li a.active {
+  color:#fff;
+  border:none;
+}
+
+
+
+
+/*----------------------------------------------------------*/
+/* Tables                                                   */
+/*----------------------------------------------------------*/
+
+div#content table {
+  width:100%; 
+  margin:0;
+}
+
+div#content table.dash-project,
+div#content table.pulse { margin-bottom:20px; }
+
+div#content table tr { background:#fff; }
+
+div#content table td {
+  border-bottom:1px solid #eee;
+  vertical-align:top;
+  line-height:20px;
+  padding:7px 5px;
+}
+
+div#content table td.tags {
+}
+
+div#content table td.project {
+  padding-left: 30px;
+  min-width:90px;
+}
+
+table#entered_hours td.entered_time   { width:60px; }
+table#entered_hours td.entered_entity { width:150px; }
+
+table#entered_hours tr { border-bottom: 1px solid #eee; }
+
+table td.entered_date {
+  color:#999;
+  width:90px;
+}
+
+div#content tr.summary    { background-color:#e6ffad; }
+div#content tr.summary td { text-align:right }
+div#content tr.summary#bottom    { background-color: white; }
+div#content tr.summary#bottom td { text-align:left }
+
+div#content td p.description,
+div#content div.section td p.description {
+  float:left;
+  margin:0 0 0 5px;
+  font-size:12px;
+  color:#94978e;
+}
+
+div#content a.external-link {
+  font-size:11px;
+  color:#aaa;
+  margin-left:4px;
+  text-decoration:none;
+}
+
+div#content a.external-link:hover { color:#1b92a8; }
+
+div#content table.time_input-report td.date,
+div#content td.table-options { width:100px; }
+
+div#content table td.time {
+  width:45px;
+  text-align:right;
+  padding-right:20px;
+  font-weight:bold;
+}
+
+div#content td.time span.unit { color:#aaa; }
+
+div#content table td.minutes.wide { min-width:80px; }
+div#content table td.user.wide    { min-width:110px; }
+
+div#content table td.user.wide a.user-link-name {
+  position:relative;
+  top:-10px;
+}
+
+div#content td.table-options { white-space:nowrap; }
+
+div#content table#entered_hours tr.edit-time-entry td.date,
+div#content tr.edit-time-entry td.date { width:115px; }
+
+div#content tr td.table-options div.button-wrapper { visibility:hidden; }
+div#content tr td.table-options div.button-wrapper span.note { color: #aaa; }
+div#content tr:hover td.table-options div.button-wrapper { visibility:visible; }
+div#content tr.edit-time-entry td.table-options a { visibility:visible; }
+
+div#content tr.edit-tag td.table-options a {
+  top:1px;
+  position:relative;
+  visibility:visible;
+  margin-right:5px;
+}
+
+div#content td.table-options a.cancel { margin-left:4px; }
+
+div#content table tr.edit-time-entry td {
+  vertical-align:normal;
+  background:#3cc5de;
+  padding:5px;
+}
+
+tr.edit-time-entry td div.first-row {
+  overflow:hidden;
+}
+
+tr.edit-time-entry td div.first-row div.user { 
+  margin:2px 0 0 10px;
+  float:left; 
+  color:#fff;
+}
+
+tr.edit-time-entry td div.first-row div.user span {
+  font-weight:bold;
+}
+
+tr.edit-time-entry td div.first-row div.user select {
+  position:relative;
+  left:5px;
+}
+
+tr.edit-time-entry td div.first-row div.options {
+  float:right;
+  margin:5px 10px 0 0;
+  width:150px;
+}
+
+div#content tr.edit-time-entry td div.first-row div.options div.button-wrapper {
+  margin-left:5px;
+}
+
+tr.edit-time-entry td div.first-row a.date-picker {
+  background:#68D6EA url(../images/time/quickentry-calendar.gif) no-repeat scroll 5px 6px;
+  font-family:"American Typewriter","Constantia","Verdana",monospace;
+  padding:2px 8px 6px 25px;
+  text-transform:uppercase;
+  text-decoration:none;
+  line-height:22px;
+  font-size:15px;
+  float:left;
+  color:#fff;
+}
+
+tr.edit-time-entry td div.first-row a.date-picker:hover {
+  color:#40A2B7;
+}
+
+tr.edit-time-entry td div.second-row {
+  background:url(../images/time/quickentry-inner.png) repeat-x;
+  overflow:hidden;
+  padding:10px;
+}
+
+tr.edit-time-entry td div.second-row input,
+tr.edit-time-entry td div.second-row textarea {
+  font-family:"Trebuchet MS", Helvetica, Arial, sans-serif;
+  float:left;
+  height:20px;
+  margin:0 7px 0 0;
+  padding:5px;
+  font-size:15px;
+  border:none;
+  resize:none;
+  overflow:hidden;
+  position:relative;
+}
+
+tr.edit-time-entry td div.second-row input.minutes  { width:76px; }
+tr.edit-time-entry td div.second-row input.client   { width:190px; }
+tr.edit-time-entry td div.second-row textarea.tags  { width:355px; margin-right:0; }
+
+*+html tr.edit-time-entry td div.second-row textarea.tags {
+  padding-top:7px;
+  width:340px;
+}
+
+tr.edit-time-entry td div.second-row input.error {
+  background:#FFBBBB;
+}
+/*----------------------------------------------------------*/
+/* People                                                   */
+/*----------------------------------------------------------*/
+
+div#person_header { 
+  margin-bottom:30px;
+  overflow:hidden;
+}
+
+div#person_header img.avatar {
+  float:left;
+  margin-right:10px;
+  width:72px;
+  height:72px;
+}
+
+ul.people li {
+  padding:0px 0;
+  border-bottom:1px dashed #ccc;
+  overflow:hidden;
+}
+
+ul.people li.you {
+padding-top: 10px;
+}
+
+ul.people li div.avatar,
+ul.people li div.info { float:left; }
+
+ul.people li div.avatar {
+  margin:0px 15px 5px 10px;
+}
+
+ul.people li div.avatar img { border:3px solid #fff; }
+
+div.person div.info, ul.people li div.info {
+  float:left;
+  width:400px;
+  overflow:hidden;
+  padding-bottom:5px;
+  margin-top:-18px;
+}
+
+ul.people li div.options {
+  margin-top:10px;
+  overflow:hidden;
+}
+
+ul.people li div.options div.button-wrapper {
+  float:left;
+  margin:0 10px 0 0;
+}
+
+ul.people li h4 {
+  height:20px;
+  line-height:20px;
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+div.person span,
+ul.people li h4 span {
+  font-size:11px;
+  font-weight:bold;
+  position:relative;
+}
+
+ul.people li h4 span { top:-2px; }
+
+span.aka {
+  font-size:11px;
+  position:relative;
+  left:7px;
+}
+
+span.thats-you {
+  color:#ef5f92;
+}
+
+span.owner {
+  color:#8ac401;
+  background:url(/images/people/star.gif) left 4px no-repeat;
+  padding-left:10px;
+}
+
+div#pulse_calendar {
+ width: 698px;
+}
+
+div#pulse_calendar_caption {
+  height: 20px;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+div#pulse_calendar_caption span {
+  zoom: 1;
+}
+
+div#active_projects ul {
+  padding-left: 28px;
+}
+
+div#active_projects ul li {
+  display: block;
+  height: 30px;
+  line-height: 23px !important;
+}
+
+div#active_projects ul li a {
+  line-height: 23px;
+}
+
+
+div.infos {
+  background:#e7f8fb;
+  overflow:hidden;
+  position:relative;
+  left:-20px;
+  top:-20px;
+  width:700px;
+  padding:15px 20px 5px 20px;
+}
+
+div#disabled-slug {
+  border:1px solid #f95a5a;
+  font-size:16px;
+  color:#b60040;
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+div#disabled-slug div.message {
+  background:#fee8e8;
+  border:5px solid #eca1a1;
+  padding:10px;
+  overflow:hidden;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+div#disabled-slug div.message span {
+  float:left;
+  position:relative;
+  top:2px;
+}
+
+div#disabled_project,
+div#disabled_user {
+  position:relative;
+  top:-20px;
+  left:-20px;
+  background:#fee8e8;
+  width:698px;
+  padding:10px 20px;
+  overflow:hidden;
+}
+
+div#disabled_project div.message,
+div#disabled_user div.message {
+  font-family:Helvetica, Arial, sans-serif;
+  font-weight:bold;
+  font-size:16px;
+}
+
+div#disabled_project div.message,
+div#disabled_user div.message
+div#disabled_project div.message a,
+div#disabled_user div.message a {
+  color:#b60040;
+}
+
+div.info-slug {
+  border:1px solid #8ac401;
+  margin-bottom:15px;
+}
+
+div.info-slug div.message {
+  background:#f1ffd2;
+  border:5px solid #dbf1aa;
+  padding:10px;
+  font-family:Helvetica, Arial, sans-serif;
+  font-size:16px;
+  line-height:1.5;
+}
+
+div#disabled_project div.message span,
+div#disabled_user div.message span {
+  float:left;
+  position:relative;
+  top:2px;
+}
+
+a.notice-link {
+  font-size:12px;
+  float:right;
+}
+
+div#disabled-slug div.message a.notice-link,
+div#disabled_project div.message a.notice-link,
+div#disabled_user div.message a.notice-link {
+  color:#b60040;
+}
+
+.disabled {
+  opacity: .5;
+}
+
+*+html tr.disabled td {
+  filter: alpha(opacity=50);
+}
+
+
+
+#your_people {
+  width: 100%;
+}
+
+#your_people:hover {
+background: aliceblue;
+}

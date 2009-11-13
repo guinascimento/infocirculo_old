@@ -8,5 +8,5 @@ ActionMailer::Base.smtp_settings = {
   :domain => "infocirculo.com.br",
   :authentication => :login,
   :user_name => "javaplayer@gmail.com",
-  :password => "guimelxxaut185ttye"
+  :password => "guimelxxaut185ttyeg"
 }

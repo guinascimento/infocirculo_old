@@ -23,6 +23,9 @@ class AccountController < ApplicationController
     if @success && @account.errors.empty?
       flash[:notice] = "Imagem carregada com sucesso."
       redirect_to(:action => 'index')
+    else
+      flash[:error] = "Erro."
+      redirect_to(:action => 'index')
     end
   end
 

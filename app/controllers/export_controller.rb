@@ -2,10 +2,10 @@ require "pdf/writer"
 	 
 class ExportController < ApplicationController
 	def pdf
-		@profile = find_curriculum_from_user
+		@profile = find_curriculum_by_id params[:id]
 
 		pdf = PDF::Writer.new
-		pdf.text convert_encoding(current_user.name), :font_size => 23
+		pdf.text convert_encoding(@profile.user.name), :font_size => 23
 		pdf.text @profile.user.professional_description + " - " + @profile.user.industry.name, :font_size => 10
 		pdf.text @profile.user.email, :font_size => 10
 		

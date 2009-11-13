@@ -29,11 +29,18 @@ class UserMailer < ActionMailer::Base
 	  invitation.update_attribute(:sent_at, Time.now)
 	end
 
+  def friendship_request(user, friend)
+    setup_email(user)
+    @subject     += "New connection"
+    @body[:url] = "http://localhost:3000/people/8600/edit"
+    @body[:requester] = friend.name
+  end
+
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
       @from        = "donotreply@infocirculo.com"
-      @subject     = "InfoCírculo - "
+      @subject     = "Infocirculo - "
       @sent_on     = Time.now
       @body[:user] = user
     end

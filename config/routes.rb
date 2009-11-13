@@ -7,9 +7,6 @@
   map.resources :events
   map.resources :personal_informations
 
-  # Dashboard
-  map.dashboard '/dashboard', :controller => 'dashboard', :action => 'index'
-
   # User Account
   map.account '/user/account',        :controller => 'account', :action => 'index'
   map.account '/user/account/update', :controller => 'account', :action => 'update'
@@ -18,6 +15,15 @@
 
   # Public Profile
   map.public_profile '/cv/:name', :controller => 'public_profile', :action => 'cv'
+  
+  # People
+  map.people '/people', :controller => 'people', :action => 'index'
+  #map.people '/people/:id', :controller => 'people', :action => 'show'
+  map.people '/people/request_connection/:id', :controller => 'people', :action => 'request_connection'
+  map.people '/people/remove_connection/:id', :controller => 'people', :action => 'remove_connection'
+  
+  # Export
+  map.people '/export/pdf/:id', :controller => 'export', :action => 'pdf'
   # =====================================================================================================================
 
   # Restful Authentication
@@ -32,18 +38,6 @@
   map.forgot_password '/forgot_password', :controller => 'user/passwords', :action => 'new'
   map.reset_password '/reset_password/:id', :controller => 'user/passwords', :action => 'edit', :id => nil
   map.resend_activation '/resend_activation', :controller => 'user/activations', :action => 'new'
-
-  # Custom Experience Route
-  #map.profile 'profile/experiences/create', :controller => 'experiences', :action => 'create'
-  #map.profile 'profile/experiences/:id/update', :controller => 'experiences', :action => 'update'
-
-  # Custom Education Route
-  #map.profile 'profile/educations/create', :controller => 'educations', :action => 'create'
-  #map.profile 'profile/educations/:id/update', :controller => 'educations', :action => 'update'
-
-  # Custom Idiom Route
-  #map.profile 'profile/idioms/create', :controller => 'idioms', :action => 'create'
-  #map.profile 'profile/idioms/:id/update', :controller => 'idioms', :action => 'update'
   # ===================================================================================== #
 
   map.namespace :admin do |admin|

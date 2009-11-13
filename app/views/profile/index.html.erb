@@ -177,10 +177,9 @@
                 <h1>Opções</h1>
                 <div class="people">
                   <div class="contact">
-                    
-                        <span class="none"><%= link_to image_tag("pdf.png", :border => 0), :controller => "export", :action => "pdf" %></span>
-                        <%= image_tag 'print.png' %>
-                    
+                    <span class="none">
+                      <%= link_to image_tag("pdf.png", :border => 0), { :id => @profile.id } %>
+                    </span>
                   </div>
                 </div>
 
