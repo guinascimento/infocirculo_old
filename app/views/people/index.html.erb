@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=unicode">
+<meta content="MSHTML 6.00.2900.3562" name="GENERATOR"></head>
+
+<body><div id="Wrapper" style="POSITION: relative">
+	 <div id="swap_from">
+			<div id="screen_body" class="container">
+				 <table class="layout">
+					<tr>
+					 <td class="left">
+						<div class="Left">
+							 <div class="col">
+								<div class="page_header">
+
+								<h1>
+									Pessoas
+								</h1>
+								</div>
+
+								<div class="innercol">
+								<div class="action"></div>
+
+							<%
+								@people.each do |c|
+							%>
+								<div id="your_people">
+									<ul class="people">
+										<li class="you">
+											<div class="avatar">
+												<%= image_tag c.avatar.url(:small), :id => "avatar_border" %>
+											</div>
+
+											<div class="info">
+												<h2>
+													<a href="/people/<%= c.id %>"><%= c.name %></a>
+												</h2>
+														<%= c.professional_description %>
+														<br>
+														Brasil | <%= c.industry.name %>
+														<br>
+														<br>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<br>
+							<%	
+								end
+							%>
+
+
+								<div class="action"></div>
+								</div>
+
+						</div><br></div></div>
+					 </td>
+					 
+					 <td class="right">
+						<div class="Right">
+							<div class="col">
+
+								<h1>Refine a pesquisa</h1>
+								<div class="people">
+									<div class="contact">
+									
+									<div id="basic_form">
+										<div class="block">
+											<% form_tag('/people/search') do %>
+												<dl>
+													<dd>Nome:</dd>
+													<dd><%= text_field_tag 'a', '', :size => 35 %></dd>
+												</dl>
+												<dl>
+													<dd>Cargo:</dd>
+													<dd><%= text_field_tag 'b', '', :size => 35 %></dd>
+												</dl>
+												<%= submit_tag 'Pesquisar' %>
+												<br><br>
+											<% end %>
+										</div>
+									</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</td>
+					 
+					</tr>
+				 </table>
+			</div>
+	 </div>
+</div></body></html>

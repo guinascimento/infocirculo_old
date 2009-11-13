@@ -1,0 +1,187 @@
+<div id="Wrapper" style="position: relative;">
+  <div id="swap_from">
+
+	<div id="screen_body" class="container">
+	  <table class="layout">
+		<tr>
+		  <td class="left">
+			<div class="Left">
+			  <div class="col">
+				<div class="page_header">
+				  <h1>Perfil</h1>
+				</div>
+
+					<div class="innercol">
+					  <div id="head_informations">
+						<ul>
+						  <span class="name"><%= @profile.user.name %></span>
+						  <li>
+								<%= @profile.user.professional_description %>
+
+								<% if @profile.user.professional_description != "" and @profile.user.industry != nil %>
+								  -
+								<% end %>
+
+								<% if @profile.user.industry != nil %>
+								  <%= @profile.user.industry.name %>
+								<% end %>
+						  </li>
+						  <li><%= @profile.user.email %></li>
+						</ul>
+					  </div>
+
+					  <div id="personal_informations">
+						<h2>
+						  Informações Pessoais
+						</h2>
+
+						<div class="block categories">
+						  <ul>
+							<% if @profile.phone != nil %>
+							  <li>Telefone: <%= @profile.phone %></li>
+							<% end %>
+							<% if @profile.address != "" %>
+							  <li>Endereço: <%= @profile.address %></li>
+							<% end %>
+							<% if @profile.im != "" %>
+							  <li>IM: <%= full_im %></li>
+							<% end %>
+							<% if @profile.maritial_status != nil %>
+							  <li>Estado Civíl: <%= @profile.maritial_status %></li>
+							<% end %>
+						  </ul>
+						</div>
+					  </div>
+
+					  <div id="summary">
+						<h2>Resumo
+						</h2>
+
+						<div class="block categories">
+						  <ul>
+							<%= format_text_area(@profile.summary) %>
+						  </ul>
+						</div>
+					  </div>
+
+					  <div id="professional_experience">
+						<h2>
+						  Experiência Profissional
+						</h2>
+
+						<% for experience in @profile.experiences %>
+							<div class="block categories">
+							  <ul>
+								<li></li>
+								<li>
+								  <strong><%= experience.title %> - <%= experience.company_name %></strong>
+								</li>
+
+								<% if experience.end != nil %>
+									<li>
+									  <%= experience.start.strftime('%m/%Y') %> a <%= experience.end.strftime('%m/%Y') %>
+									</li>
+								<% else %>
+									<li><%= experience.start.strftime('%m/%Y') %></li>
+								<% end %>
+
+								<%= format_text_area(experience.description) %>
+							  </ul>
+							</div>
+						<% end %>
+					  </div>
+
+					  <div id="education">
+						<h2>
+						  Educação
+						</h2>
+
+						<% for education in @profile.educations %>
+							<div class="block categories">
+							  <ul>
+								<li></li>
+								<li>
+								  <strong><%= education.degree %> - <%= education.school_name %></strong>
+
+								  <% if education.end != nil %>
+									<li><%= education.start.strftime('%m/%Y') %>
+									  a <%= education.end.strftime('%m/%Y') %></li>
+								  <% else %>
+									<li><%= education.start.strftime('%m/%Y') %></li>
+								  <% end %>
+
+								  <%= format_text_area(education.activities) %>
+							  </ul>
+							</div>
+						<% end %>
+					  </div>
+
+					  <div id="idiom">
+						<h2>
+						  Idiomas
+						</h2>
+
+						<% for idiom in @profile.idioms %>
+							<div class="block categories">
+							  <ul>
+								<li></li>
+								<li>
+								  <%= idiom.name %> - <%= idiom.degree %>
+							  </ul>
+							</div>
+						<% end %>
+					  </div>
+
+				</div>
+
+			  </div>
+			  <ul>
+				  <li>&nbsp;</li>
+			  </ul>
+			</div>
+		  </td>
+
+		<td class="right">
+			<div class="Right">
+			  <div class="col">
+
+				<h1>Opções</h1>
+				<div class="people">
+				  <div class="contact">
+
+						<span class="none">
+							<%= link_to image_tag("pdf.png", :border => 0), :controller => "export", :action => "pdf" %>
+						</span>
+						
+						<br><br>
+						
+						<% if !is_you? @profile.user %>
+							<%= link_to "Enviar Mensagem", :controller => "sent", :action => "new" %>
+							<%= link_to image_tag("send.png", :border => 0) %>
+							<br><br>
+							<% if already_friends? @profile.user %>
+								Vocês são amigos!
+								<%= link_to_remote "Remover contato", :url => { :action => "remove_connection"} %>
+							<% else %>
+								<% if friendship_requested? @profile.user %>
+									Request ja enviado!
+								<% else %>
+									<%= link_to_remote "Adicionar contato", :url => { :action => "request_connection"} %>
+								<% end %>
+							<% end %>
+						<% end %>
+				  </div>
+
+				  </div>
+				</div>
+
+			  </div>
+			</div>
+		  </td>
+
+		</tr>
+	  </table>
+	</div>
+
+  </div>
+</div>
