@@ -17,10 +17,11 @@
   map.public_profile '/cv/:name', :controller => 'public_profile', :action => 'cv'
   
   # People
-  map.people '/people', :controller => 'people', :action => 'index'
-  #map.people '/people/:id', :controller => 'people', :action => 'show'
+  #map.people '/people', :controller => 'people', :action => 'index'
+  #map.people '/people/show/:id', :controller => 'people', :action => 'show'
   map.people '/people/request_connection/:id', :controller => 'people', :action => 'request_connection'
   map.people '/people/remove_connection/:id', :controller => 'people', :action => 'remove_connection'
+  map.people '/people/accept_connection/:id', :controller => 'people', :action => 'accept_connection'
   
   # Export
   map.people '/export/pdf/:id', :controller => 'export', :action => 'pdf'

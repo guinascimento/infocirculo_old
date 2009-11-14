@@ -155,9 +155,9 @@
 						
 						<br><br>
 						
+						<!-- TODO Fix the friendship bug -->
 						<% if !is_you? @profile.user %>
 							<%= link_to "Enviar Mensagem", :controller => "sent", :action => "new" %>
-							<%= link_to image_tag("send.png", :border => 0) %>
 							<br><br>
 							<% if already_friends? @profile.user %>
 								Vocês são amigos!

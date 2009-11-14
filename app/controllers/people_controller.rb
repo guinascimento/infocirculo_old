@@ -1,6 +1,5 @@
 class PeopleController < ApplicationController
 	def index
-		#@people = User.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
 		@people = User.find(:all)
 	end
 
@@ -15,13 +14,10 @@ class PeopleController < ApplicationController
 		if params[:b] != ""
 			query = params[:b]
 		end
-		puts query
+
 		results = SiteUser.search query
 		@people  = results.docs
 		@total_hits = results.total_hits
-
-		puts results.docs
-		puts @total_hits
 
 		render :template => "people/index"
 	end
@@ -45,5 +41,12 @@ class PeopleController < ApplicationController
 		friend = User.find(params[:id])
 
 		current_user.remove_friendship_with(friend)
+	end
+
+	def accept_connection
+		friendship = Friendship.find(:first, :conditions => "user_id = '#{params[:id]}'")
+		request = Friendship.find(:first, :conditions => "friend_id = '#{params[:id]}'")
+		friendship.accept!
+		request.accept!
 	end
 end

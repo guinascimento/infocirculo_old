@@ -10314,6 +10314,10 @@ BASIC FORM
 }
 
 #basic_form dd {
+  font-weight: bold;
+}
+
+#basic_form dd {
   margin: 0 0 5px 0px;
   font-size: 10px;
 }
@@ -10787,8 +10791,10 @@ text-decoration: none;
 
 
 
+.buttons_left a, .buttons_left input[type="submit"] {-moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); background: #EAEAEA url(/images/buttongradient.png) repeat-x scroll left top; border-color: #bdbdbd #9b9a9a #9b9a9a #bdbdbd; border-style: solid; border-width: 1px; color: #464646; cursor: pointer; display: block; float: right; font-weight: bold; font-family: "Lucida Grande",Tahoma,Arial,sans-serif; font-size: 90%; line-height: 130%; margin: 0 20.7em 0 0; padding: 5px 10px 6px; text-decoration: none}
 
 .buttons a, .buttons input[type="submit"] {-moz-background-clip: border; -moz-background-inline-policy: continuous; -moz-background-origin: padding; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); background: #EAEAEA url(/images/buttongradient.png) repeat-x scroll left top; border-color: #bdbdbd #9b9a9a #9b9a9a #bdbdbd; border-style: solid; border-width: 1px; color: #464646; cursor: pointer; display: block; float: right; font-weight: bold; font-family: "Lucida Grande",Tahoma,Arial,sans-serif; font-size: 90%; line-height: 130%; margin: 0 0.7em 0 0; padding: 5px 10px 6px; text-decoration: none}
+
 .buttons input[type="submit"]:hover, .buttons a:hover {border: 1px solid #999999; color: #000000}
  
  

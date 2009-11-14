@@ -101,6 +101,17 @@
                       <li><span style="vertical-align:bottom"><%= image_tag "tick.png" %></span> 4500 Oportunidades</li>
                     </div>
                   </div>
+                  
+                  <h1>Convites</h1>
+                  <div class="people">
+                    <%
+                      status, friendship = pending_requests? current_user
+                      if status  
+                    %>
+                      Vc tem convites: 
+                      <%= link_to_remote friendship.user.name, :url => { :controller => "people", :action => "accept_connection", :id => friendship.user.id } %>
+                    <% end %>
+                  </div>
 
                 </div>
               </div>
