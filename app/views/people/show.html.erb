@@ -159,11 +159,11 @@
 						<% if !is_you? @profile.user %>
 							<%= link_to "Enviar Mensagem", :controller => "sent", :action => "new" %>
 							<br><br>
-							<% if already_friends? @profile.user %>
+							<% if already_friends? current_user, @profile.user %>
 								Vocês são amigos!
 								<%= link_to_remote "Remover contato", :url => { :action => "remove_connection"} %>
 							<% else %>
-								<% if friendship_requested? @profile.user %>
+								<% if friendship_requestedd? current_user, @profile.user %>
 									Request ja enviado!
 								<% else %>
 									<%= link_to_remote "Adicionar contato", :url => { :action => "request_connection"} %>

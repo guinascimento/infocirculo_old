@@ -44,8 +44,8 @@ class PeopleController < ApplicationController
 	end
 
 	def accept_connection
-		friendship = Friendship.find(:first, :conditions => "user_id = '#{params[:id]}'")
-		request = Friendship.find(:first, :conditions => "friend_id = '#{params[:id]}'")
+		friendship = Friendship.find(:first, :conditions => "user_id = '#{params[:user_id]}' AND friend_id = '#{params[:friend_id]}'")
+		request = Friendship.find(:first, :conditions => "user_id = '#{params[:friend_id]}' AND friend_id = '#{params[:user_id]}'")
 		friendship.accept!
 		request.accept!
 	end

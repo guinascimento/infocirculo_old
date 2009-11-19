@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
   #validates_presence_of :name
   #attr_accessible :login, :email, :name, :password, :password_confirmation, :invitation_token, :last_name, :industry_id, :cep, :professional_description, :avatar
   
-  has_attached_file :avatar, :styles => { :thumb => "90x90>", :small => "50x50>" }
+  has_attached_file :avatar, :styles => { :thumb => "90x90>", :small => "50x50>", :contact => "36x36" }
   
   def self.member_list(page)
     paginate :all, :per_page => 50, :page => page, :conditions => ['enabled = ? and activated_at IS NOT NULL', true], :order => 'login'

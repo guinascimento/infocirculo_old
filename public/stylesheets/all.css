@@ -2362,6 +2362,14 @@ h2 {
 	padding: 0;
 }
 
+div.body #username h2 {
+  font-family:  Arial,Helvetica,"Nimbus Sans L",sans-serif;
+  margin: 20px 0 4px 0px;
+  color: #333;
+  font-size: 12.9px;
+  margin-top: 8px;
+}
+
 .info h2 {
   font-family: "Lucida Grande", arial, sans-serif;
   margin: 20px 0 5px 0px;
@@ -11334,3 +11342,103 @@ div#disabled_user div.message a.notice-link {
 #your_people:hover {
 background: aliceblue;
 }
+
+#pending {
+  background: aliceblue;
+}
+
+
+/*----------------------------------------------------------*/
+/* Buttons                                                  */
+/*----------------------------------------------------------*/
+
+div.button-wrapper {
+  float: left;
+  margin-right:10px;
+}
+
+v\:roundrect.button {
+  display:block;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  position:relative;
+  height:100%;
+  width:100%;
+  color:#7c7f76;
+  background-color:#dbdbdb;
+  behavior:url(#default#VML);
+  /background-color:transparent;
+}
+
+v\:roundrect.button.report {
+  background-color:#bce35f;
+  behavior:url(#default#VML);
+  /background-color:transparent;
+}
+
+v\:roundrect.button.feed {
+  background-color:#fa9d3a;
+  behavior:url(#default#VML);
+  /background-color:transparent;
+}
+
+v\:roundrect.button.delete {
+  background:#ed8080;
+  color:#a71616;
+  behavior:url(#default#VML);
+  /background-color:transparent;
+}
+
+v\:roundrect.button:hover        { background-color:#bab5b5; }
+v\:roundrect.button.report:hover { background-color:#d1f47d; }
+v\:roundrect.button.feed:hover   { background-color:#fbae5d; }
+v\:roundrect.button.delete:hover { background-color:#d47272; }
+
+v\:roundrect.button a:hover        { color:#333333; }
+v\:roundrect.button.report a:hover { color:#364c00; }
+v\:roundrect.button.feed a:hover   { color:#fff; }
+v\:roundrect.button.delete a:hover { color:#8a1111; }
+
+*+html v\:roundrect.button:hover,
+*+html v\:roundrect.button.report:hover,
+*+html v\:roundrect.button.feed:hover,
+*+html v\:roundrect.button.delete:hover {
+  background-color:transparent;
+}
+
+a.feed-button,
+a.inline-button,
+a.save,
+a.cancel,
+a.delete,
+a.edit {
+  color:#333333;
+  display: block;
+  font-size:10px;
+  font-family:"Lucida Grande", Arial, sans-serif;
+  text-decoration:none;
+  font-weight:normal;
+  line-height:12px;
+  font-weight:bold;
+  padding:2px 8px 2px 8px;
+}
+
+a.description {
+  color:#333333;
+  display: block;
+  
+  text-decoration:none;
+  
+  padding:1px 8px 14px 1px;
+}
+
+
+div#contact tr td.table-options div.button-wrapper { visibility:hidden; }
+div#contact tr td.table-options div.button-wrapper span.note { color: #aaa; }
+div#contact tr:hover td.table-options div.button-wrapper { visibility:visible; }
+
+.delete_back {
+background: #fee1e1;
+}
+
+

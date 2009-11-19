@@ -5,6 +5,8 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>InfoCírculo - Sua Rede Social Profissional</title>
 
+  <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+
   <%= stylesheet_link_tag 'all' %>
   <%= stylesheet_link_tag 'style' %>
   <%= stylesheet_link_tag 'weekly' %>

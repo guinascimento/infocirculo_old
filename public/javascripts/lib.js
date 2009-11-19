@@ -13,3 +13,22 @@ function unselectAll() {
 		}
 	}
 }
+
+function reject(id) {
+	$("#people"+ id).addClass("delete_back").fadeIn("slow");
+
+	if (confirm("Tem certeza ?")) {
+		jQuery.ajax(
+			{
+				data:'authenticity_token=' + encodeURIComponent('738Mq3yYmZdPlNlRHp3guAWEuEg0NM57pjODApL0cbw='),
+				dataType:'script',
+				type:'post',
+				url:'/people/remove_connection/'+id
+			}
+		);
+		$("#people"+ id).fadeOut("slow");
+		return false;
+	} else {
+		$("#people"+ id).removeClass("delete_back");
+	}
+}

@@ -5,23 +5,22 @@ module PeopleHelper
 	end
 
 	def pending_requests? user
-		friendship = Friendship.find(:first, :conditions => "user_id = '#{user.id}'")
-		if friendship != nil
-			if friendship.pending?
-				return true, friendship
-			end
-		end
+		friendship = Friendship.find(:all, :conditions => "user_id = '#{user.id}' AND status = 'pending'")
 	end
 
-	def already_friends? user
-		friendship = Friendship.find(:first, :conditions => "friend_id = '#{user.id}'")
+	def pending_requests
+		friendship = Friendship.find(:all, :conditions => "user_id = '#{current_user.id}' AND status = 'pending'")
+	end
+
+	def already_friends? user, friend
+		friendship = Friendship.find(:first, :conditions => "user_id = '#{user.id}' AND friend_id = '#{friend.id}'")
 		if friendship != nil
 			friendship.accepted?
 		end
 	end
 
-	def friendship_requested? user
-		friendship = Friendship.find(:first, :conditions => "friend_id = '#{user.id}'")
+	def friendship_requestedd? user, friend
+		friendship = Friendship.find(:first, :conditions => "user_id = '#{user.id}' AND friend_id = '#{friend.id}'")
 		if friendship != nil
 			friendship.requested?
 		end
