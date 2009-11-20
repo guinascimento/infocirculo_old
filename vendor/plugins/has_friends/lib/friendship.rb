@@ -34,7 +34,8 @@ class Friendship < ActiveRecord::Base
   end
 
   def accept!
-    #User.increment_counter(:friends_count, user.id) unless accepted?
+    User.increment_counter(:friends_count, user.id) unless accepted?
     update_attribute(:status, 'accepted')
+    update_attribute(:accepted_at, Time.now)
   end
 end

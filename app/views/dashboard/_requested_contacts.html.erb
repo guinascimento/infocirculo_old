@@ -1,36 +1,37 @@
 <%
 	status, friendship = pending_requests? current_user
-	if status  
+	unless !status
 %>
-	<h1>Solicitações de Amigos</h1>
 
-	<div class="contact" id="contact">
-		<table width="100%" border="0">
-			<% pending_requests.each do |people| %>
-				<tr id="people<%= people.friend.id %>">
-						<td width="10%">
-							<%= link_to image_tag(people.friend.avatar.url(:contact), :id => "avatar_border"), :controller => "people", :action => "show", :id => people.friend.id %>
-						</td>
-						<td class="table-options">
-							<div>
-								<%= link_to people.friend.name, { :controller => "people", :action => "show", :id => people.friend.id }, :class => "description" %>
-							</div>
-	
-							<div class="button-wrapper">
-								<v:roundrect arcsize=".5" fillcolor="#dbdbdb" class="button" stroked="false">
-									<%= link_to_remote "aceitar", :url => { :controller => "people", :action => "accept_connection", :user_id => people.user.id, :friend_id => people.friend.id }, :html => { :class => "edit" } %>
-								</v:roundrect>
-							</div>
-	
-							<div class="button-wrapper">
-								<v:roundrect arcsize=".5" fillcolor="#dbdbdb" class="button delete" stroked="false">
-									<%= link_to_function "recusar", :class => "delete", :onclick => "reject('#{people.friend.id}')" %>
-								</v:roundrect>
-							</div>						
-						</td>
-					</tr>
-			<% end %>
+<h1>Solicitações de Amigos</h1>
+
+<div class="contact" id="contact">
+	<% pending_requests.each do |people| %>
+		<table width="100%" border="0" id="people<%= people.friend.id %>">
+			<tr>
+				<td width="10%">
+					<%= link_to image_tag(people.friend.avatar.url(:contact), :id => "avatar_border"), :controller => "people", :action => "show", :id => people.friend.id %>
+				</td>
+				<td class="table-options">
+					<div>
+						<%= link_to people.friend.name, { :controller => "people", :action => "show", :id => people.friend.id }, :class => "description" %> <span class="time_from_request">(<%= time_ago_in_words(people.requested_at) %> atrás)</span>
+					</div>
+
+					<div class="button-wrapper">
+						<v:roundrect arcsize=".5" fillcolor="#dbdbdb" class="button" stroked="false">
+							<%= link_to_function "aceitar", :class => "edit", :onclick => "accept('#{people.friend.id}')" %>
+						</v:roundrect>
+					</div>
+
+					<div class="button-wrapper">
+						<v:roundrect arcsize=".5" fillcolor="#dbdbdb" class="button delete" stroked="false">
+							<%= link_to_function "recusar", :class => "delete", :onclick => "reject('#{people.friend.id}')" %>
+						</v:roundrect>
+					</div>						
+				</td>
+			</tr>
 		</table>
-	</div>
-	
+	<% end %>
+</div>
+
 <% end %>

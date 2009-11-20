@@ -2443,8 +2443,9 @@ h3 {
 }
 
 td, th {
-	padding: 3px;
+	padding: 2px;
 	text-align: left;
+  vertical-align: top;
 }
 
 .bigger {
@@ -11421,24 +11422,31 @@ a.edit {
   line-height:12px;
   font-weight:bold;
   padding:2px 8px 2px 8px;
+  margin-top: 9px;
 }
 
-a.description {
-  color:#333333;
-  display: block;
-  
-  text-decoration:none;
-  
-  padding:1px 8px 14px 1px;
-}
+
+
 
 
 div#contact tr td.table-options div.button-wrapper { visibility:hidden; }
 div#contact tr td.table-options div.button-wrapper span.note { color: #aaa; }
 div#contact tr:hover td.table-options div.button-wrapper { visibility:visible; }
 
-.delete_back {
-background: #fee1e1;
+
+/* Description from text on the requested contacts */
+a.description {
+  color:#333333;
+  text-decoration:none;
 }
 
+/* Time from friendship request */
+.time_from_request {
+  font-size: 10px;
+  font-style: italic;
+}
 
+/* Backgound color used to identify the request that is being deleted */
+.delete_background {
+background: #fee1e1;
+}

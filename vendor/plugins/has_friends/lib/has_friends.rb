@@ -45,9 +45,11 @@ module SimplesIdeias
         
         # we didn't find a friendship, so let's create one!
         friendship = self.friendships.create(:friend_id => friend.id, :status => 'requested')
+        friendship.update_attribute(:requested_at, Time.now)
 
         # we didn't find a friendship request, so let's create it!
         request = friend.friendships.create(:friend_id => id, :status => 'pending')
+        request.update_attribute(:requested_at, Time.now)
         
         return friendship, Friendship::STATUS_REQUESTED
       end
